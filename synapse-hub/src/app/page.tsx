@@ -11,6 +11,7 @@ import {
   Zap,
   ChevronRight
 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
   const [data, setData] = useState<any>(null);
@@ -77,7 +78,11 @@ export default function Home() {
             </h2>
             <div className="space-y-3">
               {data.tasks.map((task: any) => (
-                <div key={task.id} className="group bg-zinc-900/30 border border-zinc-800 hover:border-zinc-700 p-4 rounded-xl transition-all cursor-pointer flex justify-between items-center">
+                <Link 
+                  href={`/tasks/${task.id}`}
+                  key={task.id} 
+                  className="group bg-zinc-900/30 border border-zinc-800 hover:border-zinc-700 p-4 rounded-xl transition-all cursor-pointer flex justify-between items-center"
+                >
                   <div>
                     <span className="text-xs font-mono text-blue-500 mb-1 block">{task.id}</span>
                     <h4 className="font-medium text-white">{task.title}</h4>
@@ -88,7 +93,7 @@ export default function Home() {
                     </span>
                     <ChevronRight className="w-5 h-5 text-zinc-700 group-hover:text-zinc-500" />
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </section>
