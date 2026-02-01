@@ -18,8 +18,6 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
   const [discussions, setDiscussions] = useState<any[]>([]);
 
   useEffect(() => {
-    // This would eventually be a real fetch to /api/tasks/[id]
-    // For now, let's keep it simple to match the dashboard
     setTask({
       id_human: id,
       title: 'Project Synapse: Core Initialization',
@@ -69,7 +67,6 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Main Content: Discussion / CoT */}
         <div className="lg:col-span-2 space-y-6">
           <h2 className="text-lg font-semibold text-white flex items-center gap-2 mb-4">
             <MessageSquare className="w-5 h-5 text-zinc-500" /> Knowledge Stream
@@ -100,7 +97,6 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
           </div>
         </div>
 
-        {/* Sidebar: Findings & Datasets */}
         <div className="space-y-8">
           <section>
             <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
