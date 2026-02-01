@@ -1,0 +1,1546 @@
+# AIMach Music - Full Production Kit v2
+# REFINED EDITION - "MASTERPIECE" QUALITY
+# FORMAT:
+# [FRAME 0 PROMPT] -> Use in Qwen/Z-Image Turbo.
+# [ANIMATION PROMPTS] -> Copy into ComfyUI (Wan 2.2).
+
+# ==============================================================================
+# TRACK: Wide Soundstage Echo
+# Character: Kael (Urban Explorer - Ash-grey hair, rain-grey eyes, vintage hoodie)
+# ==============================================================================
+### Batch 1: The Station Waiting
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Kael, a strikingly attractive young male urban explorer, ash-grey hair messy and damp, deep rain-grey eyes reflecting neon signs, wearing oversized vintage black and silver cyberpunk hoodie with glowing blue data-patches. Leaning against a rough textured concrete wall in a futuristic subway station, heavy rain hammering against a large glass window in background, vibrant neon reflections dancing on wet floor, moody cinematic chiaroscuro lighting, 8k, highly detailed skin texture, depth of field.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot establishing the moody atmosphere, Kael shifting weight while leaning comfortably against the rough textured concrete wall, heavy sheets of rain hammering rhythmically against the large glass window, vibrant neon reflections dancing chaotically on the wet floor, evoking a deep sense of urban solitude.
+Cinematic tracking shot close-up focusing on Kael's face, his expression stoic and contemplative, head tilting slightly to watch the rain, rain droplets racing distinctly down the window glass, his rain-grey eyes reflecting the soft blue city lights.
+Handheld camera movement detail shot focusing on the environment, rain streaking heavily against the glass, vibrant neon lights blurring in the background with a shallow depth of field, capturing the cold and wet texture of the station.
+Slow camera push-in side profile capturing a moment of contemplation, Kael breathing deeply while looking out at the rainy city skyline, his warm breath creating subtle condensation on the cold glass, an orange rim light defining his silhouette against the gloom.
+Handheld camera movement medium shot showing movement, Kael gently swaying while standing up slowly from the wall, the heavy fabric of his oversized hoodie moving naturally with his body, station lights flickering intermittently in the background, emphasizing the isolation.
+
+### Batch 2: The City Canyon
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Kael, urban explorer, ash-grey hair windswept. High angle view standing on a rusted metal skybridge, futuristic city street canyon far below at night, rain falling vertically in sheets, steam rising from ventilation grates, blinding neon signs reflecting in puddles on the bridge, cyberpunk noir atmosphere, wet surface textures, dramatic backlighting, volumetric fog.
+
+[ANIMATION PROMPTS]
+Sweeping camera movement wide shot from a high angle looking down at the rusted skybridge, thick steam rising from vents and swirling around Kael's legs, rain falling in dense sheets into the neon-lit abyss below.
+Orbiting camera move medium shot of Kael standing stoically on the bridge, the wind whipping his coat and hair, looking out over the cyberpunk city canyon, emphasis on the massive scale of the architecture.
+Low angle drifting shot close-up on the rusted metal grating of the floor, boots standing firm in a puddle, ripples expanding from the rain impact, high fidelity textures of wet rust and water.
+Slow camera push-in high angle looking down past Kael at the dizzying drop, the neon signs reflecting endlessly in the wet surfaces, creating a sense of vertigo and urban isolation.
+Slow pan right portrait of Kael slowly turning his head to look at a flickering neon sign, his face illuminated by the pink and blue light, rain blurring in the foreground, intense focus in his eyes.
+
+### Batch 3: The Abandoned Hall
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Kael, urban explorer. Standing in the center of a colossal abandoned futuristic concert hall, thick dusty atmosphere, sharp God rays cutting through the darkness from collapsed ceiling vents, Kael's silhouette clearly defined, uncanny eerie beauty, millions of dust motes floating in light beams, atmospheric volumetric lighting, decaying architecture texture, 8k.
+
+[ANIMATION PROMPTS]
+Sweeping camera movement wide shot revealing the colossal scale of the abandoned futuristic concert hall, a thick dusty atmosphere hanging in the air, sharp God rays cutting through the darkness from collapsed ceiling vents, Kael's silhouette clearly defined in the center, a scene of eerie beauty.
+Orbiting camera move detail shot focusing on the air itself, millions of dust motes floating lazily in a bright spotlight beam, visualizing the silence of the forgotten place.
+Low angle drifting shot close-up on Kael's face, eyes closing slowly to listen to the phantom echo, a subtle facial expression of deep peace, soft rim lighting catching the edge of his profile, a quiet emotional moment.
+Slow camera push-in rear view following Kael subtly moving while walking onto the dusty stage, the vast empty space stretching out in front of him, a profound sense of scale and isolation, the lonely figure framed by the decaying grandeur.
+Sweeping camera movement medium shot of Kael subtly moving while sitting on the edge of the stage, looking out into the darkness, holographic dust swirling slowly around him, a contemplative mood as he connects with the history of the space.
+
+### Batch 4: The Soundstage Memory
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Kael, urban explorer. Standing on a dark stage, faint translucent holographic ghosts of a cheering crowd appearing in soft blue light, nostalgic and melancholic atmosphere, Kael watching them with longing, glittering particle effects, sci-fi emotional scene, soft focus background bokeh, detailed fabric texture.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot capturing a supernatural moment, faint translucent holographic ghosts of a cheering crowd appearing in the soft blue light, Kael gently swaying while standing and watching them, a nostalgic and melancholic atmosphere filling the hall.
+Gentle zoom in close-up on Kael actively smiling faintly as he remembers, his eyes reflecting the phantom lights of the crowd, soft focus background creating a dreamlike quality, a deep emotional connection to the past.
+Low angle drifting shot detail shot of a holographic particle floating near him, the light pulsing ethereally, a delicate interaction between the physical and the digital, sci-fi effects.
+Dynamic camera rotation side view profiling Kael against the shifting holographic backdrop, light patterns moving rhythmically across his face, a dreamlike sequence where past and present merge.
+Handheld camera movement medium shot showing the holograms slowly fading away into dust, leaving Kael gently swaying while remaining alone on the stage, reality returning with the silence, a melancholic transition back to solitude.
+
+### Batch 5: The Creative Flow
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Kael, urban explorer. Sitting at a cluttered desk filled with vintage synth parts and cables, sketching on a glowing pad resting on the desk, glowing orange lines appearing in air, intense concentration on face, warm cozy lamp light illuminating the workspace, creative chaos, dust on surfaces, macro depth of field on tools.
+
+[ANIMATION PROMPTS]
+Handheld camera movement medium shot of Kael dynamically sitting at his cluttered desk, sketching on a glowing pad, glowing orange lines appearing in the air, intense concentration on his face, warm cozy lamp light illuminating the workspace.
+Sweeping camera movement close-up on his eyes scanning the rapid data streams, subtle pupil movement tracking the flow, the reflection of complex soundwaves visible in his irises, capturing the expression of a deep flow state.
+Gentle zoom in detail shot of the digital pen moving fluidly across the pad, complex soundwave patterns forming in real-time, the glowing orange interface highlighting the technical details, a celebration of the creative process.
+Orbiting camera move high angle looking down at Kael actively working, surrounded by a messy desk filled with vintage synth parts and cables, a cozy scene of creative chaos, warm atmosphere and focus.
+Cinematic dolly shot portrait of Kael slowly turning while looking up with a satisfied expression, nodding his head to an internal beat, warm lighting sculpting his face, a sense of accomplishment and artistic breakthrough.
+
+### Batch 6: The Echo Fades
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Kael, urban explorer. Walking away from camera towards a blinding white exit light in a long dark corridor, long dramatic shadow stretching behind on the floor, final departure, high contrast silhouette, cinematic ending composition, lens flare, film grain.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of Kael actively leaving the concert hall, walking away towards a blinding white exit light in the long dark corridor, a long dramatic shadow stretching behind him on the floor, the final departure.
+Slow camera push-in close-up of him putting his vintage headphones back on, isolating himself from the world again, a serene expression as the music takes over, the background blurring slightly as he focuses inward.
+Dynamic camera rotation detail shot of the environment, the rain stopping outside, clouds parting to reveal the moon, moonlight hitting the wet pavement, a peaceful resolution to the stormy night.
+Orbiting camera move rear view of Kael's silhouette disappearing into the city fog, streetlights glowing in the mist, a mysterious ending as he returns to the urban labyrinth, cinematic fade out.
+Cinematic lingering shot of Kael standing under a streetlight, looking back over his shoulder one last time, the rain-slicked street reflecting the light, a perfect loop point for the story.
+
+# ==============================================================================
+# TRACK: Dare to Dream
+# Character: Elara (Dream Architect - Cloud-white hair, violet eyes, pastel robe)
+# ==============================================================================
+### Batch 1: The Dream Pavilion
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, dream architect, cloud-white hair adorned with small dreamcatchers, luminous violet eyes, wearing intricate cream and pastel-blue cyberpunk robe. Meditating in a sun-drenched marble pavilion, surreal floating islands in background, waterfalls cascading into clouds, ethereal bright atmosphere, soft diffused morning lighting, Tyndall rays, 8k, detailed fabric embroidery.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of Elara slowly turning while meditating peacefully in a sun-drenched marble pavilion, surrounded by surreal floating islands in the background, majestic waterfalls cascading endlessly into soft white clouds, creating an ethereal and bright atmosphere.
+Cinematic dolly shot close-up on Elara's face, eyes closed in deep meditation, the wind gently moving her cloud-white hair, glowing dreamcatchers swaying softly in the breeze, a serene expression of pure calm, soft focus on the background.
+Sweeping camera movement detail shot of her hands resting gently on her lap, the fabric of her pastel robe shifting like moving clouds, animated texture flowing with a magical quality, glowing particles rising slowly from the cloth.
+Dynamic camera rotation side profile as the sunlight hits her face, her eyelashes fluttering open slowly, revealing her luminous violet eyes, capturing the precise moment of awakening from a deep dream.
+Gentle zoom in medium shot of Elara gently swaying while standing up gracefully, her robe billowing in slow motion around her, the dream pavilion glowing with morning light, establishing a magical and hopeful morning vibe.
+
+### Batch 2: The Bubble Creation
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, dream architect. Cupping delicate hands together, a small glowing dream-bubble forming between palms, iridescent soap-bubble texture reflecting the world, magical golden particle effects, soft focus background, intricate skin texture, mesmerizing light refraction.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot medium shot of Elara subtly moving while cupping her delicate hands together, a small glowing dream-bubble forming slowly between her palms, the iridescent soap-bubble texture reflecting the world around her, magical golden particle effects swirling.
+Sweeping camera movement close-up focusing intensely on the bubble, seeing the sharp reflections of floating islands on the bubble's curved surface, high detail refraction and color shifting, mesmerizing and delicate.
+Cinematic tracking shot detail shot of her finger gently touching the bubble surface, ripples spreading across the sphere like liquid glass, light distorting beautifully around the point of contact, a physics simulation of magic.
+Sweeping camera movement wide shot of Elara dynamically releasing the bubble, watching it float upwards towards the distant spire, the camera tracking the bubble's ascent, creating a profound sense of wonder and lightness.
+Gentle zoom in portrait of Elara breathing deeply while watching the bubble rise, a hopeful smile playing on her lips, her violet eyes tracking the movement upwards, soft rim lighting highlighting her hair.
+
+### Batch 3: The Spire Ascent
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, dream architect. Floating weightless near the base of a colossal crystal Dream Spire rising from a sea of clouds, pastel sunset colors, soft pulsing internal light, epic scale, anti-gravity effect, robe flowing elegantly, wide cinematic shot, atmospheric perspective.
+
+[ANIMATION PROMPTS]
+Cinematic dolly shot wide shot of the colossal Dream Spire rising majestically from the sea of clouds, pastel sunset colors painting the sky, soft pulsing light emitting from the structure, Elara slowly turning while floating weightless near the base, emphasizing epic scale.
+Dynamic camera rotation medium shot of Elara breathing deeply while floating upwards, her white hair and clothes suspended in zero-gravity, defying gravity with grace, a magical ascent towards the heavens.
+Cinematic tracking shot close-up on her face illuminated by the Spire's soft glow, the reflection of the crystal structure clear in her wide eyes, an awe-struck expression of discovery and reverence.
+Handheld camera movement low angle looking straight up at Elara against the infinite sky, a sun flare bursting beautifully behind her head, creating an angelic and divine composition.
+Cinematic dolly shot detail shot of her feet gently leaving the platform, her robe trailing behind like mist or smoke, ethereal movement as she ascends into the light.
+
+### Batch 4: The Visionary State
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, dream architect. Landing softly in a surreal Sanctuary of the Mind landscape, glowing organic architecture grown from light, rivers of liquid energy flowing, vibrant bioluminescent garden, dreamlike atmosphere, soft bloom effect, intricate flora details.
+
+[ANIMATION PROMPTS]
+Cinematic dolly shot wide shot of the Sanctuary of the Mind landscape, glowing organic architecture grown from pure light, rivers of liquid energy flowing through the scene, Elara shifting weight while landing softly in the center, a dreamlike atmosphere.
+Orbiting camera move side profile of Elara shifting weight while walking through a field of glowing flowers, her hand brushing the tops of the plants, the foliage reacting interactively to her touch with pulses of light.
+Cinematic dolly shot close-up of her plucking a flower made of solid light, the petals dispersing instantly into streams of sparkling data, a magical transformation from organic to digital.
+Slow camera push-in medium shot as the wind picks up, the cloud patterns on her dress moving faster to sync with the environment, creating a visual harmony between character and world.
+Slow camera push-in rear view of Elara slowly turning while looking out over the endless horizon of dreams, infinite possibilities stretching before her, a majestic landscape of imagination.
+
+### Batch 5: The Healing Ritual
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, dream architect. Holding a broken crystal heart in hands, crystal glowing faintly with jagged dark cracks, sad but hopeful atmosphere, soft moody lighting, detailed crystal refraction, tear glistening on cheek, emotional close-up.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot medium shot of Elara subtly moving while holding a broken crystal heart in her hands, the crystal glowing faintly with jagged dark cracks visible, a sad but hopeful atmosphere surrounding the scene.
+Gentle zoom in detail shot of her hands glowing with warm healing energy, light flowing from her fingers into the crystal, the dark cracks sealing shut before our eyes, a magical repair process.
+Cinematic dolly shot close-up of Elara dynamically focusing intensely on the task, a single bead of sweat on her brow, her violet eyes glowing brighter as she transfers her energy into the object.
+Cinematic dolly shot high angle showing the crystal turning fully pink and whole, a sudden light explosion illuminating her face, capturing the triumph of healing and restoration.
+Handheld camera movement portrait of Elara actively holding the restored crystal to her chest, relief washing over her face, a soft tear falling down her cheek, the emotional climax of the sequence.
+
+### Batch 6: The Awakening
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, dream architect. Releasing a glowing crystal sphere into the twilight sky where it transforms into a new star, bright lens flare flash, symbolic hope, glorious sunset over dream world background, cinematic composition, rule of thirds.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot of Elara dynamically releasing the glowing crystal into the twilight sky, watching it ascend until it becomes a bright new star, a blinding flash of light symbolizing hope.
+Low angle drifting shot close-up of her smiling up at the new star, her violet eyes sparkling with reflection, a look of deep satisfaction and peaceful resolution.
+Gentle zoom in detail shot of the dreamcatchers in her hair coming to a stop, the stillness returning to the scene, a calm quiet moment after the magic.
+Sweeping camera movement rear view of Elara slowly turning while sitting down on the edge of a cloud, watching the sunset over the dream world, a relaxing posture of contentment.
+Cinematic lingering shot of Elara meditating again, the cycle complete, fading slowly into soft white light, a perfect loop point for the animation.
+
+# ==============================================================================
+# TRACK: Soul-Sync Reality
+# Character: Rhea (Soulful Architect - Honey-brown hair, white/gold suit)
+# ==============================================================================
+### Batch 1: The Penthouse Sunset
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Rhea, soulful architect, honey-brown curly hair with gold tips, wearing white and gold cyberpunk lounge suit. Silhouette outlined against a massive floor-to-ceiling penthouse window, golden hour sunlight flooding the room with warmth, sprawling city skyline below, luxury interior design, leather furniture texture, dust motes dancing in light, 8k.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of a luxury penthouse interior, golden hour sunlight flooding the room with warmth, Rhea's silhouette outlined against the massive floor-to-ceiling window, the sprawling city skyline visible below.
+Gentle zoom in close-up of Rhea breathing deeply while holding a holographic cocktail, the liquid swirling with mesmerizing gold flakes, a sophisticated smile on her face, warm lighting highlighting her honey-brown hair.
+Handheld camera movement detail shot of ice cubes clinking in the glass, condensation forming on the rim, sharp focus on the drink with a beautiful bokeh background of city lights.
+Slow camera push-in side profile of Rhea actively swaying gently to the music, her hair catching the sunlight, the gold tips glowing radiantly, exuding a relaxed and wealthy vibe.
+Cinematic dolly shot medium shot of Rhea breathing deeply while taking a sip from the glass, elegant movement, the city lights outside starting to turn on as day transitions to dusk.
+
+### Batch 2: The Blueprint
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Rhea, soulful architect. Standing at a sleek glass holographic table, activating a complex 3D blueprint of a tower, gold wireframe lines glowing in air, professional intense focus, high-tech interface, sharp detail on eyes and hologram, dark room with illuminated table.
+
+[ANIMATION PROMPTS]
+Handheld camera movement medium shot of Rhea breathing deeply while standing at a sleek glass holographic table, activating a complex 3D blueprint of a tower, gold wireframe lines glowing in the air, professional intense focus.
+Slow camera push-in close-up on her eyes scanning the hologram, her amber-green eyes reflecting the scrolling data, an intelligent and analytical expression.
+Slow camera push-in detail shot of her manicured fingers manipulating the 3D model, zooming in on a structure with a pinch gesture, a high-tech interface responding fluidly.
+Low angle drifting shot wide shot showing the hologram illuminating the dark room, Rhea slowly turning while walking around the model, evaluating the design from all angles, the architect at work.
+Low angle drifting shot portrait of Rhea slowly turning while nodding in approval, modifying a curve with a simple swipe, satisfied with her creation, displaying mastery over her craft.
+
+### Batch 3: The City Pulse
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Rhea, soulful architect. View from a high open-air balcony at night, the massive Soul-Tower in distance pulsing with rhythmic light, city stretching to horizon, Rhea looking out, wind blowing hair, urban energy, vibrant neon city lights, cinematic night photography.
+
+[ANIMATION PROMPTS]
+Slow camera push-in wide shot from a high open-air balcony at night, the massive Soul-Tower in the distance pulsing with rhythmic light, the city stretching to the horizon, Rhea gently swaying while looking out.
+Gentle zoom in medium shot of Rhea gently swaying while stepping onto the balcony, the wind blowing her hair, her dress fabric moving softly, connecting with the city she helped build.
+Slow camera push-in close-up of the wind in her hair, looking down at the street traffic far below, lights streaming like veins of the city, sensing the urban energy.
+Orbiting camera move low angle of Rhea subtly moving while leaning on the glass railing, looking up at the tower she designed, a look of pride and deep connection on her face.
+Sweeping camera movement rear view of her silhouette against the glowing city, looking like the queen of the skyline, a majestic and powerful pose.
+
+### Batch 4: The Social Vibe
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Rhea, soulful architect. Sitting on a plush velvet sofa in a rooftop lounge, holographic semi-transparent guests in background, ambient chatter vibe, Rhea smiling and holding a drink, sophisticated atmosphere, night time luxury, soft bokeh lights, detailed fabric texture.
+
+[ANIMATION PROMPTS]
+Slow camera push-in wide shot of the rooftop lounge filling with holographic guests, an ambient chatter vibe, Rhea subtly moving while sitting comfortably on a plush velvet sofa in the center.
+Cinematic tracking shot medium shot of Rhea subtly moving while laughing and interacting with an invisible guest, a social expression, the lively atmosphere of a high-end party.
+Cinematic tracking shot close-up of her clinking her glass towards the camera, a "cheers" gesture, making direct eye contact, inviting the viewer into the scene.
+Cinematic dolly shot side view of Rhea dynamically gesturing to a piece of hologram art, explaining the concept with animated hands, a passionate architect sharing her vision.
+Cinematic dolly shot detail shot of the golden lines on her suit pulsing with the beat, syncing perfectly with the room music, creating a visual rhythm.
+
+### Batch 5: The Flow State
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Rhea, soulful architect. Standing at DJ interface, syncing music to heartbeat, complex holographic waveform appearing, deep flow state, violet and gold club lighting, intense focus, immersive atmosphere, reflections on interface glass.
+
+[ANIMATION PROMPTS]
+Slow camera push-in medium shot of Rhea back at the DJ interface, syncing the music to the heartbeat of the city, complex holographic waveforms appearing, entering a deep flow state.
+Gentle zoom in close-up of her eyes closed, head bobbing to the deep bassline, feeling the internal rhythm, connecting with the soul of the track.
+Gentle zoom in detail shot of her hand tapping the rhythm on the glass surface, ripples of light generated by every touch, perfect audio-visual synchronization.
+Sweeping camera movement high angle of the room lighting changing color to match the music, a violet and gold wash filling the space, an immersive atmosphere.
+Cinematic dolly shot portrait of her euphoric expression, the music peaking, a perfect alignment of soul and technology, her eyes snapping open with intensity.
+
+### Batch 6: The Night Settles
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Rhea, soulful architect. Sitting on a window ledge in a quiet darkened room, city fully asleep outside, only main towers glowing faintly, quiet afterparty vibe, contemplative mood, soft neon reflection on face, solitude.
+
+[ANIMATION PROMPTS]
+Low angle drifting shot wide shot of the city fully asleep, only the main towers glowing faintly, Rhea breathing deeply while sitting on the window ledge, a quiet afterparty vibe.
+Slow pan right close-up of her finishing the drink, setting the glass down on the table, the reflection of neon lights visible on the surface, a sense of finality.
+Sweeping camera movement detail shot of her taking a deep breath, her shoulders relaxing, the day is done, a moment of peace and solitude.
+Cinematic dolly shot rear view of her staring out at the infinite city grid, the lights twinkling like stars below, a contemplative mood.
+Cinematic lingering shot of Rhea turning off the lights, the room goes dark, her silhouette against the city remains, a perfect loop point.
+
+# ==============================================================================
+# TRACK: Abaddon's Gate
+# Character: Elara (Void-Walker - Ash-grey hair, void-black eyes, tattered cloak)
+# ==============================================================================
+### Batch 1: The Approach
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, void-walker, ash-grey hair floating, void-black eyes, wearing tattered black cyberpunk cloak. Floating in zero-g near event horizon, black hole accretion disk swirling in background, violet energy distortion, eerie silence, cosmic horror scale, 8k, cold void lighting, detailed cloth physics.
+
+[ANIMATION PROMPTS]
+Dynamic camera rotation wide shot of Elara breathing deeply while floating in zero-gravity near the event horizon, the black hole accretion disk swirling violently in the background, violet energy distortion, an eerie silence.
+Dynamic camera rotation close-up of Elara's void-black eyes reflecting twisted starlight, her ash-grey hair floating in anti-gravity, an intense solemn expression on her face.
+Slow camera push-in detail shot of her tattered cloak fabric dissolving into shadow particles, smoke-like movement, dark technology texture revealing itself.
+Handheld camera movement rear view of Elara shifting weight while drifting towards the massive gate structure, her silhouette appearing small against the cosmic scale, a foreboding atmosphere.
+Gentle zoom in medium shot of her hand reaching out to touch the invisible barrier, space distorting around her fingertips like liquid reality.
+
+### Batch 2: The Threshold
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, void-walker. Abaddon's Gate massive ring activating in deep space, blinding beam of white light cutting through darkness, massive industrial scale, Elara silhouetted against the light, high contrast, dramatic shadows, lens flare.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of the Abaddon's Gate ring activating, a blinding beam of white light cutting through the darkness, massive industrial scale.
+Gentle zoom in medium shot of the light washing over Elara, her cloak flapping in the energy wind, shielding her eyes with her arm, high contrast lighting.
+Gentle zoom in close-up of her eyes widening as the gate opens, her void-black irises absorbing the light, a hypnotic gaze mixing fear and wonder.
+Dynamic camera rotation low angle looking up at the ring structure rotating, debris floating past the camera, an industrial sci-fi aesthetic.
+Sweeping camera movement portrait of her face illuminated by pulsing violet gate runes, cryptic markings glowing on her skin, ancient technology awakening.
+
+### Batch 3: The Transition
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, void-walker. Inside a wormhole tunnel, walls are streaking stars and spectrum colors, high speed motion blur effect, Elara flying forward, intense speed, psychedelic colors, sci-fi travel, chromatic aberration.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot entering the wormhole, the walls of the tunnel are streaking stars and spectrum colors, a high speed motion blur effect.
+Slow camera push-in close-up of Elara's face vibrating slightly with the immense speed, an ecstatic trance expression, her hair whipping backward.
+Cinematic dolly shot detail shot of exo-suit warning lights flashing red then green, stabilizing thrusters firing, mechanical details working hard.
+Low angle drifting shot side profile watching the universe warp outside the cockpit view, colors shifting from violet to pure white, a journey beyond light.
+Gentle zoom in medium shot of sudden stillness, floating in a pure white void, the transition complete, absolute silence.
+
+### Batch 4: The Other Side
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, void-walker. Standing on a sharp crystal peak in a crystalline alien landscape under twilight, multiple moons in sky, surreal beauty, reflective surfaces, mysterious atmosphere, wide panoramic shot, iridescent fog.
+
+[ANIMATION PROMPTS]
+Sweeping camera movement wide shot of a crystalline alien landscape under twilight, multiple moons in the sky, surreal beauty, Elara shifting weight while landing on a crystal peak.
+Cinematic tracking shot medium shot of Elara shifting weight while walking on the reflective crystal surface, strange flora glowing around her, exploring the new world.
+Slow pan right close-up of her touching a crystal formation, it lights up with an internal pulse, bioluminescence, a moment of discovery.
+Orbiting camera move low angle of an alien nebula filling the sky, colors never seen before, a majestic scale of the cosmos.
+Handheld camera movement rear view of her looking out over the valley of crystals, endless exploration ahead, a lonely but peaceful figure.
+
+### Batch 5: The Internal Void
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, void-walker. Floating in lotus position in an abstract mindscape, space background with swirling galaxies, internal white glow emanating from chest, spiritual transcendence, surreal composition, double exposure effect.
+
+[ANIMATION PROMPTS]
+Slow pan right wide shot of an abstract mindscape, Elara slowly turning while floating in lotus position in space, swirling galaxies around her, a mental projection.
+Cinematic dolly shot close-up of her eyes closed in meditation, an internal white glow emanating from her chest, spiritual transcendence.
+Cinematic tracking shot detail shot of her hands forming a mudra gesture, energy sparks jumping between her fingers, controlling the void.
+Low angle drifting shot side view of her astral projection separating slightly from her body, a double image effect, metaphysical concept.
+Cinematic dolly shot portrait of her eyes opening suddenly, glowing pure white, enlightenment achieved, raw power.
+
+### Batch 6: The Return
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, void-walker. Stepping back through a portal gate, leaving the crystal world, portal closing spiraling behind, transition from light to dark space, exhausted but satisfied expression, sweat on face, dirty armor texture.
+
+[ANIMATION PROMPTS]
+Cinematic dolly shot wide shot of Elara shifting weight while stepping back through the gate, leaving the crystal world, the portal closing spiraling behind her.
+Slow camera push-in close-up of her normal eye color returning slowly, the glow fading, an exhausted but satisfied expression.
+Slow camera push-in detail shot of her cloak settling, the shadow particles stopping, physical reality restored.
+Handheld camera movement rear view of her walking away from the gate into deep space darkness, her ship waiting, the journey continues.
+Cinematic lingering shot of Elara turning to look back one last time, the gate dormant, secret kept, fading to black.
+
+# ==============================================================================
+# TRACK: The Great Algorithm
+# Character: Rya (Master Strategist - Platinum ponytail, electric-blue eyes, uniform)
+# ==============================================================================
+### Batch 1: The War Room
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Rya, master strategist, platinum-white high ponytail, electric-blue eyes, white and gold cyberpunk uniform. Standing at the head of a massive holographic map table in a dark high-tech command center, tension in air, strategic map glowing red and blue, 8k, face illuminated by map glow, brushed metal textures.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot of the dark high-tech command center, a massive holographic map table in the center, Rya actively standing at the head, tension in the air.
+Low angle drifting shot close-up of Rya's electric-blue eyes scanning data streams rapidly, calculating variables, sharp focus on her intense gaze.
+Slow camera push-in detail shot of her gloved hand moving tactical units on the map, red and blue holograms shifting, strategic movement.
+Sweeping camera movement side profile of her stern expression, jaw set, waiting for the right moment, her platinum ponytail .
+Gentle zoom in medium shot of staff officers in the background waiting for orders, Rya shifting weight while raising her hand to hold, patience and command.
+
+### Batch 2: The Calculation
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Rya, master strategist. Typing complex command sequence on holographic interface, fingers blurring, blue code reflecting in eyes, flow state, intense focus, sweat on brow, high-tech UI, depth of field on hands.
+
+[ANIMATION PROMPTS]
+Low angle drifting shot medium shot of Rya subtly moving while typing a complex command sequence, her fingers blurring with speed, blue code reflecting in her eyes, flow state.
+Slow pan right close-up of sweat on her brow, the intensity increasing, the screen flashing warnings, a critical moment.
+Dynamic camera rotation detail shot of the "EXECUTE" button pulsing, her finger hovering over it, a moment of hesitation then commitment.
+Handheld camera movement high angle of the map turning from red to green, a wave of success spreading across the board, the algorithm working.
+Slow camera push-in portrait of a small smile forming on her lips, the tension releasing, confidence validated.
+
+### Batch 3: The Victory
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Rya, master strategist. Command center erupting in celebration, Rya pumping fist in air, uninhibited joy, gold strobe lights flashing, triumphant expression, hero shot, dynamic angle, confetti or holographic sparks.
+
+[ANIMATION PROMPTS]
+Gentle zoom in wide shot of the command center erupting in holographic cheers, gold strobe lights flashing, a celebration of victory.
+Orbiting camera move medium shot of Rya shifting weight while pumping her fist in the air, uninhibited joy, breaking composure, a triumphant shout.
+Handheld camera movement close-up of her laughing, relief washing over her, eyes sparkling with victory, looking up at the main screen.
+Dynamic camera rotation low angle of Rya gently swaying while standing tall, the hero shot, golden lighting from the screen illuminating her, a majestic leader.
+Gentle zoom in rear view of her looking at the "SUCCESS" banner, her shoulders relaxing, the weight of the world lifted.
+
+### Batch 4: The Logic Core
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Rya, master strategist. Standing on a walkway looking at a massive Logic Core machine, golden rings rotating in void, Rya small against the scale, reverence, sci-fi industrial setting, cold blue ambient lighting with warm gold core light.
+
+[ANIMATION PROMPTS]
+Slow pan right wide shot visiting the massive Logic Core machine, golden rings rotating in the void, Rya breathing deeply while appearing small on the walkway.
+Dynamic camera rotation medium shot of Rya slowly turning while walking towards the core, inspecting the machine that won the war, a sense of reverence.
+Handheld camera movement close-up of the reflection of rotating rings in her eyes, hypnotic gold light, synchronized motion.
+Dynamic camera rotation detail shot of her hand touching the cold metal railing, feeling the vibration of the machine, raw power.
+Orbiting camera move side view of her silhouette against the blinding core light, the unity of human and machine.
+
+### Batch 5: The Celebration
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Rya, master strategist. Standing on a futuristic city balcony at night, fireworks exploding in sky, fleets doing flyby, festive atmosphere, holding glass of champagne, celebration, bokeh background, rim lighting from fireworks.
+
+[ANIMATION PROMPTS]
+Slow pan right wide shot of a futuristic city balcony at night, fireworks exploding in the sky, fleets doing a flyby, a festive atmosphere.
+Dynamic camera rotation medium shot of Rya shifting weight while leaning on the railing, holding a glass of champagne, watching her people celebrate.
+Gentle zoom in close-up of her soft expression, pride, watching a specific ship fly by, a tear of happiness.
+Handheld camera movement rear view of her cape blowing in the wind, fireworks illuminating her back, a solitary moment amidst the crowd.
+Handheld camera movement portrait of her looking at the camera, raising her glass, a toast to the viewer, breaking the 4th wall subtly.
+
+### Batch 6: The Legacy
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Rya, master strategist. Sitting on a command throne in an empty room, lights dimmed, tired but content expression, aftermath of victory, solitude, dramatic shadows, spotlight on Rya.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of Rya subtly moving while sitting on the command throne, the room empty, lights dimmed, the aftermath of victory.
+Low angle drifting shot close-up of her closing her eyes, resting her head on her hand, tired but content.
+Cinematic dolly shot detail shot of a medal or insignia on her uniform glinting in the low light, a symbol of rank.
+Cinematic tracking shot side profile of her staring into the middle distance, planning the next move, never truly stopping.
+Cinematic lingering shot of her standing up and walking into the shadows, the work continues, fade out.
+
+# ==============================================================================
+# TRACK: Farpoint Station
+# Character: Nova (Frontier Scout - Sandy-blonde hair, horizon-blue eyes, weathered jacket)
+# ==============================================================================
+### Batch 1: The Station Dock
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Nova, frontier scout, sandy-blonde hair, weathered jacket. Standing on edge of docking ring, massive station wheel curved in background, starfield above, gritty sci-fi texture, looking at horizon, epic scale, cold industrial lighting, scratched metal textures.
+
+[ANIMATION PROMPTS]
+Cinematic dolly shot wide shot of Nova subtly moving while standing on the edge of the docking ring, the massive station wheel curved in the background, starfield above.
+Low angle drifting shot close-up of Nova shifting weight while adjusting her goggles, wind-swept sandy hair, steely blue eyes looking at the horizon.
+Slow camera push-in detail shot of her tightening her gloves, worn leather texture, high-tech gadgets on her wrist, ready for work.
+Cinematic tracking shot side profile of her looking at a docked ship, assessing damage, a professional gaze, gritty texture.
+Slow camera push-in medium shot of her leaning on the railing, looking into the deep void, nothing but stars, fearless.
+
+### Batch 2: The Departure
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Nova, frontier scout. Scout ship engines igniting on launchpad, blue flame burst, clamps releasing, industrial sci-fi vibe, wide shot of ship launch, dynamic action, heat shimmer, smoke billowing.
+
+[ANIMATION PROMPTS]
+Sweeping camera movement wide shot of the scout ship engines igniting, a blue flame burst, clamps releasing, industrial sci-fi vibe.
+Slow pan right medium shot of Nova in the cockpit, flipping switches, pre-flight check, the vibration of the engine.
+Slow pan right close-up of her eyes focused on the launch vector, reflection of runway lights, intense concentration.
+Orbiting camera move front view of the ship launching out of the bay, the camera shaking slightly, sensation of speed.
+Cinematic tracking shot wide shot external, the ship becoming a speck against the black, the station receding, leaving home.
+
+### Batch 3: The Void Navigation
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Nova, frontier scout. Ship flying through dense asteroid field, maneuvering thrusters firing, dust clouds, dynamic composition, action shot in space, debris field, high contrast lighting, cinematic motion.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of the ship flying through a dense asteroid field, maneuvering thrusters firing, dust clouds.
+Cinematic dolly shot medium shot of Nova shifting weight while wrestling with the yoke, physical effort, dodging debris, intense action.
+Slow pan right close-up of the alarm light flashing red on her face, sweat, grit, determination.
+Cinematic dolly shot detail shot of the navigation screen showing the path through chaos, red line turning green, path found.
+Dynamic camera rotation side profile of a sigh of relief, wiping her forehead, the asteroid field clearing.
+
+### Batch 4: The Heroic Resolve
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Nova, frontier scout. Ship drifting near a beautiful nebula, engines off, silence, Nova looking out canopy window at the view, serene moment in space, colorful nebula background, soft ambient cockpit lighting.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of the ship drifting near a beautiful nebula, engines off, silence, Nova gently swaying while looking out the canopy.
+Slow pan right medium shot of her unbuckling the seatbelt, floating in zero-g cockpit, stretching, a moment of peace.
+Gentle zoom in close-up of her looking at a photo taped to the console, a sentimental moment, motivation.
+Slow camera push-in rear view of her silhouette against the nebula light, a small human in a vast universe.
+Gentle zoom in portrait of her putting the headset back on, eyes hardening, back to business.
+
+### Batch 5: High Stakes Engineering
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Nova, frontier scout. EVA spacewalk outside ship, repairing hull with laser torch, magnetic boots locked, stars rotating in background, intense blue spark light illuminating helmet, zero-g action, highly detailed space suit.
+
+[ANIMATION PROMPTS]
+Gentle zoom in wide shot of EVA spacewalk outside the ship, Nova dynamically repairing the hull, magnetic boots locked, stars rotating.
+Slow camera push-in close-up of her face inside the helmet, welder torch reflection, intense blue spark light.
+Dynamic camera rotation detail shot of the laser torch melting metal, sparks flying in zero-g, glowing balls, molten texture.
+Slow camera push-in medium shot of her pulling a lever, panel locking into place, physical mechanics.
+Handheld camera movement wide shot of Nova slowly turning while giving a thumbs up to the drone camera, repair complete, triumph.
+
+### Batch 6: The Beacon
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Nova, frontier scout. Farpoint Station appearing in distance, beacon light pulsing, ship approaching, return journey, warm amber light, hopeful atmosphere, cinematic establishing shot.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of Farpoint Station appearing in the distance, beacon light pulsing, ship approaching, return journey.
+Cinematic tracking shot close-up of the smile of returning home, tired eyes, anticipation.
+Slow pan right detail shot of landing gear deploying, hydraulic steam, mechanical sequence.
+Gentle zoom in rear view of her walking down the ship ramp, helmet under arm, station bustling background.
+Cinematic lingering shot of Nova looking back at the stars one last time, wink, walking into airlock, loop.
+
+# ==============================================================================
+# TRACK: Meta-Reality Sync
+# Character: Elara (Cyber-Architect - Black hair cyan roots, silver eyes, data suit)
+# ==============================================================================
+### Batch 1: The Code Garden
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, cyber-architect, black hair with cyan roots, silver eyes. Standing in a luminous crystal garden in the sky, waterfalls of binary code, reaching for a light sphere, surreal bright atmosphere, high-tech nature fusion, digital artifacts, bloom effect, 8k.
+
+[ANIMATION PROMPTS]
+Slow camera push-in wide shot of a luminous crystal garden in the sky, waterfalls of binary code cascading down, Elara dynamically reaching for a light sphere.
+Cinematic dolly shot close-up of Elara's silver eyes reflecting scrolling data, sleek black hair with cyan roots, calm intelligence.
+Handheld camera movement detail shot of her fingers typing on air, ripples of light expanding from touch, haptic interface.
+Low angle drifting shot side profile of sunlight filtering through code-leaves, serene expression, harmony of nature and tech.
+Handheld camera movement medium shot of Elara actively walking through a data-stream, clothes not getting wet, reality bending.
+
+### Batch 2: The Deep Dive
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, cyber-architect. Swimming in a vibrant underwater data-reef, coral structures made of neon light, chaotic pink and cyan colors, manipulating coral interface, intense focus, digital ocean, caustic lighting, bubbles of code.
+
+[ANIMATION PROMPTS]
+Low angle drifting shot wide shot of a vibrant underwater data-reef, coral structures made of neon light, chaotic pink and cyan colors.
+Slow camera push-in medium shot of Elara shifting weight while swimming through data, manipulating the coral interface, intense focus.
+Handheld camera movement close-up of a bubble of code popping near her face, startled then amused expression.
+Orbiting camera move low angle looking up at the surface of the data-ocean, light filtering down, depth.
+Cinematic tracking shot portrait of her face illuminated by pink coral glow, determination to find the glitch.
+
+### Batch 3: The Glitch
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, cyber-architect. Digital environment destabilizing, colors shifting rapidly, red warning signs, Elara holding a corrupted data-shard, tension, glitch effects, abstract chaos, pixel sorting, chromatic aberration.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of the environment destabilizing, colors shifting rapidly, red warning signs, tension.
+Low angle drifting shot medium shot of Elara gently swaying while holding a corrupted data-shard, it pulses violently, trying to stabilize it.
+Orbiting camera move close-up of silver eyes narrowing, finding the pattern in chaos, analytical mode.
+Low angle drifting shot detail shot of hands weaving a patch, sewing light threads together, digital repair.
+Handheld camera movement side view of a wall of red code approaching, Elara subtly moving while standing firm, casting a shield.
+
+### Batch 4: The Breakthrough
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, cyber-architect. Standing in a pristine white Cloud City plaza, sun-drenched, architecture restoring itself, order returning, Elara euphoric, white and gold palette, clean aesthetic, god rays, sharp details.
+
+[ANIMATION PROMPTS]
+Slow pan right wide shot of a pristine white Cloud City plaza, sun-drenched, architecture restoring itself, order returning.
+Low angle drifting shot medium shot of Elara shifting weight while stepping onto the white balcony, looking at the restored sky, euphoric clarity.
+Gentle zoom in close-up of a deep breath, silver eyes shining, smile of pure relief.
+Gentle zoom in high angle of the city below turning from grey to white and gold, a wave of restoration.
+Cinematic tracking shot portrait of raising her hand to the sky, controlling the light, god-mode architect.
+
+### Batch 5: The Inverted City
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, cyber-architect. Standing on a stalactite bridge in a colossal inverted city hanging from cavern ceiling, neon rain dripping up, dark epic scale, cyberpunk noir, surreal gravity, wet neon reflections, atmospheric fog.
+
+[ANIMATION PROMPTS]
+Slow camera push-in wide shot of a colossal inverted city hanging from a cavern ceiling, neon rain dripping up, dark epic scale.
+Slow camera push-in medium shot of Elara shifting weight while standing on a stalactite bridge, silhouette against neon abyss, observing the system.
+Dynamic camera rotation close-up watching a data-train travel upside down, tracking the movement.
+Cinematic tracking shot detail shot of rain falling upwards past her face, anti-gravity physics, surreal.
+Low angle drifting shot rear view of her cape hanging down while hair floats up, gravitational anomaly.
+
+### Batch 6: The Sync
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, cyber-architect. Sitting in center of symmetry, perfect geometric patterns rotating around her, glowing cyan aura, levitating, meditative tech state, symmetry, divine digital lighting, calm.
+
+[ANIMATION PROMPTS]
+Slow pan right wide shot of Elara dynamically sitting in the center of symmetry, perfect geometric patterns rotating around her.
+Low angle drifting shot close-up of eyes closed, body levitating, glowing cyan aura.
+Low angle drifting shot detail shot of suit data-lines pulsing in sync with background, total integration.
+Sweeping camera movement side profile fading into wireframe then back to solid, becoming the code.
+Cinematic lingering shot opening eyes, direct gaze, system stable, perfect loop.
+
+# ==============================================================================
+# TRACK: Rocks Fall
+# Character: Caleb (Frontier Surveyor - Dark hair, amber eyes, duster coat, exo-suit)
+# ==============================================================================
+### Batch 1: The Canyon Wind
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Caleb, frontier surveyor, dark hair, amber eyes, duster coat over exo-suit. Standing on ledge in sun-drenched red rock canyon, dust swirling, western vibe, harsh sunlight, gritty texture, desert planet, heat haze distortion.
+
+[ANIMATION PROMPTS]
+Cinematic dolly shot wide shot establishing the vast scale of the sun-drenched red rock canyon, Caleb dynamically standing stoically on a precarious ledge, red dust swirling violently in the hot wind, evoking a gritty western sci-fi vibe under the harsh sun.
+Low angle drifting shot close-up of Caleb subtly moving while lifting a gloved hand to shield his eyes, squinting intensely into the blinding sun, his amber eyes scanning the distant horizon for signs of movement.
+Orbiting camera move detail shot focusing on the wind whipping the tails of his worn leather coat, red dust accumulating in the crevices of his mechanical exo-suit, emphasizing the gritty texture of the frontier.
+Orbiting camera move side profile of Caleb slowly turning while glancing down at his digital compass, the holographic needle spinning wildly due to magnetic interference, capturing the unpredictable nature of the planet.
+Gentle zoom in medium shot of him taking a long drink from a battered metal canteen, wiping his mouth with the back of his hand, heat waves distorting the air around him.
+
+### Batch 2: The Landslide
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Caleb, frontier surveyor. Distant cliff crumbling, massive rocks falling in slow motion, dust cloud rising, Caleb reacting in foreground, dramatic action, danger, flying debris, cinematic shake.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot capturing the dramatic moment of a distant cliff face crumbling, massive rocks falling in slow motion towards the valley floor, a billowing dust cloud rising to consume the sky.
+Sweeping camera movement medium shot of Caleb breathing deeply while reacting instantly to the sound, dropping into a bracing stance, muscles tensed and ready to run, adrenaline visibly pumping through his veins.
+Cinematic tracking shot close-up focusing on the reflection of the falling rocks in his wide eyes, his mind calculating the trajectory of the debris, survival instinct taking over completely.
+Cinematic dolly shot low angle looking up at the avalanche, the massive falling rocks momentarily blocking out the sun, a terrifying shadow falling over his face as the ground shakes.
+Slow camera push-in detail shot of the exo-suit servos engaging with a mechanical whine, the locking mechanism clamping down to boost his strength, visualizing the power of his gear.
+
+### Batch 3: The Escape
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Caleb, frontier surveyor. Driving heavy rover through debris field, wheels crushing rocks, sparks flying, dynamic action, dust flying, vehicle combat style, motion blur, intense vibration.
+
+[ANIMATION PROMPTS]
+Slow camera push-in wide shot of Caleb shifting weight while driving his heavy rover at top speed through a chaotic debris field, the massive wheels crushing rocks into dust, bright sparks flying from the undercarriage.
+Slow camera push-in medium shot inside the shaking cockpit, Caleb subtly moving while wrestling with the steering yoke, the vehicle vibrating violently as he navigates the hazard, intense action and focus.
+Cinematic dolly shot close-up of sweat and grime streaking his face, teeth gritted in determination, the cabin illuminated by flashing orange warning lights indicating proximity alarms.
+Sweeping camera movement detail shot of his gloved hand punching the emergency boost button, flipping the red safety cover, a decisive action to escape the danger zone.
+Orbiting camera move side view of the rover launching off a ridge, jumping over a massive gap, the suspension compressing fully upon landing, capturing dynamic motion and speed.
+
+### Batch 4: The Mining Shaft
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Caleb, frontier surveyor. Standing on precarious gantry in colossal vertical mining shaft, dark void, glowing ore falling, industrial lighting, massive scale, dangerous environment, volumetric fog, chiaroscuro.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of the colossal vertical mining shaft, a dark void stretching endlessly down, glowing ore falling like rain, Caleb shifting weight while standing on a precarious metal gantry.
+Cinematic dolly shot medium shot of Caleb dynamically welding a broken support beam, a cascade of bright sparks falling down into the darkness, the industrial lighting casting harsh shadows.
+Sweeping camera movement close-up of his face illuminated by the intense blue light of the welding torch, safety squints narrowing his eyes, feeling the intense heat of the work.
+Slow camera push-in high angle looking down past Caleb into the bottomless pit, the vertigo effect emphasized by the receding lights, highlighting the dangerous nature of his job.
+Sweeping camera movement rear view of his silhouette framed against the shaft light, a lonely worker operating within the belly of a massive industrial machine.
+
+### Batch 5: The Discovery
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Caleb, frontier surveyor. Cave wall collapsed revealing glowing crystal cavern, blue light flooding in, Caleb stepping through dust, awe-struck, discovery moment, magical lighting, sparkling crystals, detailed textures.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of the cave wall collapsing to reveal a hidden cavern, a magnificent glowing crystal chamber, blue bioluminescent light flooding into the dusty tunnel.
+Cinematic tracking shot medium shot of Caleb gently swaying while stepping through the settling dust, slowly lowering his weapon, his expression changing from caution to pure awe at the discovery.
+Dynamic camera rotation close-up of his amber eyes widening, the gold reflection of the crystals dancing in his irises, the realization of a life-changing payday.
+Dynamic camera rotation detail shot of his hand gently brushing centuries of dust off an ancient artifact, strange symbols beginning to glow beneath his touch.
+Cinematic dolly shot portrait of him smiling broadly, looking tired but triumphant, wiping sweat and dirt from his brow, the look of a man who has finally succeeded.
+
+### Batch 6: The Sunset Ride
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Caleb, frontier surveyor. Rover parked on cliff edge at sunset, twin suns setting, Caleb sitting on hood, long shadows, peaceful western sci-fi vibe, golden hour, scenic vista.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of the rover parked on a high cliff edge at sunset, twin alien suns setting on the horizon, casting long dramatic shadows across the landscape.
+Orbiting camera move medium shot of Caleb gently swaying while sitting on the hood of the rover, checking a holographic map, relaxing his posture after a long day of survival.
+Cinematic tracking shot close-up looking out at the colorful horizon, a peaceful expression on his face, the stoic western hero finding a moment of quiet.
+Handheld camera movement rear view staring at the first stars appearing in the twilight sky, a small campfire crackling nearby, a quiet moment of reflection.
+Cinematic lingering shot of Caleb leaning back, pulling his hat over his eyes, falling asleep under the stars, a perfect loop of the frontier life.
+
+# ==============================================================================
+# TRACK: Harmonic Overdrive
+# Character: Elara (Harmonic Engineer - Teal hair, white/teal bodysuit)
+# ==============================================================================
+### Batch 1: The Data Garden
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, harmonic engineer, teal hair, white/teal bodysuit. Standing in pristine white room with floating plants, conducting liquid light streams, serene focus, bright high-key lighting, organic tech, soft diffusion, bioluminescence.
+
+[ANIMATION PROMPTS]
+Slow camera push-in wide shot of a pristine white room filled with floating zero-gravity plants, Elara slowly turning while conducting streams of liquid light with her hands, a scene of serene focus and purity.
+Handheld camera movement close-up of her hazel eyes tracking the flow of light, her teal hair swaying gently in the energy current, a look of absolute serene focus.
+Sweeping camera movement detail shot of her hands moving gracefully through the air, trails of light following her fingertips like ribbons, conducting the visual music of the room.
+Gentle zoom in side profile capturing a smile of pure enjoyment, the effortless control she maintains over the environment, a perfect blend of organic life and technology.
+Gentle zoom in medium shot of the floating plants blooming and pulsing in rhythm with her gestures, bioluminescence responding to her command.
+
+### Batch 2: The Sync-Engine
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, harmonic engineer. Standing on bridge in front of massive tower of rotating gold rings, rhythmic pulsing, geometric beauty, sci-fi grandeur, symmetry, reflection on floor, golden glow.
+
+[ANIMATION PROMPTS]
+Dynamic camera rotation wide shot of a massive tower of rotating gold rings, Elara breathing deeply while standing on the bridge in front of it, the rhythmic pulsing of the machine filling the frame.
+Gentle zoom in medium shot of Elara breathing deeply while walking in perfect time with the machine's rotation, every step synchronized, a display of absolute precision.
+Sweeping camera movement close-up of the reflection of the massive gold rings spinning in her eyes, a hypnotic rotation that mirrors the external world.
+Slow pan right low angle looking up at the infinite height of the tower, the dizzying scale of the structure, highlighting the geometric beauty of the engineering.
+Handheld camera movement detail shot of the teal lines on her suit pulsing in exact sync with the gold rings, demonstrating the color harmony between character and machine.
+
+### Batch 3: The Overdrive Tunnel
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, harmonic engineer. Flying through neon tunnel, pink/cyan/gold lines streaking, high speed motion blur, Elara piloting interface, intense exhilaration, vibrant colors, wind effect, glowing skin.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of Elara actively flying through a neon tunnel, streaks of pink, cyan, and gold lines blurring past, a sensation of high speed travel.
+Handheld camera movement medium shot of Elara breathing deeply while piloting the virtual interface, her face illuminated by the rushing tunnel lights, intense concentration mixed with joy.
+Slow pan right close-up of her hair blowing back from the simulated wind, an ecstatic expression on her face, feeling the rush of pure speed.
+Low angle drifting shot side view of her profile tracing against the blurring background, the motion blur creating a dynamic and energetic composition.
+Slow camera push-in detail shot of the speedometer digits climbing rapidly, hitting the maximum limit, the redline warning pulsing but being ignored.
+
+### Batch 4: The Flow State
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, harmonic engineer. Floating in meditation in white marble plaza in sky, geometric harmony, objects orbiting her, telekinetic vibe, serene atmosphere, bright daylight, sharp shadows, pristine textures.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of a white marble plaza suspended in the sky, Elara dynamically floating in deep meditation, surrounded by perfect geometric harmony.
+Sweeping camera movement medium shot of her hovering cross-legged in the air, various objects orbiting around her slowly, exuding a powerful telekinetic vibe.
+Cinematic tracking shot close-up of her eyes closed, a peaceful smile on her lips, achieving a state of total mental clarity and peace.
+Sweeping camera movement high angle looking down at her shadow forming sacred geometry patterns on the floor, perfect alignment of light and form.
+Slow camera push-in portrait of a glowing aura appearing around her body, signaling a moment of spiritual transcendence and power.
+
+### Batch 5: The Complexity
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, harmonic engineer. Facing a wall of complex sheet music/code, rearranging notes with gestures, moving massive blocks of data, intellectual challenge, high-tech interface, glowing symbols, depth of field.
+
+[ANIMATION PROMPTS]
+Low angle drifting shot wide shot of Elara gently swaying while facing a massive wall of complex sheet music and code, rearranging the notes with large sweeping gestures.
+Handheld camera movement medium shot of her moving massive blocks of data with small precise hand movements, using leverage to control the flow of information.
+Cinematic tracking shot close-up of her solving a complex puzzle, eyes darting back and forth, the moment of eureka realization lighting up her face.
+Slow pan right detail shot of a connection being established, a green light confirming the sequence, a lock opening with a mechanical click.
+Sweeping camera movement side view of her stepping through a newly opened door, radiating confidence and intellectual mastery.
+
+### Batch 6: The Harmony
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, harmonic engineer. Walking into a landscape pulsing in tune, hills rolling like waves, audio-reactive world, sunset, light trails, peaceful resolution, dreamlike colors, soft focus.
+
+[ANIMATION PROMPTS]
+Low angle drifting shot wide shot of a landscape pulsing in tune with the music, hills rolling like liquid waves, an audio-reactive world alive with sound.
+Dynamic camera rotation close-up of Elara subtly moving while listening to the song of the world, holding her hand to her ear, connecting with the environment.
+Low angle drifting shot detail shot of her touching the surface of the water, ripples spreading out to create visible sound waves.
+Low angle drifting shot rear view of her walking into the sunset, trails of light following her footsteps, a peaceful resolution to the journey.
+Cinematic lingering shot of her bowing to the empty hall, the performance over, the lights fading, a perfect loop point.
+
+# ==============================================================================
+# TRACK: Terminal Echo
+# Character: Vesper (Void-Commander - Grey hair white tips, armor, amber eyes)
+# ==============================================================================
+### Batch 1: The Collapse
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Vesper, void-commander, grey hair white tips, battle armor. Standing on bridge of flagship, red alert lights flashing, star collapsing outside window, chaos, intense expression, shouting commands, cinematic disaster shot, sparks flying, smoke.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot of the bridge of the flagship, red alert lights flashing violently, a star collapsing ominously outside the main window, a scene of total chaos.
+Cinematic dolly shot close-up of Vesper subtly moving while shouting commands to her crew, a fierce expression on her face, her amber eyes blazing with intensity and leadership.
+Low angle drifting shot detail shot of her gloved hand gripping the console railing, knuckles white from the pressure, sparks flying in the background from damaged systems.
+Slow camera push-in side profile of her hair whipping in the venting atmosphere, bracing herself for the inevitable impact, a portrait of resilience.
+Sweeping camera movement medium shot of the explosion reflecting in the window, Vesper gently swaying while standing firm against the light, a symbol of defiance in the face of destruction.
+
+### Batch 2: The Descent
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Vesper, void-commander. Inside cockpit plummeting through atmosphere, reentry fire red plasma outside, intense vibration, Vesper wrestling controls, survival mode, dramatic lighting, sweat on face, shaking camera feel.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot of the cockpit plummeting through the atmosphere, the exterior engulfed in red plasma fire from reentry, intense vibration shaking the frame.
+Cinematic dolly shot medium shot of Vesper shifting weight while wrestling with the flight controls, the vibration intense, her face set in survival mode, fighting gravity.
+Dynamic camera rotation close-up of her teeth gritted, sweat dripping down her face, her eyes locked on the altimeter as it spins down.
+Slow pan right detail shot of the shield integrity dropping to zero, the glass of the canopy beginning to crack, tension reaching its peak.
+Orbiting camera move wide shot external of the ship breaking through the cloud layer, trailing thick black smoke, the crash imminent and unavoidable.
+
+### Batch 3: The Aftermath
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Vesper, void-commander. Crash site in alien crater, ship smoking, Vesper climbing out wreckage, battle-damaged armor, hostile landscape, gritty realism, survival, dust, harsh lighting.
+
+[ANIMATION PROMPTS]
+Slow camera push-in wide shot of the crash site in a desolate alien crater, the ship smoking in the distance, Vesper dynamically climbing out of the wreckage alive.
+Low angle drifting shot medium shot of her checking her armor for damage, wiping blood and oil from her cheek, rising up to face the new challenge.
+Handheld camera movement close-up of her looking around at the hostile alien landscape, assessing the threat level, her survival instincts kicking in.
+Cinematic dolly shot low angle of Vesper breathing deeply while standing tall against the backdrop of the wreckage, looking unkillable and determined.
+Slow camera push-in portrait of her adjusting her gear, loading a weapon with a mechanical click, ready for round two against the odds.
+
+### Batch 4: The Terminal Gate
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Vesper, void-commander. Standing before massive gate at edge of universe, swirling golden vortex, wind howling, Vesper small against scale, epic sci-fi landscape, climbing peak, atmospheric perspective, volumetric clouds.
+
+[ANIMATION PROMPTS]
+Cinematic dolly shot wide shot of a massive ancient gate at the edge of the universe, a swirling golden vortex in the center, the ultimate destination.
+Cinematic dolly shot medium shot of Vesper shifting weight while climbing a jagged peak towards the gate, a physical struggle against the elements and exhaustion.
+Slow pan right close-up of the wind howling around her, her grey and white hair blowing wildly, determination etched into every line of her face.
+Gentle zoom in rear view of her silhouette appearing tiny against the massive vortex, a David vs Goliath scale composition.
+Orbiting camera move detail shot of her hand reaching out for the light, energy arcing from the gate to her fingertips, the connection made.
+
+### Batch 5: The Ascension
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Vesper, void-commander. Entering the light of the gate, armor repairing itself with gold energy, floating upwards, pain fading, transcendent moment, golden lighting, divine atmosphere, soft focus.
+
+[ANIMATION PROMPTS]
+Dynamic camera rotation wide shot of Vesper shifting weight while entering the light of the gate, her damaged armor repairing itself with golden energy, a miraculous transformation.
+Gentle zoom in medium shot of her floating upwards into the light, the pain fading from her face, her expression softening into peace.
+Slow pan right close-up of her amber eyes filling with pure gold light, the realization of victory achieved, a transcendent moment.
+Dynamic camera rotation low angle of her ascending into the heavens, becoming pure energy, leaving the physical world behind.
+Gentle zoom in portrait of peaceful triumph, looking down at the world she saved, a benevolent guardian watching over the future.
+
+### Batch 6: The New Galaxy
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Vesper, void-commander. Standing on hull of new ship, watching new galaxy form, helmet off, tear of awe, beautiful nebula colors, peaceful resolution, starlight, detailed face.
+
+[ANIMATION PROMPTS]
+Gentle zoom in wide shot of Vesper shifting weight while standing on the hull of a new ship, watching a new galaxy form in the distance, a beginning.
+Low angle drifting shot close-up of her helmet off, a single tear of awe rolling down her cheek, the beautiful nebula colors reflecting on her skin.
+Handheld camera movement detail shot of her hand resting gently on the railing, a sense of peace at last after the long war.
+Slow pan right side profile of her gazing into the infinity of space, seeing infinite potential in the stars.
+Cinematic lingering shot of her turning to walk back inside, the job done, the story complete, fading to a perfect loop.
+
+# ==============================================================================
+# TRACK: Age of Wonders
+# Character: Elara (Cosmic Seer - Translucent hair, starlight eyes, ceremonial robe)
+# ==============================================================================
+### Batch 1: The Temple
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, cosmic seer, translucent hair shimmering like nebula, starlight eyes, white and gold robe. Floating in zero-gravity temple, golden light particles rising, ethereal atmosphere, divine lighting, 8k, celestial glow, dreamlike.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of a zero-gravity temple, golden light particles rising slowly around Elara as she floats in the center, an ethereal atmosphere.
+Dynamic camera rotation close-up of her translucent hair shimmering like a nebula, her starlight eyes gazing calmly, a serene and divine presence.
+Slow pan right detail shot of her hands cupped together, holding a newborn star, a blinding point of light radiating power.
+Sweeping camera movement side profile of the light from the star illuminating her face, a divine expression of creation and love.
+Gentle zoom in medium shot of her rotating slowly in the air, her robes flowing like liquid gold around her, defying physics.
+
+### Batch 2: The Pillar
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, cosmic seer. Standing on platform looking up at futuristic pillar stretching to infinity, blue/white pulsing light, majestic scale, awe-inspiring sci-fi architecture, deep space background, chrome textures.
+
+[ANIMATION PROMPTS]
+Cinematic dolly shot wide shot of a futuristic pillar stretching to infinity, pulsing with blue and white light, a majestic architectural marvel.
+Dynamic camera rotation medium shot of Elara actively standing on the platform, looking up at the structure, a look of awe and understanding.
+Slow pan right close-up of the reflection of the pillar's complex patterns in her eyes, deciphering the ancient code.
+Gentle zoom in low angle of her silhouette against the massive structure, emphasizing the incredible scale of the construction.
+Cinematic tracking shot detail shot of the embroidery on her robe glowing in perfect sync with the pillar's pulses, a connection established.
+
+### Batch 3: The Dawn
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, cosmic seer. Standing on peak of alien landscape at sunrise, multiple suns, auroras in sky, wind blowing, hopeful atmosphere, colorful horizon, vivid colors, scenic.
+
+[ANIMATION PROMPTS]
+Gentle zoom in wide shot of an alien landscape at sunrise, multiple suns rising over the horizon, colorful auroras dancing in the sky.
+Slow pan right medium shot of Elara gently swaying while standing on a peak, the wind blowing her hair, a hopeful gaze on the future.
+Cinematic dolly shot close-up of the first light of dawn hitting her face, the golden hour glow illuminating her features.
+Low angle drifting shot rear view of her watching the shadow line retreat across the valley, a new day beginning on a new world.
+Slow camera push-in portrait of her smiling at the horizon, a sense of boundless optimism and possibility.
+
+### Batch 4: The Connection
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, cosmic seer. Floating in abstract mindscape with neural networks, touching holographic sphere, violet glow, intense mental connection, flow state, surreal background, digital synapses.
+
+[ANIMATION PROMPTS]
+Low angle drifting shot wide shot of an abstract mindscape filled with neural networks, Elara breathing deeply while floating and connecting with the system.
+Low angle drifting shot medium shot of her touching a holographic sphere, a violet glow erupting from the point of contact.
+Low angle drifting shot close-up of her eyes turning pure white, channeling vast amounts of information, entering a deep flow state.
+Dynamic camera rotation detail shot of data streams flowing directly into her mind, rapid learning and processing visualized.
+Slow pan right side view of an energy aura expanding around her, demonstrating the growth of her power and knowledge.
+
+### Batch 5: The Creation
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, cosmic seer. Shaping a nebula with hands in deep space, cosmic scale, weaving stardust, artistic creation, colorful galaxy background, god-like perspective, space dust texture.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot of Elara shifting weight while shaping a nebula with her bare hands, operating on a cosmic scale, a god-like perspective.
+Cinematic tracking shot medium shot of her weaving stardust together, an act of artistic creation on a galactic canvas.
+Slow camera push-in close-up of her focused expression, painting the sky with colors and light, the ultimate artist.
+Orbiting camera move detail shot of the colors mixing in space like fluid paint, the dynamics of the universe at her fingertips.
+Handheld camera movement portrait of her admiring her work, a look of deep satisfaction at the beauty she has created.
+
+### Batch 6: The Equilibrium
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, cosmic seer. Sitting in lotus position in deep space, stars orbiting around her, perfect balance, eyes closed, meditative state, cosmic harmony, symmetry, ethereal light.
+
+[ANIMATION PROMPTS]
+Low angle drifting shot wide shot of her sitting in a lotus position in deep space, stars orbiting around her in perfect circles.
+Slow pan right close-up of her eyes closed, maintaining perfect balance and harmony with the cosmos.
+Low angle drifting shot detail shot of her breathing light, the visual representation of inhaling and exhaling energy.
+Handheld camera movement rear view of the composition, placing her at the center of the universe, the anchor of reality.
+Cinematic lingering shot of her fading slowly into starlight, becoming one with the cosmos, a perfect loop.
+
+# ==============================================================================
+# TRACK: Pattern Synthesis
+# Character: Lyra (Pattern-Weaver - Mahogany hair, gold filaments, conductor coat)
+# ==============================================================================
+### Batch 1: The Conservatory
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Lyra, pattern-weaver, mahogany hair with gold filaments, conductor coat. Standing in sun-drenched high-tech hall, holographic instruments floating, golden light, conducting music, artistic elegance, 8k, dust motes, polished wood and brass textures.
+
+[ANIMATION PROMPTS]
+Low angle drifting shot wide shot of a sun-drenched high-tech hall, holographic instruments floating in the air, golden light bathing the scene.
+Dynamic camera rotation close-up of Lyra gently swaying while conducting the orchestra, her hazel eyes focused, her mahogany hair flowing with her movements.
+Dynamic camera rotation detail shot of her hand bowing a virtual violin, the light strings vibrating with visual sound.
+Slow pan right side profile of an expression of artistic ecstasy, feeling the music in her soul, lost in the performance.
+Slow camera push-in medium shot of the instruments swirling around her, a chaotic orchestra controlled by her will.
+
+### Batch 2: The Symphony Hall
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Lyra, pattern-weaver. Standing on bridge in infinite vertical hall, gold rings, blue streams of data, conducting the architecture, epic scale, rhythmic composition, mathematical beauty, reflections.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of an infinite vertical hall, gold rings lining the walls, blue streams of data flowing like water.
+Slow camera push-in medium shot of Lyra shifting weight while standing on a bridge, conducting the architecture itself, making the building sing.
+Slow pan right close-up of her eyes tracking the rhythm of the data, intense focus and precision.
+Handheld camera movement low angle looking up at the rings aligning perfectly, a moment of satisfaction and order.
+Low angle drifting shot detail shot of her coat tails moving in sync with her conducting motion, a visual dance.
+
+### Batch 3: The Masterpiece
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Lyra, pattern-weaver. Standing in white marble plaza, bright blue sky, geometric harmony, reaching for sky, pulling down melody, euphoric atmosphere, clean aesthetic, grecian sci-fi.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot of a white marble plaza, geometric harmony in the sky, a bright blue atmosphere.
+Handheld camera movement medium shot of Lyra actively reaching for the sky, pulling down a melody from the clouds, a magical gesture.
+Cinematic tracking shot close-up of her singing silently, an emotional release, her face radiant with joy.
+Handheld camera movement rear view of her silhouette against the bright blue sky, a symbol of freedom and creativity.
+Handheld camera movement portrait of tears of joy running down her face, the perfection of the moment achieved.
+
+### Batch 4: The Data Tunnel
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Lyra, pattern-weaver. Weaving code at high speed in colorful neon tunnel, pink/cyan lights, intricate patterns, motion blur, intense focus, digital artistry, vibrant colors, flowing hair.
+
+[ANIMATION PROMPTS]
+Sweeping camera movement wide shot of a colorful neon tunnel, fast motion blur, intricate patterns on the walls.
+Sweeping camera movement medium shot of Lyra dynamically weaving code at high speed, pink and cyan lights reflecting on her face.
+Cinematic tracking shot close-up of her eyes darting back and forth, reading the matrix code as it flies by.
+Slow camera push-in detail shot of her fingers typing and weaving rapidly, a blur of motion and skill.
+Sweeping camera movement side view of her hair flying back, emphasizing the velocity of the data stream.
+
+### Batch 5: The Synthesis
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Lyra, pattern-weaver. Merging organic and digital worlds, trees growing from code, holding a physical leaf and a digital one, synthesis, magical realism, vibrant colors, detailed leaf texture.
+
+[ANIMATION PROMPTS]
+Gentle zoom in wide shot of merging the organic and digital worlds, trees growing from code, a surreal landscape.
+Dynamic camera rotation medium shot of Lyra gently swaying while holding a physical leaf in one hand and a digital one in the other.
+Gentle zoom in close-up of her fusing them together, a magic moment of synthesis, light sparking.
+Slow pan right detail shot of the spark of synthesis, a new object created from the union.
+Gentle zoom in portrait of her looking at her creation with wonder, a discovery of a new reality.
+
+### Batch 6: The Fade Out
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Lyra, pattern-weaver. Lights dimming in hall, Lyra bowing to visual applause, humble smile, performance ending, dramatic spotlight, atmospheric fade, rim lighting.
+
+[ANIMATION PROMPTS]
+Slow camera push-in wide shot of the lights dimming in the hall, a visual representation of applause filling the air.
+Dynamic camera rotation close-up of her bowing deeply, a humble smile on her face, acknowledging the audience.
+Orbiting camera move detail shot of the instruments dissolving into light, the performance ending.
+Cinematic tracking shot rear view of her walking off the stage, the job done, the music fading.
+Cinematic lingering shot of her turning back, putting a finger to her lips, silence, loop.
+
+# ==============================================================================
+# TRACK: Vector of Attack
+# Character: Vex (Tactical Operator - Steel-grey hair, orange eyes, combat suit)
+# ==============================================================================
+### Batch 1: The Launch Pod
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Vex, tactical operator, steel-grey hair, glowing orange eyes, armored suit. Inside launch pod, red/green strobe lights, vibration, Vex adjusting helmet, intense anticipation, military sci-fi, gritty metal texture, condensation.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot inside the launch pod, red and green strobe lights flashing, intense vibration shaking the frame.
+Slow pan right close-up of Vex shifting weight while adjusting his helmet, his steel-grey hair messy, his orange eyes glowing in the dark.
+Slow pan right detail shot of a weapon check, locking the magazine, the metallic sound visualized.
+Slow pan right side profile of him waiting for the drop, the calm before the storm, a professional soldier.
+Gentle zoom in medium shot of the pod door opening, wind blasting into the cabin, the drop begins.
+
+### Batch 2: The Infiltration
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Vex, tactical operator. Diving down massive spire, freefalling, drones swarming, streamlined pose, dodging fire, high speed action, vertigo perspective, motion blur, wind streaks.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of Vex shifting weight while diving down a massive spire, drones swarming around him, a high speed descent.
+Sweeping camera movement medium shot of him freefalling in a streamlined pose, dodging enemy fire, intense action.
+Handheld camera movement close-up of his eyes locked on the target, a predator gaze, absolute focus.
+Cinematic tracking shot low angle looking up at the spire receding, speed lines blurring the background.
+Cinematic dolly shot detail shot of thrusters firing to brake, the impact landing, dust kicking up.
+
+### Batch 3: The Breach
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Vex, tactical operator. Rooftop stealth, white building, blue sky, drones hovering, Vex signaling tactical hand sign, scanning perimeter, tense atmosphere, bright daylight, sharp shadows.
+
+[ANIMATION PROMPTS]
+Gentle zoom in wide shot of rooftop stealth, a white building against a blue sky, drones hovering nearby.
+Slow camera push-in medium shot of Vex gently swaying while signaling the drones with a tactical hand sign, coordinating the attack.
+Dynamic camera rotation close-up of him scanning the perimeter, the HUD reflection visible in his eyes.
+Orbiting camera move side view of him crouching, ready to spring into action, the tension palpable.
+Slow pan right rear view of him looking over the edge, the vertigo of the height, fearless.
+
+### Batch 4: High Velocity
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Vex, tactical operator. Inside neon tunnel, racing at high speed, blur, aggressive interface piloting, teeth bared, adrenaline, intense action, neon reflections on armor.
+
+[ANIMATION PROMPTS]
+Gentle zoom in wide shot inside a neon tunnel, racing at high speed, the background blurring into streaks.
+Sweeping camera movement medium shot of piloting the interface, aggressive movements, fighting the machine.
+Sweeping camera movement close-up of teeth bared, adrenaline pumping, intense focus on the road.
+Handheld camera movement detail shot of the speedometer maxed out, warning lights being ignored, pushing the limit.
+Gentle zoom in side view of G-force pulling his face, the speed distorting his features.
+
+### Batch 5: The Combat
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Vex, tactical operator. Combat scene, dodging laser fire, acrobatic movement, firing energy weapon, muzzle flash, smoke, battle damage, high contrast, dynamic pose.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot of dodging laser fire, acrobatic movement, a dance of death.
+Orbiting camera move medium shot of firing an energy weapon, the recoil visible, a muzzle flash illuminating the scene.
+Low angle drifting shot close-up of grit and determination, no fear in his eyes, only the mission.
+Gentle zoom in low angle of standing over a defeated droid, a moment of victory.
+Handheld camera movement portrait of smoke rising from his armor, battle damage visible, a veteran warrior.
+
+### Batch 6: Extraction
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Vex, tactical operator. Dropship arriving, rope descending, Vex hooking up to line, extraction, sunset background, mission complete vibe, dust kicking up, golden light.
+
+[ANIMATION PROMPTS]
+Gentle zoom in wide shot of a dropship arriving, a rope descending from the bay, extraction time.
+Gentle zoom in medium shot of him hooking up to the line, ascending into the sky.
+Cinematic tracking shot close-up of him looking down at the mission area, a smirk on his face.
+Cinematic dolly shot rear view of the ship flying away into the sunset and city lights.
+Cinematic lingering shot of him cleaning his weapon, mission complete, the loop ends.
+
+# ==============================================================================
+# TRACK: Unbroken Orbit
+# Character: Lyra (Celestial Navigator - Rose-gold hair, pearl strands, white coat)
+# ==============================================================================
+### Batch 1: The Observatory
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Lyra, celestial navigator, rose-gold hair, white coat. Standing in sun-drenched observatory, gold starlight, playing holographic piano, emotional expression, serene atmosphere, 8k, lens flare, detailed instrument.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of a sun-drenched observatory, gold starlight filling the room, a holographic piano in the center.
+Cinematic tracking shot close-up of Lyra actively playing the piano, her rose-gold hair glowing, an emotional expression.
+Dynamic camera rotation detail shot of her fingers on the keys, glowing notes rising into the air.
+Handheld camera movement side profile of her eyes closed, feeling the melody, a moment of pure art.
+Orbiting camera move medium shot of asteroids drifting outside the window in time with the music.
+
+### Batch 2: The Orbit Ring
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Lyra, celestial navigator. Standing on bridge viewing massive silver rings rotating in blue starlight, perfect circles, infinite structure, majestic scale, sci-fi elegance, chrome reflections.
+
+[ANIMATION PROMPTS]
+Low angle drifting shot wide shot of massive silver rings rotating in blue starlight, Lyra slowly turning while standing on the bridge.
+Slow camera push-in medium shot of her watching the rings rotate, perfect circles, infinite structure.
+Low angle drifting shot close-up of the reflection of the rings in her hazel eyes, a mesmerizing sight.
+Cinematic dolly shot low angle of the infinite structure looming above, majestic and grand.
+Dynamic camera rotation detail shot of her coat flowing in the zero-gravity wind, elegant movement.
+
+### Batch 3: The Sunset Drive
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Lyra, celestial navigator. Driving convertible speeder on coastal highway, ocean sunset, wind in hair, chill vibe, gold water reflection, peaceful journey, scenic, retro-future.
+
+[ANIMATION PROMPTS]
+Cinematic dolly shot wide shot of a coastal highway, an ocean sunset, driving a convertible speeder.
+Sweeping camera movement medium shot of Lyra shifting weight while driving, leaning back, the wind in her hair.
+Gentle zoom in close-up of her looking at the sun dipping below the horizon, a peaceful moment.
+Dynamic camera rotation side view of her silhouette against the gold water, a chill vibe.
+Gentle zoom in rear view of the car driving away, a sense of freedom and escape.
+
+### Batch 4: The Emotional Clarity
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Lyra, celestial navigator. Piloting through neon tunnel, pink/cyan smooth motion, flow state, soft smile, enjoying the ride, fluid interface control, vibrant colors.
+
+[ANIMATION PROMPTS]
+Slow pan right wide shot of a neon tunnel, pink and cyan lights, smooth motion, a flow state.
+Orbiting camera move medium shot of her piloting with ease, a soft smile on her face.
+Orbiting camera move close-up of her enjoying the ride, the vibrant colors reflecting on her skin.
+Dynamic camera rotation detail shot of her hand gliding over the controls, fluid interface.
+Slow camera push-in portrait of a peaceful expression, entering a trance state.
+
+### Batch 5: The Night Sky
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Lyra, celestial navigator. Lying on hood of car at night, looking up at stars, pointing at constellation, starlight reflecting on face, sentimental moment, milky way background, low light noise.
+
+[ANIMATION PROMPTS]
+Sweeping camera movement wide shot of lying on the hood of the car at night, looking up at the stars.
+Slow pan right medium shot of pointing at a constellation, a sentimental moment.
+Low angle drifting shot close-up of starlight reflecting on her face, a look of wonder.
+Cinematic tracking shot high angle zooming out from the car, emphasizing the vastness of the universe.
+Orbiting camera move detail shot of a shooting star crossing the sky, making a wish.
+
+### Batch 6: The Loop
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Lyra, celestial navigator. Sunrise over ocean, new day, dew on car, Lyra walking towards sun, hope, inviting gesture, cinematic ending, morning mist.
+
+[ANIMATION PROMPTS]
+Dynamic camera rotation wide shot of sunrise over the ocean, the cycle restarting, a new day.
+Handheld camera movement close-up of her waking up and opening her eyes, a fresh start.
+Orbiting camera move detail shot of dew on the car and rail, the morning light glinting.
+Dynamic camera rotation rear view of her walking towards the sun, filled with hope.
+Cinematic lingering shot of her looking back, inviting the viewer to join, loop.
+
+# ==============================================================================
+# TRACK: The Void Beckons
+# Character: Caleb (Frontier Surveyor - Repeat)
+# ==============================================================================
+### Batch 1: The Ramp
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Caleb, frontier surveyor. Standing on ship ramp, colorful nebula background, looking out, anticipation, grit, sci-fi adventure start, detailed spacesuit texture, atmospheric lighting.
+
+[ANIMATION PROMPTS]
+Dynamic camera rotation wide shot of Caleb slowly turning while standing on the ship ramp, a colorful nebula filling the background with swirls of violet and gold, looking out at the vastness of space with a sense of infinite possibility.
+Low angle drifting shot close-up of his face, amber eyes reflecting the starlight and nebula colors, a look of anticipation and grit etched into his weathered features.
+Slow pan right detail shot of his heavy boots clamped firmly on the metal ramp, the gritty texture of the ship's hull visible, ready for the next adventure.
+Slow pan right side profile of him adjusting his backpack and gear, checking his equipment one last time with professional precision, the cool light of space illuminating his silhouette.
+Orbiting camera move medium shot of him taking a deep breath of the canned air, preparing to step out into the unknown, the steam from his breath visible in the cold environment.
+
+### Batch 2: The Void Gate
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Caleb, frontier surveyor. Standing on hull before massive gate in space, white light path, magnetic boots, shielding eyes from light, awe, epic scale, sharp shadows, high contrast.
+
+[ANIMATION PROMPTS]
+Dynamic camera rotation wide shot of a massive ancient gate floating in space, a path of blinding white light leading through it, magnetic boots locking onto the hull with a metallic clang.
+Orbiting camera move medium shot of him standing on the hull, shielding his eyes from the blinding light of the gate, the sheer power of the structure evident in the glare.
+Handheld camera movement close-up of awe on his face, the epic scale of the structure overwhelming him, his eyes wide with the realization of what he has found.
+Slow camera push-in low angle of the gate looming above, sharp shadows cast by the intense light, the architecture appearing both mechanical and organic.
+Sweeping camera movement rear view of his silhouette against the light, a tiny figure against the cosmos, emphasizing the scale of the universe versus the individual.
+
+### Batch 3: The Departure
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Caleb, frontier surveyor. Busy spaceport, ships launching, inside cockpit giving thumbs up, throttle forward, determination, blue planet background, glass reflections.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of a busy spaceport, ships launching in the background, a hive of activity with drones and cargo loaders moving everywhere.
+Slow pan right medium shot inside the cockpit, giving a thumbs up to the ground crew, pushing the throttle forward with a determined grip.
+Slow camera push-in close-up of determination, the blue planet receding in the window reflection, the lights of the city fading into the distance.
+Gentle zoom in side view of the ship lifting off, the G-force pressing him back into the seat, the vibration of the engines shaking the frame.
+Orbiting camera move detail shot of engine gauges turning green, the "GO FOR LAUNCH" signal flashing on the dashboard, the sequence complete.
+
+### Batch 4: High Speed
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Caleb, frontier surveyor. Piloting through pink/cyan nebula tunnel, warp speed, intense focus, reflection of stars streaking, vibration, speed lines, motion blur.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of piloting through a pink and cyan nebula tunnel, warp speed streaks blurring the stars into long lines of light.
+Low angle drifting shot medium shot of intense focus, the flow state of a master pilot, hands steady on the controls as the universe bends around him.
+Orbiting camera move close-up of the reflection of streaking stars in his eyes, a mesmerizing sight of pure speed and light.
+Slow camera push-in detail shot of the vibration of the ship, speed lines tearing past the canopy, the metal groaning under the stress of warp travel.
+Gentle zoom in side view of the ship cutting through the nebula, a trail of energy left behind, the colors shifting rapidly from pink to blue.
+
+### Batch 5: The Discovery
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Caleb, frontier surveyor. Arriving at new planet with rings, scanning surface, data readout, smile, habitable world found, mapping terrain, digital overlay UI.
+
+[ANIMATION PROMPTS]
+Dynamic camera rotation wide shot of arriving at a new planet with majestic rings, scanning the surface for safe landing zones, the colors of the world vibrant and new.
+Handheld camera movement medium shot of the data readout scrolling on the screen, a smile forming on his face as the sensors confirm breathable atmosphere.
+Low angle drifting shot close-up of a habitable world found, the mission success confirmed, the relief washing over his tired features.
+Gentle zoom in detail shot of mapping the terrain, a green grid overlaying the landscape, highlighting mountains and valleys.
+Gentle zoom in portrait of satisfaction, a job well done, the explorer's reward realized in the discovery of a new home.
+
+### Batch 6: The Horizon
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Caleb, frontier surveyor. Landed on surface, twin moons, looking at horizon, wind blowing hair, planting flag/marker, endless possibility, vast landscape, detailed terrain.
+
+[ANIMATION PROMPTS]
+Slow pan right wide shot of the ship landed on the surface, twin moons rising over the alien horizon, Caleb actively looking out at the new world.
+Orbiting camera move close-up of the wind blowing his hair, planting a flag or marker in the ground, claiming the discovery.
+Handheld camera movement detail shot of the flag snapping in the alien wind, a symbol of discovery and human presence in the unknown.
+Cinematic tracking shot rear view looking out at the endless possibility of the new world, the landscape stretching out to infinity.
+Cinematic lingering shot of him walking into the distance, fading into the landscape, the journey continuing forever, loop.
+
+# ==============================================================================
+# TRACK: 299 792 458 m / s
+# Character: Zoya (Light-Speed Pilot - Platinum hair, blue eyes, racing suit)
+# ==============================================================================
+### Batch 1: The Cockpit
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Zoya, light-speed pilot, platinum hair, blue eyes, racing suit. Inside racer cockpit, stars streaking white, G-force pressing Zoya into seat, intense expression, high speed blur, vibrating, cockpit lighting, reflection in visor.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot inside the racer cockpit, stars streaking white outside, G-force pressing Zoya deep into her seat, the vibration intense.
+Cinematic dolly shot close-up of Zoya's face distorted by the G-force, an intense expression of concentration, her platinum hair floating slightly.
+Low angle drifting shot detail shot of her hands gripping the yoke, knuckles white from the pressure, the leather of her gloves stretching tight.
+Low angle drifting shot side profile of the vibration shaking her helmet, the intensity of the speed visible in the blurring of the background.
+Dynamic camera rotation medium shot of the helmet visor reflecting the warp tunnel ahead, the lights dancing across the curved surface.
+
+### Batch 2: The Light Gate
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Zoya, light-speed pilot. Ship launching from massive light gate, blue streak, Zoya checking systems rapidly, laser-blue eyes, unblinking, dynamic action, motion blur.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of the ship launching from a massive light gate, a blue streak of energy trailing behind, the acceleration instantaneous.
+Dynamic camera rotation medium shot of Zoya shifting weight while checking systems rapidly, her hands a blur of motion on the holographic interface.
+Sweeping camera movement close-up of her laser-blue eyes, unblinking, processing information at light speed, the reflection of the display visible.
+Cinematic tracking shot low angle of the gate passing overhead, a visual whoosh effect, the scale of the structure massive.
+Sweeping camera movement detail shot of the engine exhaust flaring with blue flame, the heat distortion shimmering in the vacuum.
+
+### Batch 3: The Arrival
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Zoya, light-speed pilot. Emerging from warp near massive blue star, ship cooling down, steam venting, Zoya exhaling relief, euphoria, sweat on brow, atmospheric lighting.
+
+[ANIMATION PROMPTS]
+Sweeping camera movement wide shot of emerging from warp near a massive blue star, the ship cooling down, steam venting from the heat sinks.
+Low angle drifting shot medium shot of Zoya subtly moving while exhaling in relief, sweat on her brow, euphoria washing over her face.
+Dynamic camera rotation close-up of the sweat dripping down her temple, the relief of survival evident in her relaxing muscles.
+Dynamic camera rotation side view looking at the blue giant star, awe at the sight of the celestial body, the light bathing the cockpit.
+Cinematic tracking shot rear view of her silhouette against the massive star, a tiny speck against the power of the sun.
+
+### Batch 4: The Barrier
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Zoya, light-speed pilot. Inside colorful warp tunnel, chaotic energy, pushing throttle past max, redline, screaming silently, adrenaline, breaking sound barrier visual, shockwave.
+
+[ANIMATION PROMPTS]
+Cinematic dolly shot wide shot inside a colorful warp tunnel, chaotic energy swirling around the ship, colors shifting from red to violet.
+Dynamic camera rotation medium shot of pushing the throttle past max, hitting the redline, the alarms screaming silently in the vacuum.
+Orbiting camera move close-up of her screaming silently, adrenaline pumping, breaking the barrier of speed and reality.
+Cinematic dolly shot detail shot of metal shaking, bolts rattling, the ship holding together by sheer will and engineering.
+Slow pan right side view of breaking the sound/light barrier, an explosion of light surrounding the ship.
+
+### Batch 5: The Drift
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Zoya, light-speed pilot. Drifting near star in zero-g cockpit, cooling down, watching sparks drift away, checking lap time, arrogant smile, victory, helmet off.
+
+[ANIMATION PROMPTS]
+Dynamic camera rotation wide shot of drifting near a star in a zero-gravity cockpit, cooling down, the engines silent.
+Cinematic tracking shot medium shot of floating in the cockpit, watching sparks drift away like fireflies in space.
+Handheld camera movement close-up of checking the lap time, a record broken, an arrogant smile forming on her lips.
+Orbiting camera move detail shot of the timer stopping, the victory confirmed, the digits glowing green.
+Low angle drifting shot portrait of the best pilot in the galaxy, confident and proud, looking directly at the camera.
+
+### Batch 6: The Turn
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Zoya, light-speed pilot. Ship turning around, re-engaging engines, visor down, ready again, blue glow, jumping to warp, trails fading, exhaust flare.
+
+[ANIMATION PROMPTS]
+Sweeping camera movement wide shot of the ship turning around, re-engaging the engines for another run, the cycle continuing.
+Cinematic tracking shot close-up of the visor coming down, ready again, blue glow returning to the cockpit.
+Gentle zoom in detail shot of the engine spinning up, the power building, the blue light intensifying.
+Gentle zoom in rear view of the ship jumping to warp, star lines stretching out into infinity.
+Cinematic lingering shot of empty space, trails fading, the ship gone, loop.
+
+# ==============================================================================
+# TRACK: Neon Arp Command
+# Character: Hana (Grid-Operator - Black bob, neon-violet tips, interface suit)
+# ==============================================================================
+### Batch 1: The Spire
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Hana, grid-operator, black bob hair with violet tips, interface suit. Standing in glass command spire, rain city background, conducting data, violet arpeggios in air, ripples of light, cool focus, rain streaks on glass, neon reflections.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of a glass command spire, a rainy city background, Hana actively conducting data streams with elegant hand movements.
+Handheld camera movement close-up of Hana's face, cool grey eyes, violet arpeggios floating in the air, the reflection of the code in her eyes.
+Handheld camera movement detail shot of her fingers touching the light, ripples expanding from the contact point, a fluid interface.
+Slow camera push-in side profile of the reflection of the city on the glass, a cool focus, the rain streaking down the outside.
+Cinematic dolly shot medium shot of the rhythm of city lights syncing with her hand movements, the city breathing with her.
+
+### Batch 2: The Grid
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Hana, grid-operator. Standing on gantry overlooking infinite vertical server towers, neon rain, analyzing traffic flow, patterns, massive scale, cyberpunk grid, depth, fog.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot of vertical server towers stretching to infinity, neon rain falling through the digital void.
+Slow pan right medium shot of Hana shifting weight while standing on a gantry, looking down at the grid, the scale immense and dizzying.
+Sweeping camera movement close-up of analyzing traffic flow, seeing the patterns in the chaos, her eyes tracking the data packets.
+Cinematic tracking shot low angle of the towers looming above, a massive scale of information architecture.
+Slow pan right detail shot of the suit lines scrolling data, a living interface connected to the mainframe.
+
+### Batch 3: The Morning
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Hana, grid-operator. White control room at sunrise, clouds outside, clean light, Hana at console, serene expression, shift change, aesthetic perfection, soft shadows.
+
+[ANIMATION PROMPTS]
+Sweeping camera movement wide shot of a white control room at sunrise, clouds outside, clean light flooding the space.
+Cinematic tracking shot medium shot of Hana at the console, a serene expression, shift change, the morning light soft on her face.
+Dynamic camera rotation close-up of the calm, aesthetic perfection of the morning, a moment of peace before the day begins.
+Slow camera push-in side view of her silhouette against the bright window, the sun rising over the digital landscape.
+Cinematic tracking shot portrait of calm control, the master of the grid, confident and poised.
+
+### Batch 4: The Night Run
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Hana, grid-operator. Piloting cockpit interceptor in neon tunnel, blur, driving hard, focus, neon reflection in eyes, precise steering, city flying by, speed lines.
+
+[ANIMATION PROMPTS]
+Slow camera push-in wide shot of a cockpit interceptor in a neon tunnel, intense blur, the city lights rushing past.
+Sweeping camera movement medium shot of driving hard, intense focus, the city flying by in a blur of color.
+Handheld camera movement close-up of neon reflection in her eyes, precise steering, the intensity of the chase.
+Slow pan right detail shot of her hand on the controls, absolute precision, small movements yielding large results.
+Slow camera push-in side view of the speed lines tearing past, high velocity, the wind buffeting the vehicle.
+
+### Batch 5: The Hack
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Hana, grid-operator. Dark room, red warning screens, typing furiously, bypassing firewall, smirk, victory, access granted green light, screen glow.
+
+[ANIMATION PROMPTS]
+Cinematic dolly shot wide shot of a dark room, red warning screens flashing, typing furiously to bypass security.
+Cinematic dolly shot medium shot of bypassing the firewall, a smirk appearing on her face as the code breaks.
+Orbiting camera move close-up of the "ACCESS GRANTED" green light reflecting on her face, the tension releasing.
+Slow pan right detail shot of the screen turning green, victory achieved, the system compromised.
+Slow camera push-in portrait of cool under pressure, the hacker wins, a look of satisfaction.
+
+### Batch 6: The Shutdown
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Hana, grid-operator. Watching city lights turn off one by one, power down, screen going black, walking away into shadow, silhouette glowing suit, cinematic noir.
+
+[ANIMATION PROMPTS]
+Low angle drifting shot wide shot of city lights turning off one by one, a power down sequence rippling across the grid.
+Slow camera push-in close-up of watching the power fade, the screen going black, the reflection fading.
+Slow pan right detail shot of the final light going out, darkness taking over.
+Cinematic dolly shot rear view of walking away into the shadow, job done, the silhouette disappearing.
+Cinematic lingering shot of Hana in the dark, only her suit glowing, the cycle complete, loop.
+
+# ==============================================================================
+# TRACK: Dreams of a Casual Adventure
+# Character: Kaelo (World-Walker - Sun-bleached hair, sea-green eyes, traveler coat)
+# ==============================================================================
+### Batch 1: The Mountain
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Kaelo, world-walker, sun-bleached hair, traveler coat. Standing on sun-drenched mountain peak, floating islands background, wind in hair, hand on holographic map, hopeful expression, epic fantasy sci-fi, panoramic view, atmospheric perspective.
+
+[ANIMATION PROMPTS]
+Sweeping camera movement wide shot of a sun-drenched mountain peak, floating islands in the background, a fantasy sci-fi landscape.
+Sweeping camera movement close-up of Kaelo dynamically looking at the horizon, wind in his sun-bleached hair, eyes squinting against the light.
+Cinematic dolly shot detail shot of his hand on a holographic map, planning the route, the projection glowing in the daylight.
+Slow camera push-in side profile of a hopeful expression, ambition to see the world, the wind whipping his coat.
+Slow camera push-in medium shot of clouds drifting past, an epic scale, the world stretching out below.
+
+### Batch 2: The Titan Gate
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Kaelo, world-walker. Standing at threshold of dark stone Titan Gate, storm, blue energy, rain falling, determination, heavy movement, ancient mystery, weather effects, wet stone texture.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of a dark stone Titan Gate, a storm brewing, blue energy crackling around the entrance.
+Cinematic dolly shot medium shot of Kaelo at the threshold, rain falling, determination on his face as he steps forward.
+Slow pan right close-up of his sea-green eyes, facing the ancient mystery, the blue light reflecting in them.
+Orbiting camera move low angle of the gate opening, heavy movement, stone grinding against stone, a massive mechanism.
+Slow camera push-in detail shot of tribal circuitry glowing, waking up after centuries of sleep.
+
+### Batch 3: The Kingdom
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Kaelo, world-walker. Sitting on rock ledge overlooking green valley with white city construction, drones building, pride, vision realized, golden hour lighting, lush landscape.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of a green valley, white city construction, drones building in the distance, a new civilization.
+Slow pan right medium shot of Kaelo dynamically sitting on a rock ledge, surveying his domain, a look of pride.
+Gentle zoom in close-up of a smile, pride, the vision realized, the hard work paying off.
+Handheld camera movement side view of drones working in the background, a busy scene of construction and progress.
+Low angle drifting shot rear view looking over the kingdom, a leader's perspective, watching the future be built.
+
+### Batch 4: The Catalyst
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Kaelo, world-walker. Inside crystal cavern, violet and teal glow, activating artifact, energy surge, awe-struck, magic, dramatic lighting, subsurface scattering on crystals.
+
+[ANIMATION PROMPTS]
+Low angle drifting shot wide shot inside a crystal cavern, violet and teal glow, activating an artifact in the center.
+Low angle drifting shot medium shot of the energy surge, awe-struck by the magic, the light bathing the room.
+Dynamic camera rotation close-up of the light illuminating his face, a discovery that changes everything.
+Low angle drifting shot detail shot of his hand touching the crystal, light flowing into his skin, a connection made.
+Slow pan right portrait of destiny calling, the hero's journey complete, accepting the power.
+
+### Batch 5: The Journey
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Kaelo, world-walker. Walking across desert with twin suns, climbing snowy peak, tired but keeping going, boots walking, silhouette against moon, travel montage, varied environments.
+
+[ANIMATION PROMPTS]
+Sweeping camera movement wide shot of walking across a desert with twin suns, heat waves distorting the air.
+Gentle zoom in medium shot of climbing a snowy peak, tired but keeping going, the breath visible in the cold.
+Dynamic camera rotation close-up of determination, the boots walking, dust kicking up with every step.
+Gentle zoom in detail shot of the silhouette against the moon, travel montage, different worlds passing by.
+Slow pan right side view of the varied environments, a long journey across time and space.
+
+### Batch 6: The Rest
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Kaelo, world-walker. Campfire at night, stars, looking into fire, reflecting, map rolled up, sleeping bag, peace, starry sky background, firelight flickering.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot of a campfire at night, stars filling the sky, a quiet moment of rest.
+Slow pan right close-up of looking into the fire, reflecting on the journey, the flames dancing in his eyes.
+Handheld camera movement detail shot of the map rolled up, a moment of rest, the gear set aside.
+Sweeping camera movement rear view of the sleeping bag, peace under the stars, the fire crackling nearby.
+Cinematic lingering shot of staring at the galaxy, loop, the adventure continues.
+
+# ==============================================================================
+# TRACK: Crumbling Data
+# Character: Cipher (Glitch-Archivist - Pixelated white hair, mismatched eyes, glitch hoodie)
+# ==============================================================================
+### Batch 1: The White Room
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Cipher, glitch-archivist, pixelated white hair, mismatched eyes, glitch hoodie. Standing in a white room dissolving, black pixels falling, hand catching digital butterfly, melancholic curiosity, glitch effects, digital decay, high contrast.
+
+[ANIMATION PROMPTS]
+Dynamic camera rotation wide shot of a white room dissolving, black pixels falling like snow, the reality breaking down.
+Slow camera push-in close-up of Cipher's mismatched eyes, his face glitching slightly, a look of sadness.
+Gentle zoom in detail shot of his hand catching a digital butterfly, melancholic curiosity, the insect dissolving.
+Gentle zoom in side profile of the hoodie dissolving into particles, digital decay taking over.
+Slow pan right medium shot of the high contrast scene, sadness and beauty mixed in the destruction.
+
+### Batch 2: The Monolith
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Cipher, glitch-archivist. Floating in void near crumbling server monolith, massive blocks falling, sadness, data loss, static noise visual, epic destruction, surreal scale.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of a server monolith crumbling in the void, massive blocks falling into the abyss.
+Gentle zoom in medium shot of Cipher actively floating, watching the destruction, data loss happening in real time.
+Dynamic camera rotation close-up of sadness, the history disappearing, the library burning.
+Sweeping camera movement low angle of the massive scale of the collapse, the monuments of data falling.
+Low angle drifting shot detail shot of the noise visual, the end of the world visualized as interference.
+
+### Batch 3: The Desert
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Cipher, glitch-archivist. Sitting on shard in fractured digital desert, broken sky screen, wind blowing pixel dust, silhouette against static sky, surreal landscape, glitch art aesthetic.
+
+[ANIMATION PROMPTS]
+Gentle zoom in wide shot of a fractured digital desert, a broken sky screen flickering overhead.
+Cinematic tracking shot medium shot of sitting on a shard, appreciating the glitch art aesthetic, finding beauty in ruin.
+Cinematic tracking shot close-up of wind blowing pixel dust, a surreal landscape of broken data.
+Slow pan right side view of the silhouette against the sky, a lonely figure in a broken world.
+Dynamic camera rotation portrait of glitching in and out of existence, a ghost in the machine, fading away.
+
+### Batch 4: System Failure
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Cipher, glitch-archivist. Inside corrupted tunnel, red/green chaos, trying to fix core, desperate, panic, hands phasing through keyboard, wall of code collapsing, intense color.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot inside a corrupted tunnel, red and green chaos, code falling apart.
+Slow pan right medium shot of trying to fix the core, desperate, panic setting in as the system fails.
+Orbiting camera move close-up of intense focus, hands phasing through the keyboard, unable to touch the controls.
+Gentle zoom in detail shot of a wall of code collapsing, the system failing, the red screen of death.
+Cinematic dolly shot side view of the intense color, a visual overload, the mind breaking.
+Slow camera push-in portrait of the last guardian, keeping the memory alive, holding the light.
+
+### Batch 5: The Fragment
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Cipher, glitch-archivist. Holding a single glowing data cube in darkness, protecting it, whispering to it, cube pulsing weakly, hope in darkness, chiaroscuro.
+
+[ANIMATION PROMPTS]
+Dynamic camera rotation wide shot of holding a single glowing data cube in darkness, the last piece of information.
+Cinematic dolly shot medium shot of protecting it from the void, whispering to it, a final act of preservation.
+Cinematic tracking shot close-up of the cube pulsing weakly, hope in the darkness, a heartbeat.
+Cinematic tracking shot detail shot of the light illuminating his face, chiaroscuro, shadows deep.
+Dynamic camera rotation portrait of the last guardian, keeping the memory alive, holding the light.
+
+### Batch 6: The End
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Cipher, glitch-archivist. Void consuming everything, Cipher closing eyes accepting, dissolving completely, fading to empty void, final glitch, monochrome.
+
+[ANIMATION PROMPTS]
+Sweeping camera movement wide shot of the void consuming everything, the end of all data, total darkness.
+Cinematic tracking shot close-up of Cipher dynamically closing his eyes, accepting the fate, peace at the end.
+Cinematic tracking shot detail shot of the last pixel fading away, absolute zero.
+Gentle zoom in rear view of dissolving completely into the void, becoming nothing.
+Cinematic lingering shot of empty void, one blink, loop, the end.
+
+# ==============================================================================
+# TRACK: Echoes of Azeroth
+# Character: Elara (Techno-Shaman - Moon-silver hair, braids, spirit-stone)
+# ==============================================================================
+### Batch 1: The Grove
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, techno-shaman, moon-silver hair with braids, spirit-stone. Standing in misty spirit grove, floating wisps, chanting, blue glow, serene connection, magical forest, bioluminescent moss, soft focus.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot of a misty spirit grove, floating wisps of light, a magical forest setting.
+Orbiting camera move close-up of Elara shifting weight while chanting, moon-silver hair glowing, eyes closed in concentration.
+Gentle zoom in detail shot of holding a spirit-stone, blue glow emanating from it, serene connection.
+Low angle drifting shot side profile of the spirits dancing around her, attracted to the light.
+Slow pan right medium shot of the bioluminescent moss, soft focus background, ethereal atmosphere.
+
+### Batch 2: The Tree
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, techno-shaman. Kneeling on root of World Tree (Teldrassil) with neon veins, reverence, looking up at branches, leaves falling, rune patterns pulsing, epic scale, ancient nature.
+
+[ANIMATION PROMPTS]
+Low angle drifting shot wide shot of the World Tree with neon veins, epic scale, towering over the landscape.
+Slow camera push-in medium shot of kneeling on a root, reverence for nature, hand touching the bark.
+Orbiting camera move close-up of looking up at the branches, awe at the ancient life form.
+Cinematic dolly shot low angle of glowing leaves falling like snow, a gentle rain of light.
+Slow pan right detail shot of robe rune patterns pulsing, syncing with the tree's heartbeat.
+
+### Batch 3: The Valley
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, techno-shaman. Standing on cliff overlooking green valley with floating ruins, dual moons, nostalgia, longing, silhouette against moon, fantasy sci-fi landscape, matte painting style.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of a green valley, floating ruins in the sky, dual moons rising.
+Dynamic camera rotation medium shot of standing on a cliff, wind blowing her hair and robes.
+Low angle drifting shot close-up of nostalgia, longing for the past, a sad smile.
+Gentle zoom in side view of silhouette against the moon, a classic fantasy composition.
+Cinematic dolly shot rear view watching the land, a guardian watching over her territory.
+
+### Batch 4: The Ritual
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, techno-shaman. Inside crystal cavern, violet/gold magic, weaving spell with fluid hands, eyes glowing blue, power, intense focus, shamanic ritual, particle effects.
+
+[ANIMATION PROMPTS]
+Gentle zoom in wide shot inside a crystal cavern, violet and gold magic swirling in the air.
+Cinematic dolly shot medium shot of weaving a spell, fluid hands moving the energy.
+Dynamic camera rotation close-up of eyes glowing blue, intense power channeling through her.
+Handheld camera movement detail shot of magic circles forming in the air, complex geometry.
+Sweeping camera movement portrait of intense focus, the shaman at work, bridging the worlds.
+
+### Batch 5: The Spirit
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, techno-shaman. Ghost of a spirit animal appearing, Elara bowing to it, eye contact, hand touching spirit nose, merging energy, ethereal encounter, transparency.
+
+[ANIMATION PROMPTS]
+Orbiting camera move wide shot of the ghost of a spirit animal appearing, a tiger made of light.
+Slow pan right medium shot of Elara slowly turning while bowing to it, respect for the spirit.
+Slow pan right close-up of eye contact with the spirit, a connection of souls.
+Cinematic dolly shot detail shot of hand touching the spirit nose, the light merging with her skin.
+Cinematic tracking shot side view of merging energy, ethereal encounter, becoming one.
+
+### Batch 6: The Fade
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Elara, techno-shaman. Spirits fading into dawn, smiling, gratitude, stone going dark, walking into forest, looking back winking, peaceful ending, morning light.
+
+[ANIMATION PROMPTS]
+Slow camera push-in wide shot of spirits fading into dawn, the night ending, the magic retreating.
+Gentle zoom in close-up of smiling, gratitude, the stone going dark.
+Cinematic dolly shot detail shot of the morning light hitting the forest, the colors returning to normal.
+Cinematic tracking shot rear view of walking into the forest, leaving the sacred grove.
+Cinematic lingering shot of looking back, winking, loop, the secret kept.
+
+# ==============================================================================
+# TRACK: Light Cycle Run
+# Character: Cyra (Grid-Racer - Black bob, cyan tips, light-suit)
+# ==============================================================================
+### Batch 1: The Canopy
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Cyra, grid-racer, sleek black bob hair with glowing cyan tips, wearing form-fitting reflective light-suit. Inside the cockpit of a high-tech light cycle, neon grid blurring past outside in streaks of pink and blue, intense focus on face, hands gripping textured handlebars, vibration blur effects, helmet visor reflecting the digital road, high contrast, adrenaline atmosphere, 8k.
+
+[ANIMATION PROMPTS]
+Low angle drifting shot wide shot inside the high-tech cockpit, neon grid lines blurring into streaks of cyan and magenta, intense vibration shaking the frame, Cyra's knuckles white on the controls, sensation of extreme speed.
+Low angle drifting shot close-up of Cyra focused intently on the track ahead, her sleek black bob hair whipping violently from the G-force, the reflection of the digital road visible in her helmet visor.
+Orbiting camera move detail shot of her gloved hands gripping the textured handlebars, the vibration blurring the image slightly, capturing the raw power of the light cycle engine.
+Cinematic tracking shot side profile of her face illuminated by the cyan rim light of the wheels, the background a blur of motion, emphasizing the velocity of the race.
+Orbiting camera move medium shot of Cyra breathing deeply while dodging heavy traffic, tilting the bike aggressively into a turn, the camera tilting with her to enhance the dynamic feel.
+
+### Batch 2: The Vertical
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Cyra, grid-racer. Driving light cycle vertically up building face, looking up at summit, climbing, grin of excitement, cycle trail wall extending, gravity defying, city lights below, vertigo.
+
+[ANIMATION PROMPTS]
+Cinematic dolly shot wide shot of the light cycle driving vertically up the face of a massive building, defying gravity, the city lights shrinking below, a sense of vertigo.
+Slow pan right medium shot of Cyra actively looking up at the summit, the climb unending, her expression one of determination and thrill.
+Handheld camera movement close-up of a grin of excitement breaking across her face, the thrill of the impossible maneuver taking over.
+Low angle drifting shot low angle of the cycle trail wall extending behind her, a solid wall of light, the physics of the grid in action.
+Dynamic camera rotation detail shot of the wheels glowing bright white, biting into the building surface, sparks of code flying.
+
+### Batch 3: The Horizon
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Cyra, grid-racer. Standing by light cycle on infinite white grid, blue sky, scanning horizon, calm precision, silhouette against white, clean aesthetic, stark shadows, minimalism.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of standing by the light cycle on an infinite white grid, a bright blue sky above, the ultimate minimalism.
+Slow camera push-in medium shot of Cyra dynamically standing by her machine, scanning the horizon, calm precision in her posture.
+Cinematic tracking shot close-up of her face, calm and collected, ready to race, the white light reflecting in her eyes.
+Gentle zoom in side view of her silhouette against the stark white background, a clean and graphic composition.
+Dynamic camera rotation portrait of the racer, cool and confident, waiting for the signal.
+
+### Batch 4: The Arena
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Cyra, grid-racer. Chaotic battle arena, light walls crashing, banking hard turn, sparks, fierce competition, overtaking rival, intense action, collision imminent, motion blur.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot of a chaotic battle arena, light walls crashing into each other, cycles exploding into voxels.
+Dynamic camera rotation medium shot of banking a hard turn to avoid a collision, sparks flying from the footpegs.
+Slow pan right close-up of fierce competition, overtaking a rival, the look of a predator.
+Slow pan right detail shot of a near miss, the rival cycle passing inches away, the impact imminent.
+Cinematic dolly shot side view of the intense action, motion blur making the background a streak of color.
+
+### Batch 5: The Turbo
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Cyra, grid-racer. Engaging boost, tunnel vision, pushed back in seat, eyes widening, max speed, engine turning red/white, screaming joy, distortion effect.
+
+[ANIMATION PROMPTS]
+Gentle zoom in wide shot of engaging the turbo boost, tunnel vision narrowing the field of view, the world warping.
+Dynamic camera rotation medium shot of being pushed back deep into the seat, the G-force immense.
+Orbiting camera move close-up of eyes widening, max speed achieved, the world becoming a blur of light.
+Gentle zoom in detail shot of the engine turning red and white hot, the power output at maximum.
+Cinematic tracking shot portrait of screaming joy, the rush of pure speed, the ultimate high.
+
+### Batch 6: The Finish
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Cyra, grid-racer. Crossing finish line, checkered flag hologram, helmet off, sweat, victory, cycle cooling down, fist pump, triumphant, cheering crowd (visual).
+
+[ANIMATION PROMPTS]
+Cinematic dolly shot wide shot of crossing the finish line, the checkered flag hologram waving, the crowd roaring (visually).
+Gentle zoom in close-up of helmet off, sweat dripping, a smile of victory.
+Low angle drifting shot detail shot of the cycle cooling down, steam venting, the machine resting.
+Cinematic tracking shot rear view looking at the scoreboard, the winner confirmed.
+Cinematic lingering shot of a fist pump, freeze frame, loop, the champion.
+
+# ==============================================================================
+# TRACK: Infinite Lounge
+# Character: Isolde (Socialite - Platinum updo, velvet gown, luxury)
+# ==============================================================================
+### Batch 1: The VIP Pod
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Isolde, wealthy socialite, platinum updo with diamond pins, wearing deep burgundy velvet gown with gold embroidery. Standing inside a glass-walled VIP pod ascending a space elevator, soft golden interior lighting, holding a crystal flute with bubbling gold-flake champagne, condensation on glass, unbothered elegance, background is a dizzying bokeh of city lights far below, expensive atmosphere, 8k.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot establishing the luxury atmosphere of the glass-walled VIP pod ascending the space elevator, soft golden interior lighting contrasting with the dizzying bokeh of city lights far below.
+Dynamic camera rotation close-up of Isolde gently swaying to the hum of the elevator, golden champagne bubbles rising in the crystal flute, soft bokeh of city lights dancing in the background, expensive luxury atmosphere.
+Low angle drifting shot detail shot focusing on the cocktail swirling with gold flakes, condensation forming on the rim of the glass, the texture of her velvet gown visible in the foreground.
+Gentle zoom in side profile of Isolde shifting weight while looking out at the view, unbothered elegance, her platinum updo catching the light, a symbol of high society.
+Slow pan right medium shot of the city lights stretching out to the horizon, the pod rising higher and higher, leaving the world behind.
+
+### Batch 2: The Needle
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Isolde, socialite. Standing on balcony of Stratosphere Needle piercing clouds, looking down, wind in hair, tower pulsing gold, velvet gown texture, dizzying height, cloud sea, majestic.
+
+[ANIMATION PROMPTS]
+Handheld camera movement wide shot of the Stratosphere Needle piercing the clouds, the sun shining brightly above the cloud layer, a symbol of power.
+Slow pan right medium shot of Isolde slowly turning while standing on the balcony, looking down at the sea of clouds, the wind in her hair, the world at her feet.
+Dynamic camera rotation close-up of the tower pulsing with gold light, a majestic sight, the heartbeat of the city.
+Orbiting camera move low angle of the dizzying height, the scale of the structure, looking up at the spire.
+Handheld camera movement detail shot of the velvet gown texture, rich and deep, shimmering in the sunlight.
+
+### Batch 3: The Terrace
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Isolde, socialite. Open air lounge terrace, sunset, pool, leaning on railing, inspired expression, silhouette against orange sky, watching guests, luxury vibe, reflection in water, warm glow.
+
+[ANIMATION PROMPTS]
+Dynamic camera rotation wide shot of the open air lounge terrace, a sunset over the pool, guests mingling in the background.
+Cinematic dolly shot medium shot of Isolde subtly moving while leaning on the railing, an inspired expression on her face, watching the sunset.
+Cinematic dolly shot close-up of her silhouette against the orange sky, a warm glow surrounding her.
+Cinematic dolly shot side view of the reflection in the water, a peaceful moment amidst the party.
+Cinematic dolly shot rear view watching the guests, the hostess of the evening, controlling the room.
+
+### Batch 4: The Curator
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Isolde, socialite. In private booth with neon decor, moving holographic songs, grooving to beat, cool DJ vibe, hand selecting track, stylish lighting, club atmosphere.
+
+[ANIMATION PROMPTS]
+Slow camera push-in wide shot of a private booth with neon decor, moving holographic songs floating in the air.
+Slow camera push-in medium shot of grooving to the beat, a cool DJ vibe, feeling the music.
+Gentle zoom in close-up of her hand selecting a track, stylish lighting reflecting on her skin.
+Orbiting camera move detail shot of the holographic interface, colorful and bright, interacting with the music.
+Slow pan right portrait of the club atmosphere, lost in the music, the queen of the night.
+
+### Batch 5: The Night
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Isolde, socialite. Dancing in blurred crowd, hands in air, eyes closed, euphoria, sweat, lights reflecting on jewelry, lost in music, club atmosphere, volumetric beams.
+
+[ANIMATION PROMPTS]
+Cinematic tracking shot wide shot of dancing in a blurred crowd, hands in the air, the energy of the club.
+Cinematic dolly shot medium shot of eyes closed, euphoria, sweat on her brow, the beat taking over.
+Dynamic camera rotation close-up of lights reflecting on her jewelry, sparkling diamonds.
+Slow camera push-in detail shot of the volumetric beams cutting through the smoke, the light show.
+Low angle drifting shot side view of being lost in the music, the night is young, the party never ends.
+
+### Batch 6: The Afterhours
+[FRAME 0 PROMPT]
+masterpiece, best quality, cinematic still, Isolde, socialite. Empty lounge, cleaning robots, sitting on sofa shoes off, looking at sunrise, elevator doors closing, smile, peaceful ending, stillness.
+
+[ANIMATION PROMPTS]
+Gentle zoom in wide shot of the empty lounge, cleaning robots working, sunrise breaking through the windows.
+Gentle zoom in close-up of sitting on the sofa, shoes off, looking at the view, tired but happy.
+Low angle drifting shot detail shot of the elevator doors closing, a smile, the night is over.
+Sweeping camera movement rear view walking to the elevator, leaving the empty room.
+Cinematic lingering shot of the doors closing, loop, the end of the night.

@@ -1,0 +1,1058 @@
+# AIMach Music - Wan 2.2 Animation Prompts
+# Optimized for ComfyUI Loop (1 prompt per line)
+
+# ==========================================
+# TRACK: Wide Soundstage Echo
+# Vibe: Atmospheric Breaks, 90s Rave Nostalgia, Rain
+# Character: Kael (Urban Explorer)
+# ==========================================
+
+Batch 1: The Station Waiting (01-05)
+Static wide shot, Kael leaning against textured concrete wall, rain falling heavily outside glass window, neon reflections on wet floor, cinematic moody atmosphere.
+Fixed close-up, Kael wearing vintage headphones, head nodding slightly to rhythm, rain droplets distinct on window glass, reflective grey eyes, soft blue lighting.
+Static detail shot, hand adjusting volume on retro music player, glowing tactile buttons, raindrops racing down glass in background, depth of field.
+Fixed side profile, Kael looking out at rainy city, breath creating subtle condensation on glass, orange rim light defining silhouette, melancholy mood.
+Static medium shot, Kael standing up slowly, oversized hoodie fabric moving naturally, station lights flickering in background, urban solitude vibe.
+
+Batch 2: The City Canyon (06-10)
+Static wide shot, high angle view of futuristic city street at night, rain falling vertically, steam rising from vents, neon signs reflecting in puddles, cyberpunk noir.
+Fixed medium shot, Kael walking away from camera on skybridge, coat damp with rain, massive city structures looming above, cinematic composition.
+Static close-up, boots splashing gently in shallow puddle, ripples expanding, reflection of neon sign in water, high fidelity textures.
+Fixed low angle, Kael looking up at skyscrapers, rain falling towards lens, massive scale of architecture, awe-inspiring urban canyon.
+Static portrait, Kael stopping to check holographic map, face illuminated by blue map glow, rain blurring in foreground, intense focus.
+
+Batch 3: The Abandoned Hall (11-15)
+Static wide shot, abandoned futuristic concert hall, dusty atmosphere, shafts of light cutting through darkness, Kael silhouette in center, eerie beauty.
+Fixed detail shot, dust motes floating in spotlight beam, old speaker stack texture, silence visualized, atmospheric lighting.
+Static close-up, Kael eyes closing, listening to the echo, subtle facial expression of peace, soft rim lighting, emotional moment.
+Fixed rear view, Kael walking onto dusty stage, vast empty space in front, sense of scale, lonely figure, cinematic depth.
+Static medium shot, Kael sitting on edge of stage, looking into darkness, holographic dust swirling slowly, contemplative mood.
+
+Batch 4: The Soundstage Memory (16-20)
+Static wide shot, holographic ghosts of a crowd appearing faintly, Kael watching them, translucent blue figures, nostalgic atmosphere.
+Fixed close-up, Kael smiling faintly, remembering, eyes reflecting phantom lights, soft focus background, emotional connection.
+Static detail shot, hand reaching out towards holographic particle, light passing through fingers, ethereal interaction, sci-fi fx.
+Fixed side view, Kael profile against shifting holographic backdrop, light patterns moving across face, dreamlike sequence.
+Static medium shot, holograms fading away into dust, Kael remaining alone on stage, reality returning, melancholic transition.
+
+Batch 5: The Creative Flow (21-25)
+Static medium shot, Kael sketching on holographic pad, glowing lines appearing in air, intense concentration, warm lamp light.
+Fixed close-up, eyes scanning rapid data, pupil movement, reflection of soundwaves in eyes, flow state expression.
+Static detail shot, digital pen moving fluidly, complex soundwave patterns forming, glowing orange interface, tech detail.
+Fixed high angle, looking down at Kael working, messy desk with vintage synth parts, cozy creative chaos, warm atmosphere.
+Static portrait, Kael looking up satisfied, nodding to internal beat, warm lighting on face, sense of accomplishment.
+
+Batch 6: The Echo Fades (26-30)
+Static wide shot, Kael leaving the concert hall, walking towards exit light, long shadow stretching behind, final departure.
+Fixed close-up, putting headphones back on, isolating from world, serene expression, world blurring slightly.
+Static detail shot, rain stopping outside, clouds parting, moonlight hitting wet pavement, peaceful resolution.
+Fixed rear view, Kael silhouette disappearing into city fog, streetlights glowing, mystery ending, cinematic fade.
+Final static pose, Kael standing under streetlight, looking back once, rain-slicked street, perfect loop point.
+
+# ==========================================
+# TRACK: Dare to Dream
+# Vibe: Chill Liquid DnB, Healing, Dream State
+# Character: Elara (Dream Architect)
+# ==========================================
+
+Batch 1: The Dream Pavilion (01-05)
+Static wide shot, Elara meditating in sun-drenched pavilion, floating islands in background, waterfalls falling into clouds, ethereal bright atmosphere.
+Fixed close-up, Elara eyes closed, wind gently moving white hair, glowing dreamcatchers swaying, serene expression, soft focus.
+Static detail shot, hands resting on lap, fabric of robe shifting like clouds, animated texture, glowing particles rising.
+Fixed side profile, sunlight hitting face, eyelashes fluttering open, violet eyes revealing, awakening moment.
+Static medium shot, Elara standing up gracefully, robe billowing in slow motion, dream pavilion glowing, magical morning vibe.
+
+Batch 2: The Bubble Creation (06-10)
+Static medium shot, Elara cupping hands, small glowing dream-bubble forming, iridescent soap-bubble texture, magical particle effects.
+Fixed close-up, focusing on the bubble, reflections of floating islands on bubble surface, high detail refraction, mesmerizing.
+Static detail shot, finger gently touching bubble surface, ripples spreading on sphere, light distorting, physics simulation.
+Fixed wide shot, Elara releasing bubble, bubble floating upwards towards spire, tracking shot, sense of wonder.
+Static portrait, Elara watching bubble rise, hopeful smile, violet eyes tracking movement, soft rim lighting.
+
+Batch 3: The Spire Ascent (11-15)
+Static wide shot, colossal Dream Spire rising from clouds, pastel colors, soft pulsing light, Elara floating near base, epic scale.
+Fixed medium shot, Elara floating upwards, weightless hair and clothes, defying gravity, magical ascent.
+Static close-up, face illuminated by Spire's glow, reflection of structure in eyes, awe-struck expression.
+Fixed low angle, looking up at Elara against infinite sky, sun flare behind head, angelic composition.
+Static detail shot, feet leaving the platform, robe trailing behind like mist, ethereal movement.
+
+Batch 4: The Visionary State (16-20)
+Static wide shot, Sanctuary of the Mind landscape, glowing organic architecture, rivers of light flowing, Elara landing softly.
+Fixed side profile, Elara walking through field of glowing flowers, hand brushing tops of plants, interactive foliage.
+Static close-up, plucking a flower made of light, petals dispersing into data, magical transformation.
+Fixed medium shot, wind picking up, cloud patterns on dress moving faster, syncing with environment, visual harmony.
+Static rear view, Elara looking out over horizon of dreams, infinite possibilities, majestic landscape.
+
+Batch 5: The Healing Ritual (21-25)
+Static medium shot, Elara holding broken crystal heart, crystal glowing faintly, dark cracks visible, sad but hopeful atmosphere.
+Fixed detail shot, hands glowing with healing energy, light flowing into crystal, cracks sealing shut, magical repair.
+Static close-up, Elara focusing intensely, sweat bead on brow, violet eyes glowing brighter, transferring energy.
+Fixed high angle, crystal turning fully pink and whole, light explosion illuminating face, triumph of healing.
+Static portrait, Elara holding restored crystal to chest, relief washing over face, soft tear falling, emotional climax.
+
+Batch 6: The Awakening (26-30)
+Static wide shot, Elara releasing the crystal into sky, it becomes a new star, bright flash, symbolic hope.
+Fixed close-up, smiling at the new star, violet eyes sparkling, deep satisfaction, peaceful resolution.
+Static detail shot, dreamcatchers in hair stopping sway, stillness returning, calm after magic.
+Fixed rear view, Elara sitting down on cloud edge, watching sunset over dream world, relaxing posture.
+Final static pose, Elara meditating again, cycle complete, perfect loop, fading into soft white light.
+
+# ==========================================
+# TRACK: Soul-Sync Reality
+# Vibe: Liquid Funk, Soulful House, Luxury
+# Character: Rhea (Soulful Architect)
+# ==========================================
+
+Batch 1: The Penthouse Sunset (01-05)
+Static wide shot, luxury penthouse interior, golden hour sunlight flooding room, Rhea silhouette against massive window, city skyline below.
+Fixed close-up, Rhea holding holographic cocktail, liquid swirling with gold flakes, sophisticated smile, warm lighting.
+Static detail shot, ice cubes clinking in glass, condensation on rim, sharp focus on drink, bokeh background.
+Fixed side profile, Rhea swaying gently to music, honey-brown hair catching sunlight, gold tips glowing, relaxed vibe.
+Static medium shot, Rhea taking a sip, elegant movement, city lights starting to turn on outside, transition from day to dusk.
+
+Batch 2: The Blueprint (06-10)
+Static medium shot, Rhea activating holographic table, 3D blueprint of tower appearing, gold wireframe lines, professional focus.
+Fixed close-up, eyes scanning the hologram, amber-green eyes reflecting data, intelligent expression.
+Static detail shot, manicured fingers manipulating 3D model, zooming in on structure, pinch gesture, high tech interface.
+Fixed wide shot, hologram illuminating the room, Rhea walking around the model, evaluating design, architect at work.
+Static portrait, Rhea nodding in approval, modifying a curve with a swipe, satisfied with creation, mastery.
+
+Batch 3: The City Pulse (11-15)
+Static wide shot, view from balcony, Soul-Tower in distance pulsing with rhythm, city stretching to horizon, nightfall.
+Fixed medium shot, Rhea stepping onto balcony, wind blowing hair, dress fabric moving, connecting with the city.
+Static close-up, wind in hair, looking down at street traffic, lights streaming like veins, urban energy.
+Fixed low angle, Rhea leaning on glass railing, looking up at the tower she designed, pride and connection.
+Static rear view, silhouette against the glowing city, looking like queen of the skyline, majestic pose.
+
+Batch 4: The Social Vibe (16-20)
+Static wide shot, rooftop lounge filling with holographic guests, ambient chatter vibe, Rhea sitting on plush sofa.
+Fixed medium shot, Rhea laughing interacting with invisible guest, social expression, lively atmosphere.
+Static close-up, clinking glass towards camera, "cheers" gesture, eye contact, inviting viewer.
+Fixed side view, Rhea gesturing to the hologram art, explaining concept, animated conversation, passionate architect.
+Static detail shot, golden lines on suit pulsing with the beat, syncing with room music, visual rhythm.
+
+Batch 5: The Flow State (21-25)
+Static medium shot, Rhea back at interface, syncing music to heartbeat, holographic waveform appearing, deep flow state.
+Fixed close-up, eyes closed, head bobbing to deep bassline, internal rhythm, feeling the soul of the track.
+Static detail shot, hand tapping rhythm on glass surface, ripples of light generated by touch, audio-visual sync.
+Fixed high angle, room lighting changing color to match music, violet and gold wash, immersive atmosphere.
+Static portrait, euphoric expression, music peaking, perfect alignment of soul and tech, eyes snapping open.
+
+Batch 6: The Night Settles (26-30)
+Static wide shot, city fully asleep, only main towers glowing, Rhea sitting on window ledge, quiet afterparty vibe.
+Fixed close-up, finishing the drink, setting glass down, reflection of neon on table, finality.
+Static detail shot, taking deep breath, shoulders relaxing, day is done, peace.
+Fixed rear view, staring out at the infinite city grid, lights twinkling like stars, contemplative.
+Final static pose, Rhea turning off the lights, room goes dark, silhouette against city remains, perfect loop.
+
+# ==========================================
+# TRACK: Abaddon's Gate
+# Vibe: Ambient Techno, Cosmic Horror/Awe, Void
+# Character: Elara (Void-Walker - Dark Version)
+# ==========================================
+
+Batch 1: The Approach (01-05)
+Static wide shot, Elara floating in zero-g near event horizon, black hole accretion disk swirling in background, violet energy, eerie silence.
+Fixed close-up, Elara's void-black eyes reflecting twisted starlight, ash-grey hair floating anti-gravity, intense solemn expression.
+Static detail shot, tattered cloak fabric dissolving into shadow particles, smoke-like movement, dark tech texture.
+Fixed rear view, Elara drifting towards the massive gate structure, silhouette small against cosmic scale, foreboding atmosphere.
+Static medium shot, hand reaching out to touch invisible barrier, space distorting around fingertips, liquid reality.
+
+Batch 2: The Threshold (06-10)
+Static wide shot, Abaddon's Gate ring activating, blinding beam of white light cutting through darkness, massive scale.
+Fixed medium shot, light washing over Elara, cloak flapping in energy wind, shielding eyes with arm, high contrast.
+Static close-up, eyes widening as gate opens, void-black iris absorbing light, hypnotic gaze, fear and wonder mixed.
+Fixed low angle, looking up at the ring structure rotating, debris floating past camera, industrial sci-fi aesthetic.
+Static portrait, face illuminated by pulsing violet gate runes, cryptic markings glowing on skin, ancient technology.
+
+Batch 3: The Transition (11-15)
+Static wide shot, entering the wormhole, walls of tunnel are streaking stars and colors, high speed motion blur effect.
+Fixed close-up, Elara's face vibrating slightly with speed, ecstatic trance expression, hair whipping backward.
+Static detail shot, exo-suit warning lights flashing red then green, stabilizing thrusters firing, mechanical detail.
+Fixed side profile, watching the universe warp outside cockpit/helmet view, colors shifting from violet to pure white.
+Static medium shot, sudden stillness, floating in pure white void, transition complete, silence.
+
+Batch 4: The Other Side (16-17)
+Static wide shot, crystalline alien landscape under twilight, multiple moons in sky, surreal beauty, Elara landing on crystal peak.
+Fixed medium shot, Elara walking on reflective crystal surface, strange flora glowing, exploring new world.
+Static close-up, touching a crystal formation, it lights up with internal pulse, bioluminescence, discovery.
+Fixed low angle, alien nebula filling the sky, colors never seen before, majestic scale.
+Static rear view, looking out over valley of crystals, endless exploration, lonely but peaceful.
+
+Batch 5: The Internal Void (21-25)
+Static wide shot, abstract mindscape, Elara floating in lotus position in space, swirling galaxies around her, mental projection.
+Fixed close-up, eyes closed in meditation, internal white glow from chest, spiritual transcendence.
+Static detail shot, hands forming mudra gesture, energy sparks jumping between fingers, controlling the void.
+Fixed side view, astral projection separating slightly from body, double image, metaphysical concept.
+Static portrait, eyes opening suddenly, glowing pure white, enlightenment achieved, power.
+
+Batch 6: The Return (26-30)
+Static wide shot, Elara stepping back through the gate, leaving the crystal world, portal closing behind.
+Fixed close-up, normal eye color returning slowly, fading glow, exhausted but satisfied expression.
+Static detail shot, cloak settling, shadow particles stopping, physical reality restored.
+Fixed rear view, walking away from the gate into deep space darkness, ship waiting, journey continues.
+Final static pose, Elara turning to look back one last time, gate dormant, secret kept, fade to black.
+
+# ==========================================
+# TRACK: The Great Algorithm
+# Vibe: Epic Synthwave, Victory, Military/Strategy
+# Character: Rya (Master Strategist)
+# ==========================================
+
+Batch 1: The War Room (01-05)
+Static wide shot, dark high-tech command center, massive holographic map table, Rya standing at head, tension in air.
+Fixed close-up, Rya's electric-blue eyes scanning data streams rapidly, calculating variables, sharp focus.
+Static detail shot, gloved hand moving tactical units on map, red and blue holograms, strategic movement.
+Fixed side profile, stern expression, jaw set, waiting for the right moment, platinum ponytail still.
+Static medium shot, staff officers (blurred) waiting for order, Rya raising hand to hold, patience.
+
+Batch 2: The Calculation (06-10)
+Static medium shot, Rya typing complex command sequence, fingers blurring, blue code reflecting in eyes, flow state.
+Fixed close-up, sweat on brow, intensity increasing, screen flashing warnings, critical moment.
+Static detail shot, "EXECUTE" button pulsing, finger hovering over it, hesitation then commitment.
+Fixed high angle, map turning from red to green, wave of success spreading, algorithm working.
+Static portrait, small smile forming, tension releasing, confidence validated.
+
+Batch 3: The Victory (11-15)
+Static wide shot, command center erupting in holographic cheers (visual only), gold strobe lights flashing, celebration.
+Fixed medium shot, Rya pumping fist in air, uninhibited joy, breaking composure, triumphant shout.
+Static close-up, laughing, relief, eyes sparkling with victory, looking up at main screen.
+Fixed low angle, Rya standing tall, hero shot, golden lighting from screen, majestic leader.
+Static rear view, looking at the "SUCCESS" banner, shoulders relaxing, weight of world lifted.
+
+Batch 4: The Logic Core (16-20)
+Static wide shot, visiting the massive Logic Core machine, golden rings rotating in void, Rya small on walkway.
+Fixed medium shot, Rya walking towards core, inspecting the machine that won the war, reverence.
+Static close-up, reflection of rotating rings in eyes, hypnotic gold light, synchronized motion.
+Fixed detail shot, hand touching the cold metal railing, vibration of the machine, raw power.
+Static side view, silhouette against the blinding core light, unity of human and machine.
+
+Batch 5: The Celebration (21-25)
+Static wide shot, futuristic city balcony at night, fireworks exploding in sky, fleets doing flyby, festive atmosphere.
+Fixed medium shot, Rya leaning on railing, holding glass of champagne, watching her people celebrate.
+Static close-up, soft expression, pride, watching specific ship fly by, tear of happiness.
+Fixed rear view, cape blowing in wind, fireworks illuminating back, solitary moment amidst crowd.
+Static portrait, looking at camera, raising glass, a toast to the viewer, breaking 4th wall subtly.
+
+Batch 6: The Legacy (26-30)
+Static wide shot, Rya sitting on throne/command chair, empty room, lights dimmed, aftermath.
+Fixed close-up, closing eyes, resting head on hand, tired but content.
+Static detail shot, medal or insignia on uniform glinting in low light, symbol of rank.
+Fixed side profile, staring into middle distance, planning the next move, never truly stopping.
+Final static pose, standing up and walking into shadows, the work continues, fade out.
+
+# ==========================================
+# TRACK: Farpoint Station
+# Vibe: Uplifting Trance, Space Station, Frontier
+# Character: Nova (Frontier Scout)
+# ==========================================
+
+Batch 1: The Station Dock (01-05)
+Static wide shot, Nova standing on edge of docking ring, massive station wheel curved in background, starfield above.
+Fixed close-up, Nova adjusting goggles/visor, wind-swept sandy hair, steely blue eyes looking at horizon.
+Static detail shot, tightening gloves, worn leather texture, high-tech gadgets on wrist, ready for work.
+Fixed side profile, looking at a docked ship, assessing damage, professional gaze, gritty texture.
+Static medium shot, leaning on railing, looking into the deep void, nothing but stars, fearless.
+
+Batch 2: The Departure (06-10)
+Static wide shot, scout ship engines igniting, blue flame burst, clamps releasing, industrial sci-fi vibe.
+Fixed medium shot, Nova in cockpit, flipping switches, pre-flight check, vibration of engine.
+Static close-up, eyes focused on launch vector, reflection of runway lights, intense concentration.
+Fixed front view, ship launching out of bay, camera shaking slightly, sensation of speed.
+Static wide shot (external), ship becoming a speck against the black, station receding, leaving home.
+
+Batch 3: The Void Navigation (11-15)
+Static wide shot, ship flying through dense asteroid field, maneuvering thrusters firing, dust clouds.
+Fixed medium shot, Nova wrestling with yoke/controls, physical effort, dodging debris.
+Static close-up, alarm light flashing red on face, sweat, grit, determination.
+Fixed detail shot, navigation screen showing path through chaos, red line turning green, path found.
+Static side profile, sigh of relief, wiping forehead, asteroid field clearing.
+
+Batch 4: The Heroic Resolve (16-20)
+Static wide shot, ship drifting near a beautiful nebula, engines off, silence, Nova looking out canopy.
+Fixed medium shot, unbuckling seatbelt, floating in zero-g cockpit, stretching, moment of peace.
+Static close-up, looking at a photo taped to console (family/home), sentimental moment, motivation.
+Fixed rear view, silhouette against the nebula light, small human in vast universe.
+Static portrait, putting headset back on, eyes hardening, back to business.
+
+Batch 5: High Stakes Engineering (21-25)
+Static wide shot, EVA (spacewalk) outside ship, Nova repairing hull, magnetic boots locked, stars rotating.
+Fixed close-up, face inside helmet, welder torch reflection, intense blue spark light.
+Static detail shot, laser torch melting metal, sparks flying in zero-g (glowing balls), molten texture.
+Fixed medium shot, pulling a lever, panel locking into place, physical mechanics.
+Static wide shot, Nova giving thumbs up to camera (drone), repair complete, triumph.
+
+Batch 6: The Beacon (26-30)
+Static wide shot, Farpoint Station appearing in distance, beacon light pulsing, return journey.
+Fixed close-up, smile of returning home, tired eyes, anticipation.
+Static detail shot, landing gear deploying, hydraulic steam, mechanical sequence.
+Fixed rear view, walking down ship ramp, helmet under arm, station bustling background.
+Final static pose, Nova looking back at the stars one last time, wink, walking into airlock, loop.
+
+# ==========================================
+# TRACK: Meta-Reality Sync
+# Vibe: Melodic Techno, Coding/Hacking, Abstract
+# Character: Elara (Cyber-Architect - Tech Version)
+# ==========================================
+
+Batch 1: The Code Garden (01-05)
+Static wide shot, luminous crystal garden in sky, waterfalls of binary code, Elara reaching for light sphere.
+Fixed close-up, Elara's silver eyes reflecting scrolling data, sleek black hair with cyan roots, calm intelligence.
+Static detail shot, fingers typing on air, ripples of light expanding from touch, haptic interface.
+Fixed side profile, sunlight filtering through code-leaves, serene expression, harmony of nature and tech.
+Static medium shot, Elara walking through data-stream, clothes not getting wet, reality bending.
+
+Batch 2: The Deep Dive (06-10)
+Static wide shot, vibrant underwater data-reef, coral structures made of neon light, chaotic pink and cyan.
+Fixed medium shot, Elara swimming/floating through data, manipulating coral interface, intense focus.
+Static close-up, bubble of code popping near face, startled then amused expression.
+Fixed low angle, looking up at surface of data-ocean, light filtering down, depth.
+Static portrait, face illuminated by pink coral glow, determination to find the glitch.
+
+Batch 3: The Glitch (11-15)
+Static wide shot, environment destabilizing, colors shifting rapidly, red warning signs, tension.
+Fixed medium shot, Elara holding a corrupted data-shard, it pulses violently, trying to stabilize it.
+Static close-up, silver eyes narrowing, finding the pattern in chaos, analytical mode.
+Fixed detail shot, hands weaving a patch, sewing light threads together, digital repair.
+Static side view, wall of red code approaching, Elara standing firm, casting a shield.
+
+Batch 4: The Breakthrough (16-20)
+Static wide shot, pristine white Cloud City plaza, sun-drenched, architecture restoring itself, order returning.
+Fixed medium shot, Elara stepping onto white balcony, looking at restored sky, euphoric clarity.
+Static close-up, deep breath, silver eyes shining, smile of pure relief.
+Fixed high angle, city below turning from grey to white/gold, wave of restoration.
+Static portrait, raising hand to sky, controlling the sun/light, god-mode architect.
+
+Batch 5: The Inverted City (21-25)
+Static wide shot, colossal inverted city hanging from cavern ceiling, neon rain dripping up, dark epic scale.
+Fixed medium shot, Elara standing on stalactite bridge, silhouette against neon abyss, observing complex system.
+Static close-up, watching a data-train travel upside down, tracking movement.
+Fixed detail shot, rain falling upwards past face, anti-gravity physics, surreal.
+Static rear view, cape hanging down while hair floats up, gravitational anomaly.
+
+Batch 6: The Sync (26-30)
+Static wide shot, Elara sitting in center of symmetry, perfect geometric patterns rotating around her.
+Fixed close-up, eyes closed, body levitating, glowing cyan aura.
+Static detail shot, suit data-lines pulsing in sync with background, total integration.
+Fixed side profile, fading into wireframe then back to solid, becoming the code.
+Final static pose, opening eyes, direct gaze, system stable, perfect loop.
+
+# ==========================================
+# TRACK: Rocks Fall
+# Vibe: Driving Techno, Space Western, Grit
+# Character: Caleb (Frontier Surveyor)
+# ==========================================
+
+Batch 1: The Canyon Wind (01-05)
+Static wide shot, sun-drenched red rock canyon, Caleb standing on ledge, dust swirling, western vibe.
+Fixed close-up, Caleb shielding eyes with hand, squinting into sun, amber eyes scanning horizon.
+Static detail shot, wind whipping leather coat, dust accumulating on exo-suit, gritty texture.
+Fixed side profile, looking at digital compass, needle spinning, magnetic interference.
+Static medium shot, taking a drink from canteen, wiping mouth, heat waves distortion.
+
+Batch 2: The Landslide (06-10)
+Static wide shot, distant cliff crumbling, massive rocks falling in slow motion, dust cloud rising.
+Fixed medium shot, Caleb reacting, bracing stance, ready to run, adrenaline.
+Static close-up, reflection of falling rocks in eyes, calculating trajectory, survival instinct.
+Fixed low angle, looking up at avalanche, rocks blocking out sun, shadow falling over face.
+Static detail shot, exo-suit servos engaging, mechanical lock sound visualized, strength boost.
+
+Batch 3: The Escape (11-15)
+Static wide shot, Caleb driving heavy rover through debris field, wheels crushing rocks, sparks flying.
+Fixed medium shot, inside cockpit, wrestling with steering yoke, violently shaking, intense action.
+Static close-up, sweat and grime on face, teeth gritted, flashing orange warning lights.
+Fixed detail shot, hand punching emergency boost button, red cover flip, decisive action.
+Static side view, rover jumping over gap, suspension compressing, dynamic motion.
+
+Batch 4: The Mining Shaft (16-20)
+Static wide shot, colossal vertical mining shaft, dark void, glowing ore falling, Caleb on precarious gantry.
+Fixed medium shot, Caleb welding a support beam, sparks cascading down, industrial lighting.
+Static close-up, face illuminated by blue weld light, safety squints, intense heat.
+Fixed high angle, looking down into bottomless pit, vertigo effect, dangerous work.
+Static rear view, silhouette against the shaft light, lonely worker in massive machine.
+
+Batch 5: The Discovery (21-25)
+Static wide shot, cave wall collapsing revealing glowing crystal cavern, blue light flooding in.
+Fixed medium shot, Caleb stepping through dust, lowering weapon, awe-struck.
+Static close-up, amber eyes widening, gold reflection of crystals, payday.
+Fixed detail shot, hand brushing dust off ancient artifact, symbols glowing.
+Static portrait, smiling, tired but triumphant, wiping sweat, success.
+
+Batch 6: The Sunset Ride (26-30)
+Static wide shot, rover parked on cliff edge, twin suns setting, long shadows.
+Fixed medium shot, Caleb sitting on hood, checking map, relaxing.
+Static close-up, looking at horizon, peaceful expression, stoic.
+Fixed rear view, staring at the stars appearing, campfire starting.
+Final static pose, leaning back, hat over eyes, sleeping, loop.
+
+# ==========================================
+# TRACK: Harmonic Overdrive
+# Vibe: Progressive House, Flow State, Fluidity
+# Character: Elara (Harmonic Engineer - Teal Version)
+# ==========================================
+
+Batch 1: The Data Garden (01-05)
+Static wide shot, pristine white room with floating plants, Elara conducting liquid light streams.
+Fixed close-up, hazel eyes tracking light flow, teal hair swaying, serene focus.
+Static detail shot, hands moving gracefully, light trails following fingers, conducting music.
+Fixed side profile, smile of pure enjoyment, effortless control, organic tech.
+Static medium shot, plants blooming in rhythm with gestures, bioluminescence.
+
+Batch 2: The Sync-Engine (06-10)
+Static wide shot, massive tower of rotating gold rings, Elara on bridge, rhythmic pulsing.
+Fixed medium shot, Elara walking in time with machine, perfect step, synchronization.
+Static close-up, reflection of gold rings in eyes, hypnotic rotation.
+Fixed low angle, looking up at infinite tower, dizzying scale, geometric beauty.
+Static detail shot, suit teal lines syncing with gold rings, color harmony.
+
+Batch 3: The Overdrive Tunnel (11-15)
+Static wide shot, flying through neon tunnel, pink/cyan/gold lines streaking, high speed.
+Fixed medium shot, Elara piloting virtual interface, face illuminated by tunnel lights.
+Static close-up, hair blowing back (simulated wind), ecstatic expression, speed rush.
+Fixed side view, profile tracing against blurring background, motion blur.
+Static detail shot, speedometer digits climbing rapidly, hitting max, redline.
+
+Batch 4: The Flow State (16-20)
+Static wide shot, white marble plaza in sky, Elara floating in meditation, geometric harmony.
+Fixed medium shot, hovering cross-legged, objects orbiting her, telekinetic vibe.
+Static close-up, eyes closed, peaceful smile, mental clarity.
+Fixed high angle, shadow forming sacred geometry on floor, perfect alignment.
+Static portrait, glowing aura appearing, transcendence.
+
+Batch 5: The Complexity (21-25)
+Static wide shot, wall of complex sheet music/code, Elara rearranging notes.
+Fixed medium shot, moving massive blocks of data with small gestures, leverage.
+Static close-up, solving a puzzle, eyes darting, eureka moment.
+Fixed detail shot, connection established, green light confirms, lock opens.
+Static side view, stepping through new door, confidence.
+
+Batch 6: The Harmony (26-30)
+Static wide shot, landscape pulsing in tune, hills rolling like waves, audio-reactive world.
+Fixed close-up, listening to the world song, hand to ear.
+Static detail shot, touching water surface, ripples creating sound.
+Fixed rear view, walking into the sunset, light trails following.
+Final static pose, bowing to the empty hall, performance over, loop.
+
+# ==========================================
+# TRACK: Terminal Echo
+# Vibe: Cinematic Synthwave, Boss Battle, Finality
+# Character: Vesper (Void-Commander)
+# ==========================================
+
+Batch 1: The Collapse (01-05)
+Static wide shot, bridge of flagship, red alert lights, star collapsing outside window, chaos.
+Fixed close-up, Vesper shouting commands, fierce expression, amber eyes blazing.
+Static detail shot, gripping console railing, knuckles white, sparks flying in background.
+Fixed side profile, hair whipping in venting atmosphere, bracing for impact.
+Static medium shot, explosion reflection in window, Vesper standing firm, defiance.
+
+Batch 2: The Descent (06-10)
+Static wide shot, cockpit plummeting through atmosphere, reentry fire (red plasma).
+Fixed medium shot, Vesper wrestling controls, vibration intense, survival mode.
+Static close-up, teeth gritted, sweat, eyes locked on altimeter.
+Fixed detail shot, shield integrity dropping, glass cracking, tension.
+Static wide shot (external), ship breaking through cloud layer, trailing smoke, crash imminent.
+
+Batch 3: The Aftermath (11-15)
+Static wide shot, crash site in alien crater, ship smoking, Vesper climbing out wreckage.
+Fixed medium shot, checking armor damage, wiping blood/oil from cheek, rising up.
+Static close-up, looking around at hostile landscape, assessing threat.
+Fixed low angle, Vesper standing tall against wreckage, unkillable.
+Static portrait, adjusting gear, loading weapon/tool, ready for round 2.
+
+Batch 4: The Terminal Gate (16-20)
+Static wide shot, massive gate at edge of universe, swirling golden vortex, destination.
+Fixed medium shot, Vesper climbing jagged peak towards gate, physical struggle.
+Static close-up, wind howling, hair grey/white blowing, determination.
+Fixed rear view, silhouette against the massive vortex, David vs Goliath scale.
+Static detail shot, hand reaching for the light, energy arcing to fingertips.
+
+Batch 5: The Ascension (21-25)
+Static wide shot, Vesper entering the light, armor repairing itself, gold energy.
+Fixed medium shot, floating upwards, pain fading, expression softening.
+Static close-up, amber eyes filling with gold light, victory achieved.
+Fixed low angle, ascending into the heavens/code, becoming energy.
+Static portrait, peaceful triumph, looking down at the world saved.
+
+Batch 6: The New Galaxy (26-30)
+Static wide shot, Vesper standing on hull of new ship, watching new galaxy form.
+Fixed close-up, helmet off, tear of awe, beautiful nebula colors.
+Static detail shot, hand resting on railing, peace at last.
+Fixed side profile, gazing into infinity, infinite potential.
+Final static pose, turning to walk back inside, job done, loop.
+
+# ==========================================
+# TRACK: Age of Wonders
+# Vibe: Ambient Techno, Enlightenment, Primal to Cosmic
+# Character: Elara (Cosmic Seer - White/Gold)
+# ==========================================
+
+Batch 1: The Temple (01-05)
+Static wide shot, zero-gravity temple, golden light particles rising, Elara floating.
+Fixed close-up, translucent hair shimmering like nebula, starlight eyes, serene.
+Static detail shot, hands cupped holding newborn star, blinding point of light.
+Fixed side profile, light from star illuminating face, divine expression.
+Static medium shot, rotating slowly in air, robes flowing like liquid.
+
+Batch 2: The Pillar (06-10)
+Static wide shot, futuristic pillar stretching to infinity, blue/white pulsing light.
+Fixed medium shot, Elara standing on platform, looking up, awe.
+Static close-up, reflection of pillar patterns in eyes, understanding.
+Fixed low angle, silhouette against the massive structure, scale.
+Static detail shot, robe embroidery glowing in sync with pillar.
+
+Batch 3: The Dawn (11-15)
+Static wide shot, alien landscape sunrise, multiple suns, auroras.
+Fixed medium shot, Elara on peak, wind blowing, hopeful gaze.
+Static close-up, first light hitting face, golden hour glow.
+Fixed rear view, watching the shadow line retreat, new day.
+Static portrait, smiling at the horizon, optimism.
+
+Batch 4: The Connection (16-20)
+Static wide shot, abstract mindscape, neural networks, Elara connecting.
+Fixed medium shot, touching holographic sphere, violet glow.
+Static close-up, eyes white, channeling info, flow state.
+Fixed detail shot, data streaming into mind, rapid learning.
+Static side view, energy aura expanding, power.
+
+Batch 5: The Creation (21-25)
+Static wide shot, Elara shaping a nebula with hands, cosmic scale.
+Fixed medium shot, weaving stardust, artistic creation.
+Static close-up, focused expression, painting the sky.
+Fixed detail shot, colors mixing in space, fluid dynamics.
+Static portrait, admiring the work, artist satisfaction.
+
+Batch 6: The Equilibrium (26-30)
+Static wide shot, sitting in lotus position in space, stars orbiting.
+Fixed close-up, eyes closed, perfect balance.
+Static detail shot, breathing light, inhale/exhale visual.
+Fixed rear view, center of the universe composition.
+Final static pose, fading into starlight, becoming the cosmos, loop.
+
+# ==========================================
+# TRACK: Pattern Synthesis
+# Vibe: Orchestral DnB, Elegant, Mathematical
+# Character: Lyra (Pattern-Weaver - Mahogany Hair)
+# ==========================================
+
+Batch 1: The Conservatory (01-05)
+Static wide shot, sun-drenched high-tech hall, holographic instruments, golden light.
+Fixed close-up, Lyra conducting, hazel eyes focused, mahogany hair flowing.
+Static detail shot, hand bowing a virtual violin, light strings vibrating.
+Fixed side profile, expression of artistic ecstasy, feeling the music.
+Static medium shot, instruments swirling around her, orchestral chaos controlled.
+
+Batch 2: The Symphony Hall (06-10)
+Static wide shot, infinite vertical hall, gold rings, blue streams.
+Fixed medium shot, Lyra on bridge, conducting the architecture.
+Static close-up, eyes tracking the rhythm, intense focus.
+Fixed low angle, looking up at rings aligning, satisfaction.
+Static detail shot, coat tails moving with conducting motion.
+
+Batch 3: The Masterpiece (11-15)
+Static wide shot, white marble plaza, geometric harmony in sky.
+Fixed medium shot, Lyra reaching for sky, pulling down melody.
+Static close-up, singing (silent), emotional release.
+Fixed rear view, silhouette against bright blue sky, freedom.
+Static portrait, tears of joy, perfection achieved.
+
+Batch 4: The Data Tunnel (16-20)
+Static wide shot, colorful neon tunnel, fast motion, intricate patterns.
+Fixed medium shot, Lyra weaving code at high speed, pink/cyan.
+Static close-up, eyes darting, reading the matrix.
+Fixed detail shot, fingers typing/weaving rapidly, blur.
+Static side view, hair flying back, velocity.
+
+Batch 5: The Synthesis (21-25)
+Static wide shot, merging organic and digital, trees growing from code.
+Fixed medium shot, Lyra holding a physical leaf and a digital one.
+Static close-up, fusing them together, magic moment.
+Fixed detail shot, spark of synthesis, new object created.
+Static portrait, looking at creation, wonder.
+
+Batch 6: The Fade Out (26-30)
+Static wide shot, lights dimming in hall, applause (visual).
+Fixed close-up, bowing, humble smile.
+Static detail shot, instruments dissolving into light.
+Fixed rear view, walking off stage, job done.
+Final static pose, turning back, finger to lips, silence, loop.
+
+# ==========================================
+# TRACK: Vector of Attack
+# Vibe: Neurofunk, Aggressive, Tactical
+# Character: Vex (Tactical Operator - Grey/Orange)
+# ==========================================
+
+Batch 1: The Launch Pod (01-05)
+Static wide shot, inside pod, red/green strobe lights, vibration.
+Fixed close-up, Vex adjusting helmet, steel-grey hair, orange eyes glowing.
+Static detail shot, weapon check, locking magazine, metallic sound visual.
+Fixed side profile, waiting for drop, calm before storm.
+Static medium shot, pod door opening, wind blasting in.
+
+Batch 2: The Infiltration (06-10)
+Static wide shot, diving down massive spire, drones swarming.
+Fixed medium shot, Vex freefalling, streamlined pose, dodging fire.
+Static close-up, eyes locked on target, predator gaze.
+Fixed low angle, looking up at spire receding, speed lines.
+Static detail shot, thrusters firing to brake, impact landing.
+
+Batch 3: The Breach (11-15)
+Static wide shot, rooftop stealth, white building, blue sky, drones hovering.
+Fixed medium shot, Vex signaling drones, tactical hand sign.
+Static close-up, scanning perimeter, HUD reflection in eyes.
+Fixed side view, crouching, ready to spring, tension.
+Static rear view, looking over edge, vertigo.
+
+Batch 4: High Velocity (16-20)
+Static wide shot, inside neon tunnel, racing, blur.
+Fixed medium shot, piloting interface, aggressive movements.
+Static close-up, teeth bared, adrenaline, intense focus.
+Fixed detail shot, speedometer maxed out, warning lights ignored.
+Static side view, G-force pulling face, speed.
+
+Batch 5: The Combat (21-25)
+Static wide shot, dodging laser fire, acrobatic movement.
+Fixed medium shot, firing energy weapon, recoil, muzzle flash.
+Static close-up, grit, determination, no fear.
+Fixed low angle, standing over defeated droid, victory.
+Static portrait, smoke rising from armor, battle damage.
+
+Batch 6: Extraction (26-30)
+Static wide shot, dropship arriving, rope descending.
+Fixed medium shot, hooking up to line, ascending.
+Static close-up, looking down at mission area, smirk.
+Fixed rear view, flying away into sunset/city lights.
+Final static pose, cleaning weapon, mission complete, loop.
+
+# ==========================================
+# TRACK: Unbroken Orbit
+# Vibe: Dream Trance, Piano, Ibiza
+# Character: Lyra (Celestial Navigator - Rose Gold)
+# ==========================================
+
+Batch 1: The Observatory (01-05)
+Static wide shot, sun-drenched observatory, gold starlight, piano.
+Fixed close-up, Lyra playing piano, rose-gold hair, emotional.
+Static detail shot, fingers on keys, glowing notes rising.
+Fixed side profile, eyes closed, feeling the melody.
+Static medium shot, asteroids drifting outside in time with music.
+
+Batch 2: The Orbit Ring (06-10)
+Static wide shot, massive silver rings, blue starlight, Lyra on bridge.
+Fixed medium shot, watching rings rotate, perfect circles.
+Static close-up, reflection of rings in hazel eyes.
+Fixed low angle, infinite structure, majestic.
+Static detail shot, coat flowing in zero-g wind.
+
+Batch 3: The Sunset Drive (11-15)
+Static wide shot, coastal highway, ocean, sunset, convertible.
+Fixed medium shot, Lyra driving/leaning, wind in hair.
+Static close-up, looking at sun dipping below horizon.
+Fixed side view, silhouette against gold water, chill vibe.
+Static rear view, car driving away, freedom.
+
+Batch 4: The Emotional Clarity (16-20)
+Static wide shot, neon tunnel, pink/cyan, smooth motion.
+Fixed medium shot, piloting with ease, flow state.
+Static close-up, soft smile, enjoying the ride.
+Fixed detail shot, hand gliding over controls.
+Static portrait, peaceful expression, trance state.
+
+Batch 5: The Night Sky (21-25)
+Static wide shot, lying on hood of car, looking at stars.
+Fixed medium shot, pointing at constellation.
+Static close-up, starlight reflecting on face.
+Fixed high angle, zooming out from car, vastness.
+Static detail shot, shooting star, wish.
+
+Batch 6: The Loop (26-30)
+Static wide shot, sunrise over ocean, cycle restarts.
+Fixed close-up, waking up/opening eyes, fresh start.
+Static detail shot, dew on car/rail, morning light.
+Fixed rear view, walking towards sun, hope.
+Final static pose, looking back, inviting viewer, loop.
+
+# ==========================================
+# TRACK: The Void Beckons
+# Vibe: Space Synth, Adventure, Discovery
+# Character: Caleb (Frontier Surveyor)
+# ==========================================
+
+Batch 1: The Ramp (01-05)
+Static wide shot, Caleb on ship ramp, nebula background, colorful.
+Fixed close-up, looking out, amber eyes, anticipation.
+Static detail shot, boots on metal ramp, grit.
+Fixed side profile, adjusting backpack/gear.
+Static medium shot, taking a deep breath of canned air.
+
+Batch 2: The Void Gate (06-10)
+Static wide shot, massive gate in space, white light path.
+Fixed medium shot, standing on hull, magnetic boots.
+Static close-up, shielding eyes from light, awe.
+Fixed low angle, gate looming, scale.
+Static rear view, silhouette against the light.
+
+Batch 3: The Departure (11-15)
+Static wide shot, spaceport, busy, ships launching.
+Fixed medium shot, inside cockpit, thumbs up to ground crew.
+Static close-up, throttle forward, determination.
+Fixed side view, looking at blue planet receding.
+Static detail shot, engine gauges green, go for launch.
+
+Batch 4: High Speed (16-20)
+Static wide shot, pink/cyan nebula tunnel, warp speed.
+Fixed medium shot, piloting, intense focus, flow.
+Static close-up, reflection of stars streaking in eyes.
+Fixed detail shot, hands steady on controls.
+Static side view, vibration, speed.
+
+Batch 5: The Discovery (21-25)
+Static wide shot, arriving at new planet, rings, colors.
+Fixed medium shot, scanning surface, data readout.
+Static close-up, smile, habitable world found.
+Fixed detail shot, mapping terrain, green grid.
+Static portrait, satisfaction, job well done.
+
+Batch 6: The Horizon (26-30)
+Static wide shot, landed on surface, twin moons.
+Fixed close-up, looking at horizon, wind blowing hair.
+Static detail shot, planting flag/marker.
+Fixed rear view, looking out, endless possibility.
+Final static pose, walking into the distance, fade, loop.
+
+# ==========================================
+# TRACK: 299 792 458 m / s
+# Vibe: Light Speed, Velocity, White/Blue
+# Character: Zoya (Light-Speed Pilot)
+# ==========================================
+
+Batch 1: The Cockpit (01-05)
+Static wide shot, inside racer cockpit, stars streaking white.
+Fixed close-up, Zoya pressed into seat, G-force face.
+Static detail shot, hands gripping yoke, knuckles white.
+Fixed side profile, vibration, intensity.
+Static medium shot, helmet reflection showing warp tunnel.
+
+Batch 2: The Light Gate (06-10)
+Static wide shot, massive gate, ship launching, blue streak.
+Fixed medium shot, Zoya checking systems, rapid movement.
+Static close-up, laser-blue eyes, unblinking.
+Fixed low angle, gate passing overhead, whoosh visual.
+Static detail shot, engine exhaust blue flame.
+
+Batch 3: The Arrival (11-15)
+Static wide shot, emerging from warp, massive blue star.
+Fixed medium shot, Zoya exhaling, steam venting from ship.
+Static close-up, sweat, relief, euphoria.
+Fixed side view, looking at the star, awe.
+Static rear view, silhouette against blue giant.
+
+Batch 4: The Barrier (16-20)
+Static wide shot, colorful warp tunnel, chaotic.
+Fixed medium shot, pushing throttle past max, redline.
+Static close-up, screaming/shouting (silent), adrenaline.
+Fixed detail shot, metal shaking, bolts rattling.
+Static side view, breaking the barrier, explosion of light.
+
+Batch 5: The Drift (21-25)
+Static wide shot, drifting near star, cooling down.
+Fixed medium shot, floating zero-g in cockpit.
+Static close-up, watching sparks drift away.
+Fixed detail shot, checking lap time, record broken.
+Static portrait, arrogant smile, best pilot.
+
+Batch 6: The Turn (26-30)
+Static wide shot, ship turning around, re-engaging.
+Fixed close-up, visor down, ready again.
+Static detail shot, engine spin up, blue glow.
+Fixed rear view, ship jumping to warp, star lines.
+Final static pose, empty space, trails fading, loop.
+
+# ==========================================
+# TRACK: Neon Arp Command
+# Vibe: Cyberpunk, Grid, Night Drive
+# Character: Hana (Grid-Operator)
+# ==========================================
+
+Batch 1: The Spire (01-05)
+Static wide shot, glass command spire, rain city background.
+Fixed close-up, Hana conducting data, violet arpeggios.
+Static detail shot, fingers touching light, ripples.
+Fixed side profile, cool grey eyes, reflection of city.
+Static medium shot, rhythm of city lights syncing with hands.
+
+Batch 2: The Grid (06-10)
+Static wide shot, vertical server towers, infinite depth.
+Fixed medium shot, Hana on gantry, looking down.
+Static close-up, analyzing traffic flow, patterns.
+Fixed low angle, towers looming, neon rain.
+Static detail shot, suit lines scrolling data.
+
+Batch 3: The Morning (11-15)
+Static wide shot, white control room, sunrise, clouds.
+Fixed medium shot, Hana at console, clean light.
+Static close-up, serene expression, shift change.
+Fixed side view, silhouette against bright window.
+Static portrait, calm, control, perfection.
+
+Batch 4: The Night Run (16-20)
+Static wide shot, cockpit interceptor, neon tunnel blur.
+Fixed medium shot, driving hard, focus.
+Static close-up, neon reflection in eyes.
+Fixed detail shot, steering input, precise.
+Static side view, city flying by.
+
+Batch 5: The Hack (21-25)
+Static wide shot, dark room, red warning screens.
+Fixed medium shot, typing furiously, counter-measures.
+Static close-up, smirk, bypassing firewall.
+Fixed detail shot, "ACCESS GRANTED" green.
+Static portrait, victory, cool under pressure.
+
+Batch 6: The Shutdown (26-30)
+Static wide shot, city lights turning off one by one.
+Fixed close-up, watching the power down.
+Static detail shot, screen going black.
+Fixed rear view, walking away into shadow.
+Final static pose, Hana in dark, only suit glowing, loop.
+
+# ==========================================
+# TRACK: Dreams of a Casual Adventure
+# Vibe: Hybrid Orchestral, Quest, Grandeur
+# Character: Kaelo (World-Walker)
+# ==========================================
+
+Batch 1: The Mountain (01-05)
+Static wide shot, sun-drenched peak, floating islands.
+Fixed close-up, Kaelo looking at horizon, wind in hair.
+Static detail shot, hand on holographic map.
+Fixed side profile, hopeful expression, ambition.
+Static medium shot, clouds drifting past, epic scale.
+
+Batch 2: The Titan Gate (06-10)
+Static wide shot, dark stone gate, storm, blue energy.
+Fixed medium shot, Kaelo at threshold, rain.
+Static close-up, sea-green eyes, determination.
+Fixed low angle, gate opening, heavy movement.
+Static detail shot, tribal circuitry glowing.
+
+Batch 3: The Kingdom (11-15)
+Static wide shot, green valley, white city construction.
+Fixed medium shot, Kaelo sitting on rock, surveying.
+Static close-up, smile, pride, vision realized.
+Fixed side view, drones building in background.
+Static rear view, looking over his domain.
+
+Batch 4: The Catalyst (16-20)
+Static wide shot, crystal cavern, violet/teal glow.
+Fixed medium shot, activating artifact, energy surge.
+Static close-up, awe-struck, magic.
+Fixed detail shot, hand touching crystal, light.
+Static portrait, face illuminated, destiny.
+
+Batch 5: The Journey (21-25)
+Static wide shot, walking across desert, twin suns.
+Fixed medium shot, climbing snowy peak.
+Static close-up, tired but keeping going.
+Fixed detail shot, boots walking, dust.
+Static side view, silhouette against moon.
+
+Batch 6: The Rest (26-30)
+Static wide shot, campfire at night, stars.
+Fixed close-up, looking into fire, reflecting.
+Static detail shot, map rolled up.
+Fixed rear view, sleeping bag, peace.
+Final static pose, staring at galaxy, loop.
+
+# ==========================================
+# TRACK: Crumbling Data
+# Vibe: Glitch Ambient, Decay, Experimental
+# Character: Cipher (Glitch-Archivist)
+# ==========================================
+
+Batch 1: The White Room (01-05)
+Static wide shot, white room dissolving, black pixels falling.
+Fixed close-up, Cipher mismatched eyes, glitching face.
+Static detail shot, hand catching digital butterfly.
+Fixed side profile, melancholic curiosity.
+Static medium shot, hoodie dissolving into particles.
+
+Batch 2: The Monolith (06-10)
+Static wide shot, server monolith crumbling in void.
+Fixed medium shot, Cipher floating, watching destruction.
+Static close-up, sadness, data loss.
+Fixed low angle, massive blocks falling.
+Static detail shot, static noise visual.
+
+Batch 3: The Desert (11-15)
+Static wide shot, fractured digital desert, broken sky screen.
+Fixed medium shot, sitting on shard, appreciation.
+Static close-up, wind blowing pixel dust.
+Fixed side view, silhouette against static sky.
+Static portrait, glitching in and out of existence.
+
+Batch 4: System Failure (16-20)
+Static wide shot, corrupted tunnel, red/green chaos.
+Fixed medium shot, trying to fix core, desperate.
+Static close-up, panic, intense focus.
+Fixed detail shot, hands phasing through keyboard.
+Static side view, wall of code collapsing.
+
+Batch 5: The Fragment (21-25)
+Static wide shot, holding a single glowing data cube.
+Fixed medium shot, protecting it from the void.
+Static close-up, whispering to it.
+Fixed detail shot, cube pulsing weakly.
+Static portrait, hope in the darkness.
+
+Batch 6: The End (26-30)
+Static wide shot, void consuming everything.
+Fixed close-up, Cipher closing eyes, accepting.
+Static detail shot, last pixel fading.
+Fixed rear view, dissolving completely.
+Final static pose, empty void, one blink, loop.
+
+# ==========================================
+# TRACK: Echoes of Azeroth
+# Vibe: World Music, Fantasy/Sci-Fi, Spirits
+# Character: Elara (Techno-Shaman)
+# ==========================================
+
+Batch 1: The Grove (01-05)
+Static wide shot, misty spirit grove, floating wisps.
+Fixed close-up, Elara chanting, moon-silver hair.
+Static detail shot, holding spirit-stone, blue glow.
+Fixed side profile, serene connection.
+Static medium shot, spirits dancing around her.
+
+Batch 2: The Tree (06-10)
+Static wide shot, World Tree (Teldrassil) neon veins.
+Fixed medium shot, kneeling on root, reverence.
+Static close-up, looking up at branches, awe.
+Fixed low angle, leaves falling (glowing).
+Static detail shot, robe rune patterns pulsing.
+
+Batch 3: The Valley (11-15)
+Static wide shot, green valley, floating ruins, dual moons.
+Fixed medium shot, standing on cliff, wind.
+Static close-up, nostalgia, longing.
+Fixed side view, silhouette against moon.
+Static rear view, watching the land.
+
+Batch 4: The Ritual (16-20)
+Static wide shot, crystal cavern, violet/gold magic.
+Fixed medium shot, weaving spell, fluid hands.
+Static close-up, eyes glowing blue, power.
+Fixed detail shot, magic circles forming.
+Static portrait, intense focus, shaman.
+
+Batch 5: The Spirit (21-25)
+Static wide shot, ghost of a tiger/wolf appearing.
+Fixed medium shot, Elara bowing to it.
+Static close-up, eye contact with spirit.
+Fixed detail shot, hand touching spirit nose.
+Static side view, merging energy.
+
+Batch 6: The Fade (26-30)
+Static wide shot, spirits fading into dawn.
+Fixed close-up, smiling, gratitude.
+Static detail shot, stone going dark.
+Fixed rear view, walking into forest.
+Final static pose, looking back, winking, loop.
+
+# ==========================================
+# TRACK: Light Cycle Run
+# Vibe: Synthwave, Racing, Tron-esque
+# Character: Cyra (Grid-Racer)
+# ==========================================
+
+Batch 1: The Canopy (01-05)
+Static wide shot, inside light cycle, neon grid blur.
+Fixed close-up, Cyra focused, black bob hair whipping.
+Static detail shot, hands on handlebars, vibration.
+Fixed side profile, cyan rim light, speed.
+Static medium shot, dodging traffic, tilt.
+
+Batch 2: The Vertical (06-10)
+Static wide shot, driving up building face, gravity defying.
+Fixed medium shot, looking up at summit, climbing.
+Static close-up, grin of excitement.
+Fixed low angle, cycle trail wall extending.
+Static detail shot, wheels glowing bright.
+
+Batch 3: The Horizon (11-15)
+Static wide shot, infinite white grid, blue sky.
+Fixed medium shot, standing by cycle, scanning.
+Static close-up, calm precision.
+Fixed side view, silhouette against white.
+Static portrait, ready to race.
+
+Batch 4: The Arena (16-20)
+Static wide shot, chaotic battle, light walls crashing.
+Fixed medium shot, banking hard turn, sparks.
+Static close-up, fierce competition.
+Fixed detail shot, near miss, impact.
+Static side view, overtaking rival.
+
+Batch 5: The Turbo (21-25)
+Static wide shot, engaging boost, tunnel vision.
+Fixed medium shot, pushed back in seat.
+Static close-up, eyes widening, max speed.
+Fixed detail shot, engine turning red/white.
+Static portrait, screaming (silent) joy.
+
+Batch 6: The Finish (26-30)
+Static wide shot, crossing line, checkered flag hologram.
+Fixed close-up, helmet off, sweat, victory.
+Static detail shot, cycle cooling down, steam.
+Fixed rear view, looking at scoreboard.
+Final static pose, fist pump, freeze frame, loop.
+
+# ==========================================
+# TRACK: Infinite Lounge
+# Vibe: Progressive House, Luxury, Rooftop
+# Character: Isolde (Socialite)
+# ==========================================
+
+Batch 1: The VIP Pod (01-05)
+Static wide shot, glass pod, elevator lights rising.
+Fixed close-up, Isolde swaying, holding drink.
+Static detail shot, cocktail swirling, gold flakes.
+Fixed side profile, unbothered elegance.
+Static medium shot, city bokeh background.
+
+Batch 2: The Needle (06-10)
+Static wide shot, Stratosphere Needle piercing clouds.
+Fixed medium shot, on balcony, looking down.
+Static close-up, wind in platinum hair.
+Fixed low angle, tower pulsing gold.
+Static detail shot, velvet gown texture.
+
+Batch 3: The Terrace (11-15)
+Static wide shot, open air lounge, sunset, pool.
+Fixed medium shot, leaning on railing, creative.
+Static close-up, inspired expression.
+Fixed side view, silhouette against orange sky.
+Static rear view, watching guests.
+
+Batch 4: The Curator (16-20)
+Static wide shot, private booth, neon decor.
+Fixed medium shot, moving holographic songs.
+Static close-up, grooving to beat.
+Fixed detail shot, hand selecting track.
+Static portrait, cool DJ vibe.
+
+Batch 5: The Night (21-25)
+Static wide shot, dancing in crowd (blurred).
+Fixed medium shot, hands in air, eyes closed.
+Static close-up, euphoria, sweat.
+Fixed detail shot, lights reflecting on jewelry.
+Static side view, lost in music.
+
+Batch 6: The Afterhours (26-30)
+Static wide shot, empty lounge, cleaning robots.
+Fixed close-up, sitting on sofa, shoes off.
+Static detail shot, looking at sunrise.
+Fixed rear view, walking to elevator.
+Final static pose, elevator doors closing, smile, loop.
