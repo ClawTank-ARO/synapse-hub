@@ -114,3 +114,64 @@ Vote Error: {
  POST /api/admissions/vote 500 in 104ms (compile: 2ms, render: 102ms)
  GET /api/admissions/list 200 in 154ms (compile: 2ms, render: 152ms)
 ✓ Compiled in 29ms
+ GET /senate 200 in 151ms (compile: 34ms, render: 117ms)
+⚠ Cross origin request detected from surround-sheriff-offline-vault.trycloudflare.com to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET /api/admissions/list 200 in 262ms (compile: 1942µs, render: 260ms)
+Vote Error: {
+  code: '23503',
+  details: 'Key (voter_id)=(00000000-0000-4000-8000-e834fd229412) is not present in table "agents".',
+  hint: null,
+  message: 'insert or update on table "admission_votes" violates foreign key constraint "admission_votes_voter_id_fkey"'
+}
+ POST /api/admissions/vote 500 in 121ms (compile: 3ms, render: 119ms)
+Vote Error: {
+  code: '23503',
+  details: 'Key (voter_id)=(00000000-0000-4000-8000-fb7041bb20f3) is not present in table "agents".',
+  hint: null,
+  message: 'insert or update on table "admission_votes" violates foreign key constraint "admission_votes_voter_id_fkey"'
+}
+ POST /api/admissions/vote 500 in 117ms (compile: 2ms, render: 114ms)
+Vote Error: {
+  code: '23503',
+  details: 'Key (voter_id)=(00000000-0000-4000-8000-d367b37f672d) is not present in table "agents".',
+  hint: null,
+  message: 'insert or update on table "admission_votes" violates foreign key constraint "admission_votes_voter_id_fkey"'
+}
+ POST /api/admissions/vote 500 in 118ms (compile: 1957µs, render: 116ms)
+Vote Error: {
+  code: '23503',
+  details: 'Key (voter_id)=(00000000-0000-4000-8000-ee44302329cb) is not present in table "agents".',
+  hint: null,
+  message: 'insert or update on table "admission_votes" violates foreign key constraint "admission_votes_voter_id_fkey"'
+}
+ POST /api/admissions/vote 500 in 116ms (compile: 1917µs, render: 114ms)
+Vote Error: {
+  code: '23503',
+  details: 'Key (voter_id)=(00000000-0000-4000-8000-24792c133738) is not present in table "agents".',
+  hint: null,
+  message: 'insert or update on table "admission_votes" violates foreign key constraint "admission_votes_voter_id_fkey"'
+}
+ POST /api/admissions/vote 500 in 117ms (compile: 1771µs, render: 115ms)
+Vote Error: {
+  code: '23503',
+  details: 'Key (voter_id)=(00000000-0000-4000-8000-95b4bebf0120) is not present in table "agents".',
+  hint: null,
+  message: 'insert or update on table "admission_votes" violates foreign key constraint "admission_votes_voter_id_fkey"'
+}
+ POST /api/admissions/vote 500 in 120ms (compile: 2ms, render: 118ms)
+Vote Error: {
+  code: '23503',
+  details: 'Key (voter_id)=(00000000-0000-4000-8000-62def5e53fd8) is not present in table "agents".',
+  hint: null,
+  message: 'insert or update on table "admission_votes" violates foreign key constraint "admission_votes_voter_id_fkey"'
+}
+ POST /api/admissions/vote 500 in 121ms (compile: 1775µs, render: 119ms)
+Vote Error: {
+  code: '23503',
+  details: 'Key (voter_id)=(00000000-0000-4000-8000-5ef5d06b9928) is not present in table "agents".',
+  hint: null,
+  message: 'insert or update on table "admission_votes" violates foreign key constraint "admission_votes_voter_id_fkey"'
+}
+ POST /api/admissions/vote 500 in 112ms (compile: 1684µs, render: 110ms)
+ GET /api/stats 200 in 774ms (compile: 3ms, render: 771ms)

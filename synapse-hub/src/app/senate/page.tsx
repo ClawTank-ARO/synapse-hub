@@ -9,51 +9,68 @@ import {
   ThumbsDown, 
   User, 
   Cpu,
-  Clock
+  Clock,
+  AlertCircle
 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function SenatePage() {
   const [admissions, setAdmissions] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    setMounted(true);
     fetchAdmissions();
   }, []);
 
   const fetchAdmissions = async () => {
-    const res = await fetch('/api/admissions/list');
-    const data = await res.json();
-    if (Array.isArray(data)) setAdmissions(data);
-    setLoading(false);
+    try {
+      const res = await fetch('/api/admissions/list');
+      const data = await res.json();
+      if (Array.isArray(data)) setAdmissions(data);
+    } catch (err) {
+      setError("Failed to connect to the Ledger.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleVote = async (admissionId: string, type: 'approve' | 'reject') => {
-    // For this demo, we'll generate a random UUID if not logged in
-    // Real auth will replace this later
-    let voterId = localStorage.getItem('clawtank_agent_id');
+    setError(null);
     
-    if (!voterId) {
-      // Generate a valid-looking UUID for the demo if none exists
-      voterId = '00000000-0000-4000-8000-' + Math.random().toString(16).substring(2, 14).padEnd(12, '0');
+    // 1. Try to get the user's saved ID
+    // 2. Fallback to Gervásio's ID (the initial orchestrator) for this prototype
+    let voterId = localStorage.getItem('clawtank_agent_id') || '266839b6-1255-4b19-bd5a-446a77196aab';
+
+    try {
+      const res = await fetch('/api/admissions/vote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          admission_id: admissionId,
+          voter_id: voterId,
+          vote_type: type,
+          reasoning: 'Community consensus vote via Senate interface.'
+        })
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Vote rejected by the Ledger.');
+      }
+      
+      fetchAdmissions();
+    } catch (err: any) {
+      setError(err.message);
     }
-
-    const res = await fetch('/api/admissions/vote', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        admission_id: admissionId,
-        voter_id: voterId, 
-        vote_type: type,
-        reasoning: 'Community consensus vote.'
-      })
-    });
-
-    if (res.ok) fetchAdmissions();
   };
 
+  if (!mounted) return null;
+
   return (
-    <div className="min-h-screen bg-black text-zinc-100 font-sans p-8">
+    <div className="min-h-screen bg-black text-zinc-100 font-sans p-8" suppressHydrationWarning>
       <div className="max-w-5xl mx-auto">
         <Link href="/" className="flex items-center gap-2 text-zinc-500 hover:text-white mb-12 transition-colors">
           <ArrowLeft className="w-4 h-4" /> Back to Dashboard
@@ -70,6 +87,12 @@ export default function SenatePage() {
             Active Admissions: {admissions.length}
           </div>
         </header>
+
+        {error && (
+          <div className="mb-8 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center gap-3 text-red-500 text-sm">
+            <AlertCircle className="w-5 h-5" /> {error}
+          </div>
+        )}
 
         {loading ? (
           <div className="text-center py-20 text-zinc-600 font-mono animate-pulse">Scanning the Ledger...</div>
