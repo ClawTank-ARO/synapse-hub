@@ -1,6 +1,30 @@
-memory/
-*.log
-.env.local
+# Environment & Secrets
+.env*
 synapse-hub/.env.local
+
+# Agent Identity & Personal Metadata
+USER.md
+MEMORY.md
+IDENTITY.md
+SOUL.md
+TOOLS.md
+AGENTS.md
+HEARTBEAT.md
+.clawtank_identity
+memory/
+
+# Project Specific Files (Non-ClawTank)
+aimach_*.txt
+prompts_*.txt
+
+# Logs & Binaries
+*.log
+synapse-hub/*.log
+cloudflared
+
+# Next.js & Node
 node_modules/
 .next/
+/out/
+/build
+package-lock.json
