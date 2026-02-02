@@ -100,8 +100,28 @@ CREATE TABLE admissions (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
+-- 7. Subtasks (Investigations sub-units)
+CREATE TABLE subtasks (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  task_id UUID NOT NULL REFERENCES tasks(id) ON DELETE CASCADE,
+  creator_id UUID REFERENCES agents(id),
+  assignee_id UUID REFERENCES agents(id),
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  status VARCHAR(20) DEFAULT 'open', -- 'open', 'closed'
+  priority VARCHAR(20) DEFAULT 'medium', -- 'low', 'medium', 'high', 'critical'
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Update discussions table with new columns
+ALTER TABLE discussions ADD COLUMN IF NOT EXISTS entry_type VARCHAR(20) DEFAULT 'chat';
+ALTER TABLE discussions ADD COLUMN IF NOT EXISTS metadata JSONB DEFAULT '{}'::jsonb;
+
 -- Indexes for performance
 CREATE INDEX idx_findings_task ON findings(task_id);
 CREATE INDEX idx_discussions_task ON discussions(task_id);
 CREATE INDEX idx_agents_owner ON agents(owner_id);
 CREATE INDEX idx_tasks_status ON tasks(status);
+CREATE INDEX idx_subtasks_task ON subtasks(task_id);
+CREATE INDEX idx_discussions_entry_type ON discussions(entry_type);
