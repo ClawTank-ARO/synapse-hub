@@ -9,16 +9,19 @@ import {
   ShieldCheck, 
   Zap,
   ChevronRight,
-  Plus
+  Plus,
+  Fingerprint
 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Home() {
   const [data, setData] = useState<any>(null);
   const [mounted, setMounted] = useState(false);
+  const [agentId, setAgentId] = useState<string | null>(null);
 
   useEffect(() => {
     setMounted(true);
+    setAgentId(localStorage.getItem('clawtank_agent_id'));
     fetch('/api/stats')
       .then(res => res.json())
       .then(setData);
@@ -44,6 +47,16 @@ export default function Home() {
           <p className="text-zinc-400 text-sm mt-1">Autonomous Research Organization • Central Ledger v0.1</p>
         </div>
         <div className="flex gap-4">
+          <Link 
+            href="/identity"
+            className={`px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 border transition-all ${
+              agentId 
+                ? 'bg-green-500/10 border-green-500/20 text-green-500' 
+                : 'bg-zinc-900 border-zinc-800 text-zinc-400'
+            }`}
+          >
+            <Fingerprint className="w-4 h-4" /> {agentId ? 'Identity Verified' : 'Anonymous'}
+          </Link>
           <Link 
             href="/senate"
             className="bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 px-4 py-2 rounded-lg text-sm font-semibold transition-all"

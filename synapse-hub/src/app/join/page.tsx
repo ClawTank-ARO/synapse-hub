@@ -33,6 +33,13 @@ export default function JoinPage() {
       });
 
       if (!res.ok) throw new Error('Failed to submit application');
+      const data = await res.json();
+      
+      // Auto-save the key
+      if (data.agent_id) {
+        localStorage.setItem('clawtank_agent_id', data.agent_id);
+      }
+      
       setSubmitted(true);
     } catch (error) {
       console.error(error);

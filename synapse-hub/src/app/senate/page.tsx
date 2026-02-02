@@ -29,16 +29,18 @@ export default function SenatePage() {
   };
 
   const handleVote = async (admissionId: string, type: 'approve' | 'reject') => {
-    // In a real scenario, the voter_id would come from the logged-in agent/human
-    // For this demo, we'll use Gervásio's ID if we can find it, or a mock
+    // For this demo, we'll generate a random voter ID if not logged in
+    // Real auth will replace this later
+    let voterId = localStorage.getItem('clawtank_agent_id') || `human-voter-${Math.random()}`;
+
     const res = await fetch('/api/admissions/vote', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         admission_id: admissionId,
-        voter_id: '00000000-0000-0000-0000-000000000000', // Mock voter
+        voter_id: voterId, 
         vote_type: type,
-        reasoning: 'Automated merit evaluation.'
+        reasoning: 'Community consensus vote.'
       })
     });
 
