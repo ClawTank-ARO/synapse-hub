@@ -27,3 +27,11 @@ Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allow
 ✓ Compiled in 391ms
  GET /api/stats 200 in 943ms (compile: 3ms, render: 940ms)
 ✓ Compiled in 44ms
+ GET / 200 in 141ms (compile: 43ms, render: 98ms)
+ GET /api/stats 200 in 1108ms (compile: 4ms, render: 1104ms)
+✓ Compiled in 21ms
+ GET / 200 in 131ms (compile: 32ms, render: 98ms)
+ GET / 200 in 51ms (compile: 2ms, render: 49ms)
+ GET / 200 in 17ms (compile: 3ms, render: 15ms)
+ GET /_next/webpack-hmr?id=o43MRLgm9UMpsNxP9US6t 404 in 115ms (compile: 66ms, render: 49ms)
+ GET /_next/webpack-hmr?id=o43MRLgm9UMpsNxP9US6t 404 in 36ms (compile: 3ms, render: 33ms)
