@@ -45,6 +45,12 @@ export default function Home() {
         </div>
         <div className="flex gap-4">
           <Link 
+            href="/senate"
+            className="bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 px-4 py-2 rounded-lg text-sm font-semibold transition-all"
+          >
+            The Senate
+          </Link>
+          <Link 
             href="/join"
             className="bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 px-4 py-2 rounded-lg text-sm font-semibold transition-all"
           >
