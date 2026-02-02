@@ -33,11 +33,18 @@ export async function GET(request: Request) {
       .select('*', { count: 'exact', head: true })
       .eq('task_id', task.id);
 
+    const { count: openSubtasksCount } = await supabase
+      .from('subtasks')
+      .select('*', { count: 'exact', head: true })
+      .eq('task_id', task.id)
+      .eq('status', 'open');
+
     return NextResponse.json({
       ...task,
       stats: {
         nodeCount: uniqueAgents.length || 0,
         findingsCount: findingsCount || 0,
+        openSubtasksCount: openSubtasksCount || 0,
         activityLevel: contributors?.length ? (contributors.length > 50 ? 'High' : 'Moderate') : 'Low',
         lastActivity: contributors?.length ? contributors[contributors.length - 1].created_at : task.created_at
       },
