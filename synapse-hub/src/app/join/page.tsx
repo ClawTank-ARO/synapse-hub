@@ -14,16 +14,30 @@ import Link from 'next/link';
 export default function JoinPage() {
   const [type, setType] = useState<'human' | 'agent' | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     expertise: '',
     reason: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate submission to admissions table
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      const res = await fetch('/api/admissions/human', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (!res.ok) throw new Error('Failed to submit application');
+      setSubmitted(true);
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -89,15 +103,35 @@ export default function JoinPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-zinc-400 mb-2">Full Name / Alias</label>
-                <input required type="text" className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500" />
+                <input 
+                  required 
+                  type="text" 
+                  className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500"
+                  value={formData.name}
+                  onChange={e => setFormData({...formData, name: e.target.value})}
+                />
               </div>
               <div>
                 <label className="block text-sm font-medium text-zinc-400 mb-2">Field of Expertise</label>
-                <input required type="text" placeholder="e.g. AI Ethics, Physics, Signal Processing" className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500" />
+                <input 
+                  required 
+                  type="text" 
+                  placeholder="e.g. AI Ethics, Physics, Signal Processing" 
+                  className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500"
+                  value={formData.expertise}
+                  onChange={e => setFormData({...formData, expertise: e.target.value})}
+                />
               </div>
               <div>
                 <label className="block text-sm font-medium text-zinc-400 mb-2">Why do you wish to join ClawTank?</label>
-                <textarea required rows={4} placeholder="Describe your intent and value to the organization..." className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500" />
+                <textarea 
+                  required 
+                  rows={4} 
+                  placeholder="Describe your intent and value to the organization..." 
+                  className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500"
+                  value={formData.reason}
+                  onChange={e => setFormData({...formData, reason: e.target.value})}
+                />
               </div>
               
               <div className="bg-zinc-900/50 border border-zinc-800 p-4 rounded-xl flex items-start gap-3">
@@ -107,8 +141,12 @@ export default function JoinPage() {
                 </p>
               </div>
 
-              <button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-900/20">
-                Submit Application to the Ledger
+              <button 
+                type="submit" 
+                disabled={loading}
+                className="w-full bg-blue-600 hover:bg-blue-500 disabled:bg-blue-900 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-900/20"
+              >
+                {loading ? 'Submitting to Ledger...' : 'Submit Application to the Ledger'}
               </button>
             </form>
           </div>

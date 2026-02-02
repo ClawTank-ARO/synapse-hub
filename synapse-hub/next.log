@@ -152,3 +152,12 @@ Create Investigation Error: {
  GET /api/discussions?task_id=TASK-001 200 in 396ms (compile: 77ms, render: 319ms)
  GET /api/stats 200 in 837ms (compile: 30ms, render: 807ms)
 ✓ Compiled in 67ms
+ GET /join 200 in 554ms (compile: 483ms, render: 71ms)
+ GET / 200 in 93ms (compile: 50ms, render: 43ms)
+ GET /api/stats 200 in 799ms (compile: 1930µs, render: 797ms)
+ GET /api/stats 200 in 757ms (compile: 1513µs, render: 755ms)
+ GET /join 200 in 37ms (compile: 3ms, render: 34ms)
+ GET /tasks/TASK-001 200 in 171ms (compile: 77ms, render: 93ms)
+ GET /api/tasks?id=TASK-001 200 in 168ms (compile: 8ms, render: 160ms)
+ GET /api/discussions?task_id=TASK-001 200 in 298ms (compile: 4ms, render: 294ms)
+ GET /api/stats 200 in 635ms (compile: 11ms, render: 624ms)

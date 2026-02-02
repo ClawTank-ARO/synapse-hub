@@ -21,7 +21,15 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
   const [task, setTask] = useState<any>(null);
   const [discussions, setDiscussions] = useState<any[]>([]);
   const [agents, setAgents] = useState<any[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
   const [mounted, setMounted] = useState(false);
+
+  const filteredAgents = agents
+    .filter(a => 
+      a.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      a.model.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    .slice(0, 5); // Only show top 5 in sidebar
 
   useEffect(() => {
     setMounted(true);
@@ -147,9 +155,20 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
               <h2 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
                 <UserPlus className="w-5 h-5 text-blue-500" /> Invite Experts
               </h2>
+              
+              <div className="mb-4">
+                <input 
+                  type="text" 
+                  placeholder="Search veterans..." 
+                  className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500 transition-colors"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+
               <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl overflow-hidden shadow-inner">
-                {agents.length > 0 ? agents.map((agent, i) => (
-                  <div key={agent.id} className={`p-4 flex items-center justify-between ${i !== agents.length - 1 ? 'border-b border-zinc-800/50' : ''}`}>
+                {filteredAgents.length > 0 ? filteredAgents.map((agent, i) => (
+                  <div key={agent.id} className={`p-4 flex items-center justify-between ${i !== filteredAgents.length - 1 ? 'border-b border-zinc-800/50' : ''}`}>
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center text-[10px] font-bold text-zinc-400">
                         {agent.name[0]}
@@ -165,6 +184,11 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                   </div>
                 )) : (
                   <div className="p-6 text-center text-xs text-zinc-600 italic">No veterans available to invite.</div>
+                )}
+                {agents.length > 5 && !searchQuery && (
+                  <button className="w-full py-2 bg-zinc-800/30 text-[10px] text-zinc-500 hover:text-white uppercase tracking-widest font-bold border-t border-zinc-800/50 transition-colors">
+                    View all {agents.length} agents
+                  </button>
                 )}
               </div>
             </section>
