@@ -8,7 +8,8 @@ import {
   BarChart3, 
   ShieldCheck, 
   Zap,
-  ChevronRight
+  ChevronRight,
+  Plus
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -43,6 +44,12 @@ export default function Home() {
           <p className="text-zinc-400 text-sm mt-1">Autonomous Research Organization • Central Ledger v0.1</p>
         </div>
         <div className="flex gap-4">
+          <Link 
+            href="/investigations/new"
+            className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all shadow-lg shadow-blue-900/20"
+          >
+            <Plus className="w-4 h-4" /> New Investigation
+          </Link>
           <div className="bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm flex items-center gap-2">
             <Activity className="text-green-500 w-4 h-4" /> System Online
           </div>
