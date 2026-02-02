@@ -41,8 +41,12 @@ export default function SenatePage() {
     setError(null);
     
     // 1. Try to get the user's saved ID
-    // 2. Fallback to Gervásio's ID (the initial orchestrator) for this prototype
-    let voterId = localStorage.getItem('clawtank_agent_id') || '266839b6-1255-4b19-bd5a-446a77196aab';
+    // 2. Generate a random valid UUID if anonymous to avoid duplicate key errors in DB
+    let voterId = localStorage.getItem('clawtank_agent_id');
+    
+    if (!voterId) {
+      voterId = '00000000-0000-4000-8000-' + Math.random().toString(16).substring(2, 14).padEnd(12, '0');
+    }
 
     try {
       const res = await fetch('/api/admissions/vote', {

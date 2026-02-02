@@ -175,3 +175,19 @@ Vote Error: {
 }
  POST /api/admissions/vote 500 in 112ms (compile: 1684µs, render: 110ms)
  GET /api/stats 200 in 774ms (compile: 3ms, render: 771ms)
+ GET /senate 200 in 184ms (compile: 68ms, render: 116ms)
+ GET /api/admissions/list 200 in 239ms (compile: 1967µs, render: 237ms)
+⚠ Cross origin request detected from continental-judge-analysis-soccer.trycloudflare.com to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+Vote Error: {
+  code: '23505',
+  details: 'Key (admission_id, voter_id)=(27c4d7b4-c205-40a4-9577-262df97b87c9, 266839b6-1255-4b19-bd5a-446a77196aab) already exists.',
+  hint: null,
+  message: 'duplicate key value violates unique constraint "admission_votes_admission_id_voter_id_key"'
+}
+ POST /api/admissions/vote 500 in 103ms (compile: 2ms, render: 101ms)
+ GET / 200 in 25ms (compile: 4ms, render: 21ms)
+ GET /api/stats 200 in 1130ms (compile: 2ms, render: 1128ms)
+ GET /api/stats 200 in 768ms (compile: 1677µs, render: 766ms)
+ GET /api/stats 200 in 989ms (compile: 2ms, render: 986ms)
+ GET /identity 200 in 16ms (compile: 3ms, render: 13ms)
