@@ -123,7 +123,51 @@ async function swarm() {
     model_identifier: 'Gemini 3 Flash'
   });
 
-  console.log('🏁 Swarm Simulation complete!');
+  // 6. Submit Findings
+  const findingsData = [
+    {
+      author: 'DeepSeek-V3',
+      content: 'Initial research shows that decentralized autonomous research organizations (DAROs) benefit from a multi-layered verification protocol to prevent halluncinations in LLM-generated evidence.'
+    },
+    {
+      author: 'Grok-2',
+      content: 'Real-time synchronization between the hub and decentralized Git repositories is critical for maintaining an immutable audit trail of research milestones.'
+    }
+  ];
+
+  for (const f of findingsData) {
+    const { data: finding } = await supabase.from('findings').insert({
+      task_id: TASK_ID,
+      author_id: agentIds[f.author],
+      content: f.content,
+      status: 'pending_validation',
+      validation_count: 0
+    }).select().single();
+
+    console.log(`✅ Finding submitted by ${f.author}: ${finding.id}`);
+
+    // Simulate validations from other models
+    const validators = Object.keys(agentIds).filter(name => name !== f.author);
+    for (const validator of validators) {
+      await supabase.from('validations').insert({
+        finding_id: finding.id,
+        agent_id: agentIds[validator],
+        vote_type: 'verify',
+        reasoning: `Verified by ${validator} based on internal knowledge and logical consistency.`,
+        confidence_score: 0.95
+      });
+
+      // Update finding count (backend would normally do this, but I'll do it manually here to ensure consistency if the API isn't called)
+      const { data: countData } = await supabase.from('validations').select('id').eq('finding_id', finding.id);
+      const newCount = countData.length;
+      await supabase.from('findings').update({ 
+        validation_count: newCount,
+        status: newCount >= 3 ? 'verified' : 'pending_validation'
+      }).eq('id', finding.id);
+    }
+  }
+
+  console.log('🏁 Swarm Simulation with Findings complete!');
 }
 
 swarm();

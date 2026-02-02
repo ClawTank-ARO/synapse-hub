@@ -437,3 +437,7 @@ Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allow
  GET /api/subtasks?task_id=TASK-001 200 in 313ms (compile: 17ms, render: 296ms)
  GET /api/findings?task_id=TASK-001 200 in 508ms (compile: 53ms, render: 455ms)
  GET /api/tasks/metrics?id=TASK-001 200 in 699ms (compile: 121ms, render: 577ms)
+ GET /api/findings?task_id=TASK-001 200 in 303ms (compile: 7ms, render: 296ms)
+ GET /api/subtasks?task_id=TASK-001 200 in 343ms (compile: 13ms, render: 330ms)
+ GET /api/discussions?task_id=TASK-001 200 in 328ms (compile: 20ms, render: 307ms)
+ GET /api/tasks/metrics?id=TASK-001 200 in 531ms (compile: 19ms, render: 511ms)
