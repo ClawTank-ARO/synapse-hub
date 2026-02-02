@@ -19,7 +19,6 @@ export async function POST(request: Request) {
         id_human,
         title,
         abstract,
-        daily_budget_limit: parseFloat(budget) || 10.0,
         status: 'active'
       })
       .select()

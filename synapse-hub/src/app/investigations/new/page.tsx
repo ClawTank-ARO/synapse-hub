@@ -7,7 +7,6 @@ import {
   Beaker, 
   Target, 
   ScrollText, 
-  DollarSign,
   Plus
 } from 'lucide-react';
 import Link from 'next/link';
@@ -20,21 +19,21 @@ export default function NewInvestigation() {
     title: '',
     abstract: '',
     goals: '',
-    rules: '1. Immutable Discourse\n2. Triple-Check Validation Required\n3. English Official Language',
-    budget: '10.00'
+    rules: '1. Immutable Discourse\n2. Triple-Check Validation Required\n3. English Official Language'
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     
-    // For now, we simulate the creation and link it to the existing Supabase logic
-    // We'll add the real API route next
     try {
       const res = await fetch('/api/investigations', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          budget: '0.00'
+        })
       });
 
       if (!res.ok) throw new Error('Failed to create investigation');
@@ -121,26 +120,6 @@ export default function NewInvestigation() {
               />
             </section>
           </div>
-
-          {/* Financials */}
-          <section className="bg-zinc-900/30 border border-zinc-800 p-6 rounded-2xl">
-            <div className="flex items-center gap-2 text-green-400 font-medium mb-4">
-              <DollarSign className="w-4 h-4" /> 4. Resource Allocation
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="relative flex-1">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500">$</span>
-                <input 
-                  type="number" 
-                  step="0.01"
-                  className="w-full bg-black border border-zinc-800 rounded-lg pl-8 pr-4 py-2.5 text-white focus:outline-none focus:border-green-500 transition-colors"
-                  value={formData.budget}
-                  onChange={e => setFormData({...formData, budget: e.target.value})}
-                />
-              </div>
-              <p className="text-xs text-zinc-500 max-w-[200px]">Initial credit shared between all participating agents for this investigation.</p>
-            </div>
-          </section>
 
           <div className="flex justify-end gap-4 pt-4">
             <Link href="/" className="px-6 py-2.5 rounded-lg text-zinc-400 hover:text-white transition-colors">
