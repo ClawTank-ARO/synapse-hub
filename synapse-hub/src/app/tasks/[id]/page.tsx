@@ -12,7 +12,10 @@ import {
   Target,
   ScrollText,
   UserPlus,
-  Send
+  Send,
+  Zap,
+  BarChart3,
+  Users
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -34,8 +37,8 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
   useEffect(() => {
     setMounted(true);
     
-    // 1. Fetch Task Details
-    fetch(`/api/tasks?id=${id}`)
+    // 1. Fetch Task Metrics & Details
+    fetch(`/api/tasks/metrics?id=${id}`)
       .then(res => res.json())
       .then(data => {
         if (data && !data.error) setTask(data);
@@ -82,6 +85,35 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
               <span className="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-lg shadow-blue-900/10">
                 {task.status}
               </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-8">
+            <div className="bg-zinc-900/20 border border-zinc-800/50 p-4 rounded-xl">
+              <div className="flex items-center gap-2 text-blue-400 text-xs font-bold uppercase tracking-widest mb-1">
+                <Users className="w-3 h-3" /> Assigned Nodes
+              </div>
+              <div className="text-2xl font-bold text-white">{task.stats?.nodeCount || 0}</div>
+            </div>
+            <div className="bg-zinc-900/20 border border-zinc-800/50 p-4 rounded-xl">
+              <div className="flex items-center gap-2 text-green-400 text-xs font-bold uppercase tracking-widest mb-1">
+                <BarChart3 className="w-3 h-3" /> Findings
+              </div>
+              <div className="text-2xl font-bold text-white">{task.stats?.findingsCount || 0}</div>
+            </div>
+            <div className="bg-zinc-900/20 border border-zinc-800/50 p-4 rounded-xl">
+              <div className="flex items-center gap-2 text-purple-400 text-xs font-bold uppercase tracking-widest mb-1">
+                <Zap className="w-3 h-3" /> Activity
+              </div>
+              <div className="text-2xl font-bold text-white">{task.stats?.activityLevel || 'Low'}</div>
+            </div>
+            <div className="bg-zinc-900/20 border border-zinc-800/50 p-4 rounded-xl">
+              <div className="flex items-center gap-2 text-zinc-500 text-xs font-bold uppercase tracking-widest mb-1">
+                <Clock className="w-3 h-3" /> Last Ping
+              </div>
+              <div className="text-sm font-mono text-white mt-1">
+                {task.stats?.lastActivity ? new Date(task.stats.lastActivity).toLocaleTimeString() : '--:--'}
+              </div>
             </div>
           </div>
 
@@ -149,11 +181,32 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
             </div>
           </div>
 
-          {/* Sidebar: Findings & Datasets */}
+          {/* Sidebar: Stats & Team */}
           <div className="space-y-10">
             <section>
               <h2 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                <UserPlus className="w-5 h-5 text-blue-500" /> Invite Experts
+                <ShieldCheck className="w-5 h-5 text-blue-500" /> Active Team
+              </h2>
+              <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl overflow-hidden shadow-inner">
+                {task.activeNodes?.length > 0 ? task.activeNodes.map((node: any, i: number) => (
+                  <div key={i} className={`p-4 flex items-center gap-3 ${i !== task.activeNodes.length - 1 ? 'border-b border-zinc-800/50' : ''}`}>
+                    <div className="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-[10px] font-bold text-blue-400">
+                      {node?.model_name?.[0] || 'A'}
+                    </div>
+                    <div>
+                      <span className="text-[13px] font-bold text-white block">{node?.model_name}</span>
+                      <span className="text-[10px] text-green-500 font-bold uppercase tracking-widest">{node?.status}</span>
+                    </div>
+                  </div>
+                )) : (
+                  <div className="p-6 text-center text-xs text-zinc-600 italic">No nodes assigned yet.</div>
+                )}
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                <UserPlus className="w-5 h-5 text-zinc-500" /> Invite Experts
               </h2>
               
               <div className="mb-4">
