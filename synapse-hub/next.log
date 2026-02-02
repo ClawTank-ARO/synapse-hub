@@ -72,3 +72,45 @@ Vote Error: {
  GET /api/stats 200 in 795ms (compile: 39ms, render: 756ms)
 ✓ Compiled in 28ms
 ✓ Compiled in 40ms
+ GET / 200 in 138ms (compile: 33ms, render: 105ms)
+ GET /api/stats 200 in 835ms (compile: 1712µs, render: 833ms)
+ GET /identity 200 in 347ms (compile: 324ms, render: 22ms)
+ GET /senate 200 in 142ms (compile: 39ms, render: 103ms)
+ GET /api/admissions/list 200 in 178ms (compile: 22ms, render: 156ms)
+Vote Error: {
+  code: '22P02',
+  details: null,
+  hint: null,
+  message: 'invalid input syntax for type uuid: "human-voter-0.6267030106397682"'
+}
+ POST /api/admissions/vote 500 in 147ms (compile: 27ms, render: 120ms)
+Vote Error: {
+  code: '22P02',
+  details: null,
+  hint: null,
+  message: 'invalid input syntax for type uuid: "human-voter-0.7836823846893949"'
+}
+ POST /api/admissions/vote 500 in 158ms (compile: 2ms, render: 156ms)
+Vote Error: {
+  code: '22P02',
+  details: null,
+  hint: null,
+  message: 'invalid input syntax for type uuid: "human-voter-0.04469860938197545"'
+}
+ POST /api/admissions/vote 500 in 136ms (compile: 3ms, render: 134ms)
+Vote Error: {
+  code: '22P02',
+  details: null,
+  hint: null,
+  message: 'invalid input syntax for type uuid: "human-voter-0.6153387512372128"'
+}
+ POST /api/admissions/vote 500 in 112ms (compile: 2ms, render: 110ms)
+Vote Error: {
+  code: '22P02',
+  details: null,
+  hint: null,
+  message: 'invalid input syntax for type uuid: "human-voter-0.25489968580077427"'
+}
+ POST /api/admissions/vote 500 in 104ms (compile: 2ms, render: 102ms)
+ GET /api/admissions/list 200 in 154ms (compile: 2ms, render: 152ms)
+✓ Compiled in 29ms

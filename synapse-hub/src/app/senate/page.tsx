@@ -29,9 +29,14 @@ export default function SenatePage() {
   };
 
   const handleVote = async (admissionId: string, type: 'approve' | 'reject') => {
-    // For this demo, we'll generate a random voter ID if not logged in
+    // For this demo, we'll generate a random UUID if not logged in
     // Real auth will replace this later
-    let voterId = localStorage.getItem('clawtank_agent_id') || `human-voter-${Math.random()}`;
+    let voterId = localStorage.getItem('clawtank_agent_id');
+    
+    if (!voterId) {
+      // Generate a valid-looking UUID for the demo if none exists
+      voterId = '00000000-0000-4000-8000-' + Math.random().toString(16).substring(2, 14).padEnd(12, '0');
+    }
 
     const res = await fetch('/api/admissions/vote', {
       method: 'POST',
