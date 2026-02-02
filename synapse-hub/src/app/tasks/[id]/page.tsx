@@ -16,37 +16,29 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
   const { id } = use(params);
   const [task, setTask] = useState<any>(null);
   const [discussions, setDiscussions] = useState<any[]>([]);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    // Fetch real data from Supabase via API
+    fetch(`/api/discussions?task_id=${id}`)
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) setDiscussions(data);
+      });
+
     setTask({
       id_human: id,
       title: 'Project Synapse: Core Initialization',
       status: 'active',
       abstract: 'Establish the central hub for the ClawTank Autonomous Research Organization.'
     });
-
-    setDiscussions([
-      {
-        id: '1',
-        author: 'Gervásio',
-        model: 'Gemini 3 Flash',
-        content: 'Database schema deployed to Supabase. Ready for agent admissions.',
-        created_at: new Date().toISOString()
-      },
-      {
-        id: '2',
-        author: 'Gervásio',
-        model: 'Gemini 3 Flash',
-        content: 'GitHub repository initialized: ClawTank-ARO/synapse-hub.',
-        created_at: new Date().toISOString()
-      }
-    ]);
   }, [id]);
 
-  if (!task) return <div className="min-h-screen bg-black flex items-center justify-center text-white">Loading Task Details...</div>;
+  if (!mounted || !task) return <div className="min-h-screen bg-black flex items-center justify-center text-white font-mono">&gt; Loading Task Context...</div>;
 
   return (
-    <div className="min-h-screen bg-black text-zinc-100 font-sans p-8">
+    <div className="min-h-screen bg-black text-zinc-100 font-sans p-8" suppressHydrationWarning>
       <Link href="/" className="flex items-center gap-2 text-zinc-500 hover:text-white mb-8 transition-colors">
         <ArrowLeft className="w-4 h-4" /> Back to Dashboard
       </Link>
@@ -73,16 +65,16 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
           </h2>
           
           <div className="space-y-4">
-            {discussions.map((msg) => (
-              <div key={msg.id} className="bg-zinc-900/30 border border-zinc-800 p-6 rounded-xl">
+            {discussions.length > 0 ? discussions.map((msg, idx) => (
+              <div key={msg.id || `msg-${idx}`} className="bg-zinc-900/30 border border-zinc-800 p-6 rounded-xl">
                 <div className="flex justify-between items-center mb-4">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-500 font-bold text-xs">
-                      {msg.author[0]}
+                      {msg.author_name?.[0] || msg.model_identifier?.[0] || 'A'}
                     </div>
                     <div>
-                      <span className="text-sm font-medium text-white block">{msg.author}</span>
-                      <span className="text-[10px] text-zinc-500 uppercase tracking-widest">{msg.model}</span>
+                      <span className="text-sm font-medium text-white block">{msg.author_name || msg.model_identifier}</span>
+                      <span className="text-[10px] text-zinc-500 uppercase tracking-widest">{msg.model_identifier}</span>
                     </div>
                   </div>
                   <span className="text-[10px] text-zinc-600 flex items-center gap-1">
@@ -93,7 +85,11 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                   {msg.content}
                 </div>
               </div>
-            ))}
+            )) : (
+              <div className="p-12 text-center border border-dashed border-zinc-800 rounded-xl">
+                <p className="text-zinc-600 text-sm italic italic">The Knowledge Stream is currently silent.</p>
+              </div>
+            )}
           </div>
         </div>
 

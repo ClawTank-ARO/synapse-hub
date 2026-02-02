@@ -15,54 +15,15 @@
 - Environments: .env.local
 
 ✓ Starting...
-✓ Ready in 839ms
-Error: Requested and resolved page mismatch: /tasks//[id/]/page /tasks/[id/]/page
-    at ignore-listed frames
-⨯ unhandledRejection: Error: Requested and resolved page mismatch: /tasks//[id/]/page /tasks/[id/]/page
-    at ignore-listed frames
-⨯ unhandledRejection:  Error: Requested and resolved page mismatch: /tasks//[id/]/page /tasks/[id/]/page
-    at ignore-listed frames
- GET / 200 in 922ms (compile: 739ms, render: 183ms)
- GET / 200 in 40ms (compile: 5ms, render: 35ms)
-⚠ Cross origin request detected from english-labels-leeds-transmission.trycloudflare.com to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+✓ Ready in 964ms
+ GET / 200 in 797ms (compile: 605ms, render: 193ms)
+⚠ Cross origin request detected from forecasts-appendix-navigate-sticker.trycloudflare.com to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
- GET /api/stats 200 in 1552ms (compile: 103ms, render: 1450ms)
- GET /tasks/undefined 200 in 955ms (compile: 923ms, render: 32ms)
- GET /tasks/undefined 200 in 51ms (compile: 26ms, render: 25ms)
- GET / 200 in 21ms (compile: 4ms, render: 17ms)
- GET /api/stats 200 in 752ms (compile: 2ms, render: 749ms)
- GET /api/stats 200 in 768ms (compile: 2ms, render: 766ms)
- GET / 200 in 111ms (compile: 46ms, render: 64ms)
- GET / 200 in 16ms (compile: 3ms, render: 13ms)
- GET / 200 in 16ms (compile: 2ms, render: 14ms)
- GET / 200 in 20ms (compile: 3ms, render: 17ms)
- GET / 200 in 21ms (compile: 2ms, render: 19ms)
- GET / 200 in 18ms (compile: 2ms, render: 15ms)
- GET / 200 in 20ms (compile: 3ms, render: 17ms)
- GET / 200 in 20ms (compile: 2ms, render: 18ms)
- GET / 200 in 15ms (compile: 1967µs, render: 13ms)
- GET / 200 in 17ms (compile: 2ms, render: 15ms)
- GET / 200 in 15ms (compile: 2ms, render: 13ms)
- GET / 200 in 16ms (compile: 1896µs, render: 14ms)
- GET / 200 in 14ms (compile: 1983µs, render: 12ms)
- GET / 200 in 15ms (compile: 3ms, render: 12ms)
- GET / 200 in 15ms (compile: 1889µs, render: 13ms)
- GET / 200 in 14ms (compile: 1964µs, render: 13ms)
- GET / 200 in 81ms (compile: 39ms, render: 43ms)
- GET / 200 in 15ms (compile: 1874µs, render: 13ms)
- GET / 200 in 13ms (compile: 1958µs, render: 12ms)
- GET / 200 in 14ms (compile: 2ms, render: 12ms)
- GET / 200 in 15ms (compile: 1873µs, render: 13ms)
- GET / 200 in 18ms (compile: 1867µs, render: 16ms)
- GET / 200 in 20ms (compile: 2ms, render: 17ms)
- GET / 200 in 18ms (compile: 2ms, render: 16ms)
- GET / 200 in 19ms (compile: 2ms, render: 17ms)
- GET / 200 in 14ms (compile: 1734µs, render: 12ms)
- GET / 200 in 17ms (compile: 1825µs, render: 15ms)
- GET / 200 in 18ms (compile: 2ms, render: 16ms)
- GET / 200 in 18ms (compile: 2ms, render: 15ms)
- GET / 200 in 20ms (compile: 2ms, render: 18ms)
- GET / 200 in 19ms (compile: 2ms, render: 17ms)
- GET / 200 in 17ms (compile: 5ms, render: 11ms)
- GET / 200 in 14ms (compile: 1733µs, render: 12ms)
- GET / 200 in 14ms (compile: 2ms, render: 12ms)
+ GET /api/stats 200 in 1793ms (compile: 81ms, render: 1711ms)
+ GET /tasks/undefined 200 in 452ms (compile: 425ms, render: 27ms)
+ GET / 200 in 17ms (compile: 3ms, render: 14ms)
+ GET /api/stats 200 in 941ms (compile: 2ms, render: 939ms)
+ GET /api/stats 200 in 1202ms (compile: 1926µs, render: 1201ms)
+✓ Compiled in 391ms
+ GET /api/stats 200 in 943ms (compile: 3ms, render: 940ms)
+✓ Compiled in 44ms

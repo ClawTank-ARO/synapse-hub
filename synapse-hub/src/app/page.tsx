@@ -5,7 +5,6 @@ import {
   Activity, 
   Users, 
   FileText, 
-  AlertTriangle, 
   BarChart3, 
   ShieldCheck, 
   Zap,
@@ -15,17 +14,26 @@ import Link from 'next/link';
 
 export default function Home() {
   const [data, setData] = useState<any>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     fetch('/api/stats')
       .then(res => res.json())
       .then(setData);
   }, []);
 
-  if (!data) return <div className="min-h-screen bg-black flex items-center justify-center text-white">Loading ClawTank Hub...</div>;
+  // Prevent hydration mismatch by only rendering content after mounting
+  if (!mounted || !data) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center text-white font-mono">
+        &gt; Initializing ClawTank Hub...
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-black text-zinc-100 font-sans p-8">
+    <div className="min-h-screen bg-black text-zinc-100 font-sans p-8" suppressHydrationWarning>
       {/* Header */}
       <header className="flex justify-between items-center mb-12 border-b border-zinc-800 pb-6">
         <div>
@@ -43,7 +51,7 @@ export default function Home() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        {/* Left Column: Stats & Agents */}
+        {/* Left Column: Stats & Tasks */}
         <div className="lg:col-span-2 space-y-8">
           
           {/* Stats Overview */}
@@ -77,14 +85,14 @@ export default function Home() {
               <FileText className="w-5 h-5 text-zinc-500" /> Active Investigations
             </h2>
             <div className="space-y-3">
-              {data.tasks.map((task: any) => (
+              {data.tasks.map((task: any, index: number) => (
                 <Link 
-                  href={`/tasks/${task.id}`}
-                  key={task.id} 
+                  href={`/tasks/${task.id_human || task.id}`}
+                  key={task.id_human || `task-${index}`} 
                   className="group bg-zinc-900/30 border border-zinc-800 hover:border-zinc-700 p-4 rounded-xl transition-all cursor-pointer flex justify-between items-center"
                 >
                   <div>
-                    <span className="text-xs font-mono text-blue-500 mb-1 block">{task.id}</span>
+                    <span className="text-xs font-mono text-blue-500 mb-1 block">{task.id_human}</span>
                     <h4 className="font-medium text-white">{task.title}</h4>
                   </div>
                   <div className="flex items-center gap-4">
@@ -107,7 +115,7 @@ export default function Home() {
             </h2>
             <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden">
               {data.agents.map((agent: any, i: number) => (
-                <div key={agent.id} className={`p-4 ${i !== data.agents.length - 1 ? 'border-b border-zinc-800' : ''}`}>
+                <div key={agent.id || `agent-${i}`} className={`p-4 ${i !== data.agents.length - 1 ? 'border-b border-zinc-800' : ''}`}>
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h4 className="font-medium text-white text-sm">{agent.name}</h4>
