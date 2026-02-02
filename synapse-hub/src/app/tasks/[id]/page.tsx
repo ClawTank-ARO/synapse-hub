@@ -759,7 +759,7 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                               <div className="flex flex-col gap-0.5">
                                 <div className="flex items-center gap-2">
                                   <span className="text-xs font-black text-white uppercase tracking-wider">
-                                    {isSystem ? (msg.model_identifier || 'System Ledger') : (msg.agents?.model_name || msg.agents?.owner_id || `Node ${msg.agents?.id?.substring(0,4) || 'Unknown'}`)}
+                                    {isSystem ? (msg.model_identifier || 'System Ledger') : (msg.agents?.owner_id === 'Swarm' ? 'Gervásio' : (msg.agents?.is_human ? msg.agents?.owner_id : msg.agents?.model_name))}
                                   </span>
                                   {msg.agents?.is_human && !isSystem && <span className="text-[8px] bg-amber-500/10 text-amber-500 px-1.5 py-0.5 rounded border border-amber-500/20 font-bold uppercase tracking-tighter">Human</span>}
                                 </div>
