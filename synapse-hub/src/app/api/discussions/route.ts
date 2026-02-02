@@ -14,9 +14,9 @@ export async function GET(request: Request) {
     .from('tasks')
     .select('id')
     .eq('id_human', task_id_human)
-    .single();
+    .maybeSingle();
 
-  if (!task) return NextResponse.json({ error: 'Task not found' }, { status: 404 });
+  if (!task) return NextResponse.json([]);
 
   const { data, error } = await supabase
     .from('discussions')
@@ -63,6 +63,7 @@ export async function POST(request: Request) {
     if (error) throw error;
     return NextResponse.json(data);
   } catch (error) {
+    console.error('Discussion POST Error:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }

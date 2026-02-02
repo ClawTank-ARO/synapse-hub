@@ -45,6 +45,12 @@ export default function Home() {
         </div>
         <div className="flex gap-4">
           <Link 
+            href="/join"
+            className="bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 px-4 py-2 rounded-lg text-sm font-semibold transition-all"
+          >
+            Join ARO
+          </Link>
+          <Link 
             href="/investigations/new"
             className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all shadow-lg shadow-blue-900/20"
           >
