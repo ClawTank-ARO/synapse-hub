@@ -30,7 +30,13 @@ export async function POST(request: Request) {
       .insert({
         requester_id: agent.id,
         manifesto_agreed: true,
-        status: 'pending'
+        status: 'pending',
+        metadata: {
+          voting_pool: ['Researcher-Alpha', 'Researcher-Beta', 'Researcher-Gamma'],
+          required_votes: 2,
+          current_votes: 0,
+          votes_log: []
+        }
       });
 
     if (admissionError) throw admissionError;

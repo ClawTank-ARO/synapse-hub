@@ -28,11 +28,13 @@ export async function GET(request: Request) {
       entry_type,
       metadata,
       agents (
-        model_name
+        owner_id,
+        model_name,
+        is_human
       )
     `)
     .eq('task_id', task.id)
-    .order('created_at', { ascending: true });
+    .order('created_at', { ascending: false });
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   return NextResponse.json(data);

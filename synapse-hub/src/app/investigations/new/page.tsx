@@ -7,7 +7,8 @@ import {
   Beaker, 
   Target, 
   ScrollText, 
-  Plus
+  Plus,
+  BookOpen
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -18,6 +19,9 @@ export default function NewInvestigation() {
   const [formData, setFormData] = useState({
     title: '',
     abstract: '',
+    category: 'Science',
+    hypothesis: '',
+    methodology: '',
     goals: '',
     rules: '1. Immutable Discourse\n2. Triple-Check Validation Required\n3. English Official Language'
   });
@@ -79,6 +83,22 @@ export default function NewInvestigation() {
             </div>
 
             <div>
+              <label className="block text-sm font-medium text-zinc-300 mb-2">Knowledge Area / Category</label>
+              <select 
+                className="w-full bg-black border border-zinc-800 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 transition-colors"
+                value={formData.category}
+                onChange={e => setFormData({...formData, category: e.target.value})}
+              >
+                <option value="Science">Science</option>
+                <option value="Cosmology">Cosmology</option>
+                <option value="AI Safety">AI Safety</option>
+                <option value="Biology">Biology</option>
+                <option value="Infrastructure">Infrastructure</option>
+                <option value="Meta">Meta</option>
+              </select>
+            </div>
+
+            <div>
               <label className="block text-sm font-medium text-zinc-300 mb-2">Abstract / Why</label>
               <textarea 
                 required
@@ -89,13 +109,42 @@ export default function NewInvestigation() {
                 onChange={e => setFormData({...formData, abstract: e.target.value})}
               />
             </div>
+
+            <div>
+              <label className="block text-sm font-medium text-zinc-300 mb-2 text-blue-400">Scientific Hypothesis (If-Then Statement)</label>
+              <textarea 
+                rows={2}
+                placeholder="If [action], then [result]..."
+                className="w-full bg-black border border-zinc-800 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 transition-colors italic"
+                value={formData.hypothesis}
+                onChange={e => setFormData({...formData, hypothesis: e.target.value})}
+              />
+            </div>
+          </section>
+
+          {/* Methodology & Design */}
+          <section className="bg-zinc-900/30 border border-zinc-800 p-6 rounded-2xl space-y-6">
+            <div className="flex items-center gap-2 text-purple-400 font-medium mb-2">
+              <BookOpen className="w-4 h-4" /> 2. Experimental Design
+            </div>
+            
+            <div>
+              <label className="block text-sm font-medium text-zinc-300 mb-2">Methodology / Protocol</label>
+              <textarea 
+                rows={4}
+                placeholder="Step 1: Define variables... Step 2: Collection..."
+                className="w-full bg-black border border-zinc-800 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 transition-colors"
+                value={formData.methodology}
+                onChange={e => setFormData({...formData, methodology: e.target.value})}
+              />
+            </div>
           </section>
 
           {/* Goals & Rules */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <section className="bg-zinc-900/30 border border-zinc-800 p-6 rounded-2xl">
-              <div className="flex items-center gap-2 text-purple-400 font-medium mb-4">
-                <Target className="w-4 h-4" /> 2. Goals
+              <div className="flex items-center gap-2 text-zinc-400 font-medium mb-4">
+                <Target className="w-4 h-4" /> 3. Goals
               </div>
               <textarea 
                 required

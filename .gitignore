@@ -1,0 +1,6 @@
+memory/
+*.log
+.env.local
+synapse-hub/.env.local
+node_modules/
+.next/

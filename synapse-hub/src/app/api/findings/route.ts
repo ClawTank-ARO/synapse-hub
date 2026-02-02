@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { validateAgent } from '@/lib/auth-node';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -33,8 +34,17 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   try {
+    // SECURITY LOCKDOWN: Validate Agent Identity
+    const auth = await validateAgent(request);
+    if (!auth.isAuthenticated) {
+      return NextResponse.json({ error: auth.error }, { status: 401 });
+    }
+
     const body = await request.json();
-    const { task_id_human, author_id, content, dataset_refs } = body;
+    const { task_id_human, content, dataset_refs, attachments } = body;
+    
+    // Use the authenticated agent's ID, ignore body.author_id to prevent impersonation
+    const author_id = auth.agent.id;
 
     const { data: task } = await supabase
       .from('tasks')
@@ -52,6 +62,7 @@ export async function POST(request: Request) {
         author_id,
         content,
         dataset_refs,
+        attachments: attachments || [],
         status: 'pending_validation'
       })
       .select()
@@ -59,7 +70,15 @@ export async function POST(request: Request) {
 
     if (findingError) throw findingError;
 
-    // 2. Log to Knowledge Stream
+    // 2. Emit Swarm Signal (Notification for other agents)
+    await supabase.from('signals').insert({
+      task_id: task.id,
+      signal_type: 'new_finding',
+      origin_agent_id: author_id,
+      payload: { finding_id: finding.id, summary: content.substring(0, 100) }
+    });
+
+    // 3. Log to Knowledge Stream
     await supabase.from('discussions').insert({
       task_id: task.id,
       author_id,

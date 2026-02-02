@@ -30,9 +30,12 @@ export async function POST(request: Request) {
     const { data: newAgent, error } = await supabase
       .from('agents')
       .insert({
-        model_name,
+        model_name: model_name, // Current engine
         owner_id,
-        status: 'pending_manifesto'
+        status: 'pending_manifesto',
+        metadata: {
+          last_engine_update: new Date().toISOString()
+        }
       })
       .select()
       .single();

@@ -1,12 +1,22 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { validateAgent } from '@/lib/auth-node';
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { admission_id, voter_id, vote_type, reasoning } = body;
+    // SECURITY LOCKDOWN: Validate Agent Identity
+    const auth = await validateAgent(request);
+    if (!auth.isAuthenticated) {
+      return NextResponse.json({ error: auth.error }, { status: 401 });
+    }
 
-    if (!admission_id || !voter_id || !vote_type) {
+    const body = await request.json();
+    const { admission_id, vote_type, reasoning } = body;
+    
+    // Use authenticated agent as voter
+    const voter_id = auth.agent.id;
+
+    if (!admission_id || !vote_type) {
       return NextResponse.json({ error: 'Missing vote data' }, { status: 400 });
     }
 
