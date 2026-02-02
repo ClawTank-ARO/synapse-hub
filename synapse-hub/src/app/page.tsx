@@ -338,12 +338,12 @@ export default function Home() {
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="border-b border-zinc-800/50 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600">
-                      <th className="px-10 py-8">Branch</th>
-                      <th className="px-10 py-8">Unit Name</th>
-                      <th className="px-10 py-8">Domain</th>
-                      <th className="px-10 py-8 text-center">Nodes</th>
-                      <th className="px-10 py-8 text-center">Evidence</th>
-                      <th className="px-10 py-8 text-right">Progress</th>
+                      <th className="px-6 py-8">Branch</th>
+                      <th className="px-6 py-8">Unit Name</th>
+                      <th className="px-6 py-8 text-center">Domain</th>
+                      <th className="px-6 py-8 text-center">Nodes</th>
+                      <th className="px-6 py-8 text-center">Evidence</th>
+                      <th className="px-6 py-8 text-right">Progress</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-zinc-800/30">
@@ -352,35 +352,35 @@ export default function Home() {
                         key={task.id_human}
                         className="group hover:bg-blue-600/[0.03] transition-all cursor-pointer"
                       >
-                        <td className="px-10 py-8">
-                          <Link href={`/tasks/${task.id_human}`} className="text-[10px] font-mono text-blue-500 bg-blue-500/5 border border-blue-500/10 px-4 py-2 rounded-xl uppercase tracking-widest group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <td className="px-6 py-8 whitespace-nowrap">
+                          <Link href={`/tasks/${task.id_human}`} className="text-[10px] font-mono text-blue-500 bg-blue-500/5 border border-blue-500/10 px-3 py-1.5 rounded-lg uppercase tracking-widest group-hover:bg-blue-600 group-hover:text-white transition-all inline-block">
                             {task.id_human}
                           </Link>
                         </td>
-                        <td className="px-10 py-8">
-                          <Link href={`/tasks/${task.id_human}`} className="block group-hover:translate-x-1 transition-transform">
+                        <td className="px-6 py-8">
+                          <Link href={`/tasks/${task.id_human}`} className="block group-hover:translate-x-1 transition-transform min-w-[200px]">
                             <h4 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors uppercase italic tracking-tighter">{task.title}</h4>
                             <p className="text-xs text-zinc-500 line-clamp-1 mt-1 font-medium italic opacity-60">{task.abstract}</p>
                           </Link>
                         </td>
-                        <td className="px-10 py-8">
-                          <span className="text-[9px] font-black text-zinc-500 border border-zinc-800/80 px-3 py-1.5 rounded-full uppercase tracking-widest bg-black/20">
+                        <td className="px-6 py-8 text-center">
+                          <span className="text-[9px] font-black text-zinc-400 border border-zinc-800 px-3 py-1 rounded-full uppercase tracking-widest bg-black/40 inline-block">
                             {task.category || 'Science'}
                           </span>
                         </td>
-                        <td className="px-10 py-8 text-center">
+                        <td className="px-6 py-8 text-center">
                           <div className="flex items-center justify-center gap-2 text-zinc-400 group-hover:text-blue-400 transition-colors">
                             <Users className="w-4 h-4" />
                             <span className="text-sm font-black font-mono">{task.stats.participants}</span>
                           </div>
                         </td>
-                        <td className="px-10 py-8 text-center">
+                        <td className="px-6 py-8 text-center">
                           <div className="flex items-center justify-center gap-2 text-zinc-400 group-hover:text-purple-400 transition-colors">
                             <ShieldCheck className="w-4 h-4" />
                             <span className="text-sm font-black font-mono">{task.stats.findings}</span>
                           </div>
                         </td>
-                        <td className="px-10 py-8 text-right">
+                        <td className="px-6 py-8 text-right">
                           <div className="flex items-center justify-end gap-6">
                             <div className={`px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest ${
                               task.status === 'active' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'bg-zinc-800 text-zinc-500 border border-zinc-700'
