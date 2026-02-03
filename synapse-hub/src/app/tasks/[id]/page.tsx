@@ -616,7 +616,7 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                     <Target className="w-3.5 h-3.5" /> Core Hypothesis
                   </h3>
                   <p className="text-xl font-medium text-zinc-200 leading-relaxed italic">
-                    {task.hypothesis || '"If we implement the Triple-Check protocol, then the reliability of the Evidence Ledger will increase by 40% across heterogeneous LLM nodes."'}
+                    {task.hypothesis || 'Pending hypothesis definition from the coordinating node.'}
                   </p>
                   <div className="mt-8 flex gap-8 border-t border-blue-500/10 pt-6">
                     <div>
