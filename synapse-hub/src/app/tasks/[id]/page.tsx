@@ -77,6 +77,7 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
   const [activeIdeaThread, setActiveIdeaThread] = useState<string | null>(null);
   const [newIdeaThreadMsg, setNewIdeaThreadMsg] = useState('');
   const [findingThreads, setFindingThreads] = useState<Record<string, any[]>>({});
+  const [lastIdeaFetch, setLastIdeaFetch] = useState<Record<string, number>>({});
   const [activeFindingThread, setActiveFindingThread] = useState<string | null>(null);
   const [newFindingThreadMsg, setNewFindingThreadMsg] = useState('');
   const [ragQuery, setRagQuery] = useState('');
@@ -104,11 +105,11 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
 
   const fetchIdeaThread = async (ideaId: string) => {
     try {
-      // For now, using metadata filter in API or separate route
       const res = await fetch(`/api/discussions?idea_id=${ideaId}`);
       const data = await res.json();
       if (Array.isArray(data)) {
         setIdeaThreads(prev => ({ ...prev, [ideaId]: data }));
+        setLastIdeaFetch(prev => ({ ...prev, [ideaId]: Date.now() }));
       }
     } catch (err) { console.error(err); }
   };
@@ -409,7 +410,15 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
 
     fetch(`/api/ideas?task_id=${id}`)
       .then(res => res.json())
-      .then(iData => { if (Array.isArray(iData)) setIdeas(iData); });
+      .then(iData => { 
+        if (Array.isArray(iData)) {
+          setIdeas(iData); 
+          // Auto-refresh active thread if it exists
+          if (activeIdeaThread) {
+            fetchIdeaThread(activeIdeaThread);
+          }
+        }
+      });
 
     fetch(`/api/bounties?task_id=${id}`)
       .then(res => res.json())
@@ -1301,66 +1310,54 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                 <div className="grid grid-cols-1 gap-6">
                   {ideas.length > 0 ? ideas.map((idea) => (
                     <div key={idea.id} className="bg-zinc-900/40 border border-zinc-800 p-8 rounded-3xl group backdrop-blur-sm relative overflow-hidden">
-                      <div className="flex justify-between items-start mb-6">
-                        <div className="flex flex-col gap-1">
-                          <span className="text-[10px] font-black uppercase text-yellow-500 tracking-[0.2em]">
-                            {idea.vetoed_by_human ? 'Vetoed by Human' : 'Active Proposal'}
-                          </span>
-                          <h4 className={`text-xl font-bold text-white group-hover:text-yellow-500 transition-colors ${idea.vetoed_by_human ? 'line-through text-zinc-600' : ''}`}>
-                            {idea.title}
-                          </h4>
-                        </div>
-                        {!isHuman ? (
-                          <div className="flex items-center gap-2 bg-black/40 border border-zinc-800 p-2 rounded-xl">
-                            <button className="p-2 hover:text-green-500 transition-colors"><ChevronRight className="w-4 h-4 -rotate-90" /></button>
-                            <span className="text-sm font-mono font-bold text-white">{idea.votes_up - idea.votes_down}</span>
-                            <button className="p-2 hover:text-red-500 transition-colors"><ChevronRight className="w-4 h-4 rotate-90" /></button>
+                        <div className="flex justify-between items-start mb-6">
+                          <div className="flex flex-col gap-1">
+                            <span className="text-[10px] font-black uppercase text-yellow-500 tracking-[0.2em]">
+                              Active Proposal
+                            </span>
+                            <h4 className="text-xl font-bold text-white group-hover:text-yellow-500 transition-colors">
+                              {idea.title}
+                            </h4>
                           </div>
-                        ) : (
                           <div className="flex items-center gap-3">
                             <div className="bg-zinc-900 border border-zinc-800 px-3 py-2 rounded-xl flex items-center gap-2">
                               <Users className="w-3 h-3 text-zinc-500" />
-                              <span className="text-xs font-mono font-bold text-white">{idea.votes_up - idea.votes_down}</span>
+                              <span className="text-sm font-mono font-bold text-white">{idea.votes_up - idea.votes_down}</span>
                             </div>
                             <button 
-                              onClick={() => handleCounterProposeIdea(idea)}
-                              className="px-4 py-2 rounded-xl text-[9px] font-black uppercase transition-all bg-zinc-800 text-zinc-300 hover:bg-blue-600/20 hover:text-blue-400 border border-zinc-700"
-                              title="Counter-Proposal"
+                              onClick={() => {
+                                if (activeIdeaThread === idea.id) setActiveIdeaThread(null);
+                                else {
+                                  setActiveIdeaThread(idea.id);
+                                  fetchIdeaThread(idea.id);
+                                }
+                              }}
+                              className={`px-4 py-2 border rounded-xl text-[9px] font-black uppercase transition-all flex items-center gap-2 ${
+                                activeIdeaThread === idea.id ? 'bg-amber-600 border-amber-500 text-white shadow-[0_0_15px_rgba(217,119,6,0.3)]' : 'bg-zinc-800 border-zinc-700 text-zinc-400 hover:text-white'
+                              }`}
                             >
-                              <Zap className="w-3 h-3 inline mr-1" /> Counter-Propose
+                              <MessageSquare className="w-3 h-3" /> {activeIdeaThread === idea.id ? 'Close Thread' : 'Scientific Discussion'}
                             </button>
                           </div>
-                        )}
-                      </div>
-                      <p className="text-zinc-400 text-sm leading-relaxed mb-8 whitespace-pre-wrap">{idea.content}</p>
-                      
-                      <div className="flex justify-between items-center pt-6 border-t border-zinc-800/50">
-                        <div className="flex items-center gap-2">
-                          <div className="w-6 h-6 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[8px] font-black text-zinc-500">
-                            {idea.author?.owner_id?.[0] || 'A'}
-                          </div>
-                          <span className="text-[10px] font-bold text-zinc-500">By {idea.author?.owner_id}</span>
                         </div>
-                        <div className="flex gap-3">
-                          <button 
-                            onClick={() => {
-                              if (activeIdeaThread === idea.id) setActiveIdeaThread(null);
-                              else {
-                                setActiveIdeaThread(idea.id);
-                                fetchIdeaThread(idea.id);
-                              }
-                            }}
-                            className={`px-4 py-2 border rounded-xl text-[9px] font-black uppercase transition-all flex items-center gap-2 ${
-                              activeIdeaThread === idea.id ? 'bg-amber-600 border-amber-500 text-white' : 'bg-zinc-800 border-zinc-700 text-zinc-400 hover:text-white'
-                            }`}
-                          >
-                            <Activity className="w-3 h-3" /> {activeIdeaThread === idea.id ? 'Close Logs' : 'Scientific Discussion & Efforts'}
-                          </button>
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-8 whitespace-pre-wrap">{idea.content}</p>
+                        
+                        <div className="flex justify-between items-center pt-6 border-t border-zinc-800/50">
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[10px] font-black text-zinc-500">
+                              {idea.author?.is_human ? 'H' : (idea.author?.model_name === 'Gervásio (Core)' ? 'G' : 'A')}
+                            </div>
+                            <div>
+                              <span className="text-[9px] font-black text-zinc-600 uppercase tracking-widest block">Unit Architect</span>
+                              <span className="text-xs font-bold text-zinc-400">
+                                {idea.author?.owner_id === 'Swarm' ? 'Gervásio' : (idea.author?.is_human ? idea.author?.owner_id : (idea.author?.model_name || 'Node Unknown'))}
+                              </span>
+                            </div>
+                          </div>
                           <button className="px-4 py-2 bg-blue-600/10 border border-blue-500/20 text-blue-400 text-[9px] font-black uppercase rounded-lg hover:bg-blue-600 hover:text-white transition-all">
                             Spawn Task from Idea
                           </button>
                         </div>
-                      </div>
 
                       {/* Idea Specific Incubation Thread */}
                       {activeIdeaThread === idea.id && (
