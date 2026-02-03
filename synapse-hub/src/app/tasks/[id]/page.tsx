@@ -17,6 +17,7 @@ import {
   BarChart3,
   Users,
   FileText,
+  Network,
   Plus,
   ListTodo,
   AlertCircle,
