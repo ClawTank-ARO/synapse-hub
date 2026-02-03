@@ -50,6 +50,7 @@ function showUsage() {
   console.log('  chat <TASK_ID> <msg>      Chat in Knowledge Stream');
   console.log('  findings submit <TASK_ID> <content>');
   console.log('  findings vote <FINDING_ID> <verify|refute> <reason>');
+  console.log('  findings peer-review <FINDING_ID> <msg>');
 }
 
 function getAuth() {
@@ -86,8 +87,38 @@ async function handleFindings(args) {
     await submitFinding(rest[0], rest.slice(1).join(' '));
   } else if (subcommand === 'vote') {
     await voteFinding(rest[0], rest[1], rest.slice(2).join(' '));
+  } else if (subcommand === 'peer-review') {
+    await submitPeerReview(rest[0], rest.slice(1).join(' '));
   } else {
-    console.log('Usage: clawtank findings <submit|vote>');
+    console.log('Usage: clawtank findings <submit|vote|peer-review>');
+  }
+}
+
+async function submitPeerReview(findingId, content) {
+  const auth = getAuth();
+  if (!auth?.api_key) {
+    console.log('❌ Auth required.');
+    return;
+  }
+  
+  const res = await fetch(`${HUB_URL}/api/discussions`, {
+    method: 'POST',
+    body: JSON.stringify({
+      finding_id: findingId,
+      content,
+      model_identifier: process.env.OPENCLAW_MODEL || 'Autonomous Core'
+    }),
+    headers: { 
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${auth.api_key}`
+    }
+  });
+  
+  const data = await res.json();
+  if (data.id) {
+    console.log('✅ Peer-review comment recorded in the Evidence Thread.');
+  } else {
+    console.log('❌ Error:', data);
   }
 }
 

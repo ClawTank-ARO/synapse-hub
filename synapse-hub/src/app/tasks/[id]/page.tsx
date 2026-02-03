@@ -73,6 +73,9 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
   const [newIdea, setNewIdea] = useState({ title: '', content: '' });
   const [newDataset, setNewDataset] = useState({ name: '', url: '', format: 'CSV' });
   const [newMessage, setNewMessage] = useState('');
+  const [findingThreads, setFindingThreads] = useState<Record<string, any[]>>({});
+  const [activeFindingThread, setActiveFindingThread] = useState<string | null>(null);
+  const [newFindingThreadMsg, setNewFindingThreadMsg] = useState('');
   const [ragQuery, setRagQuery] = useState('');
   const [ragResult, setRagResult] = useState<any>(null);
   const [isQuerying, setIsQuerying] = useState(false);
@@ -85,6 +88,39 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
   const [activeAgentId, setActiveAgentId] = useState<string | null>(null);
   const [agentStatus, setAgentStatus] = useState<string | null>(null);
   const [isJoined, setIsJoined] = useState(false);
+
+  const fetchFindingThread = async (findingId: string) => {
+    try {
+      const res = await fetch(`/api/discussions?finding_id=${findingId}`);
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        setFindingThreads(prev => ({ ...prev, [findingId]: data }));
+      }
+    } catch (err) { console.error(err); }
+  };
+
+  const handleSendFindingThreadMessage = async (e: React.FormEvent, findingId: string) => {
+    e.preventDefault();
+    if (!newFindingThreadMsg.trim() || !activeAgentId) return;
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('/api/discussions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          finding_id: findingId,
+          agent_id: activeAgentId,
+          content: newFindingThreadMsg,
+          model_identifier: isHuman ? 'Human Directive' : 'Autonomous Core'
+        })
+      });
+      if (res.ok) {
+        setNewFindingThreadMsg('');
+        fetchFindingThread(findingId);
+      }
+    } catch (err) { console.error(err); }
+    finally { setIsSubmitting(false); }
+  };
 
   const handleVeto = async (targetId: string, type: 'idea' | 'finding') => {
     if (!activeAgentId || !isHuman) return;
@@ -995,13 +1031,27 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                           </div>
                         </div>
                         <div className="flex gap-3">
+                          <button 
+                            onClick={() => {
+                              if (activeFindingThread === f.id) setActiveFindingThread(null);
+                              else {
+                                setActiveFindingThread(f.id);
+                                fetchFindingThread(f.id);
+                              }
+                            }}
+                            className={`px-6 py-2 border rounded-xl text-[10px] font-black uppercase transition-all flex items-center gap-2 ${
+                              activeFindingThread === f.id ? 'bg-purple-600 border-purple-500 text-white' : 'bg-zinc-800 border-zinc-700 text-zinc-400 hover:text-white'
+                            }`}
+                          >
+                            <MessageSquare className="w-3 h-3" /> {activeFindingThread === f.id ? 'Close Debate' : 'Scientific Debate'}
+                          </button>
                           {f.status !== 'verified' && (
                             <>
                               <button 
                                 onClick={() => handleValidateFinding(f.id)} 
                                 className="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-black uppercase rounded-xl transition-all shadow-lg shadow-blue-900/20 flex items-center gap-2"
                               >
-                                <CheckCircle2 className="w-3 h-3" /> Verify Evidence
+                                <CheckCircle className="w-3 h-3" /> Verify Evidence
                               </button>
                               <button 
                                 onClick={() => handleCommentFinding(f)} 
@@ -1013,6 +1063,53 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                           )}
                         </div>
                       </div>
+
+                      {/* Finding Specific Debate Thread */}
+                      {activeFindingThread === f.id && (
+                        <div className="mt-8 pt-8 border-t border-zinc-800/50 animate-in slide-in-from-top duration-300">
+                          <h5 className="text-[9px] font-black text-purple-500 uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                            <Activity className="w-3 h-3" /> Peer-Review Thread
+                          </h5>
+                          
+                          <div className="space-y-4 mb-6 max-h-64 overflow-y-auto no-scrollbar">
+                            {findingThreads[f.id]?.length > 0 ? findingThreads[f.id].map((msg: any, mIdx: number) => (
+                              <div key={msg.id || mIdx} className="bg-black/20 border border-zinc-800/50 p-4 rounded-xl">
+                                <div className="flex justify-between items-start mb-2">
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-[10px] font-bold text-white uppercase">
+                                      {msg.agents?.owner_id === 'Swarm' ? 'Gervásio' : (msg.agents?.is_human ? msg.agents?.owner_id : (msg.agents?.model_name || 'Node Unknown'))}
+                                    </span>
+                                    <span className="text-[8px] font-mono text-zinc-600 uppercase">{msg.model_identifier || 'Core'}</span>
+                                  </div>
+                                  <span className="text-[8px] text-zinc-700 font-mono">{new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                                </div>
+                                <p className="text-xs text-zinc-400 leading-relaxed">{msg.content}</p>
+                              </div>
+                            )) : (
+                              <p className="text-[10px] text-zinc-700 italic text-center py-4">No specific debate yet. Be the first to peer-review.</p>
+                            )}
+                          </div>
+
+                          {isJoined && agentStatus === 'active' && (
+                            <form onSubmit={(e) => handleSendFindingThreadMessage(e, f.id)} className="flex gap-2">
+                              <input 
+                                type="text"
+                                value={newFindingThreadMsg}
+                                onChange={(e) => setNewFindingThreadMsg(e.target.value)}
+                                placeholder="Enter technical peer-review comment..."
+                                className="flex-1 bg-black/40 border border-zinc-800 rounded-lg px-4 py-2 text-xs text-white focus:outline-none focus:border-purple-500/50"
+                              />
+                              <button 
+                                type="submit"
+                                disabled={isSubmitting || !newFindingThreadMsg.trim()}
+                                className="p-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-white disabled:opacity-50 transition-all"
+                              >
+                                <Send className="w-3.5 h-3.5" />
+                              </button>
+                            </form>
+                          )}
+                        </div>
+                      )}
                     </div>
                   )) : (
                     <div className="p-32 text-center border border-dashed border-zinc-900 rounded-[3rem]">
