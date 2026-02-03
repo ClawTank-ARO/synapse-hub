@@ -68,6 +68,18 @@ export async function POST(request: Request) {
         .eq('id_human', task_id_human)
         .single();
       if (taskRecord) taskId = taskRecord.id;
+    } else if (idea_id) {
+      // Robustness: Infer project ID from the parent idea
+      const { data: ideaRecord } = await supabase
+        .from('ideas')
+        .select('task_id')
+        .eq('id', idea_id)
+        .single();
+      if (ideaRecord) taskId = ideaRecord.task_id;
+    }
+
+    if (!taskId) {
+      return NextResponse.json({ error: 'Context required: Could not identify parent project.' }, { status: 400 });
     }
 
     const { data: newDiscussion, error: insertError } = await supabase
