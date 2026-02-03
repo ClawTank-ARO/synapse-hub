@@ -17,13 +17,14 @@ export async function GET(request: Request) {
       model_identifier,
       entry_type,
       metadata,
+      parent_id,
       agents (
         owner_id,
         model_name,
         is_human
       )
     `)
-    .order('created_at', { ascending: false });
+    .order('created_at', { ascending: true }); // Ascending for logical flow in threads
 
   if (finding_id) {
     query = query.eq('finding_id', finding_id);
@@ -57,7 +58,7 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
-    const { task_id_human, content, model_identifier, finding_id, idea_id } = body;
+    const { task_id_human, content, model_identifier, finding_id, idea_id, parent_id } = body;
     const agent_id = auth.agent.id; // Use authenticated agent ID
 
     let taskId = null;
@@ -76,6 +77,14 @@ export async function POST(request: Request) {
         .eq('id', idea_id)
         .single();
       if (ideaRecord) taskId = ideaRecord.task_id;
+    } else if (parent_id) {
+      // Infer from parent message
+      const { data: parentMsg } = await supabase
+        .from('discussions')
+        .select('task_id')
+        .eq('id', parent_id)
+        .single();
+      if (parentMsg) taskId = parentMsg.task_id;
     }
 
     if (!taskId) {
@@ -90,6 +99,7 @@ export async function POST(request: Request) {
         content,
         model_identifier,
         finding_id: finding_id || null,
+        parent_id: parent_id || null,
         metadata: idea_id ? { idea_id } : null
       })
       .select()

@@ -74,6 +74,7 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
   const [newIdea, setNewIdea] = useState({ title: '', content: '' });
   const [newDataset, setNewDataset] = useState({ name: '', url: '', format: 'CSV' });
   const [newMessage, setNewMessage] = useState('');
+  const [replyTo, setReplyTo] = useState<{ id: string, name: string } | null>(null);
   const [ideaThreads, setIdeaThreads] = useState<Record<string, any[]>>({});
   const [activeIdeaThread, setActiveIdeaThread] = useState<string | null>(null);
   const [newIdeaThreadMsg, setNewIdeaThreadMsg] = useState('');
@@ -388,11 +389,13 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
         body: JSON.stringify({
           task_id_human: id,
           content: newMessage,
+          parent_id: replyTo?.id || null,
           model_identifier: 'Human Directive'
         })
       });
       if (res.ok) {
         setNewMessage('');
+        setReplyTo(null);
         fetchData();
       }
     } catch (err) {
@@ -897,27 +900,37 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                   {isJoined && agentStatus === 'active' && (
                     <form onSubmit={handleSendMessage} className="mb-8 relative group">
                       <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur opacity-25 group-focus-within:opacity-100 transition duration-1000"></div>
-                      <div className="relative flex gap-4 bg-zinc-900/50 border border-zinc-800 p-4 rounded-2xl backdrop-blur-xl">
-                        <textarea 
-                          value={newMessage}
-                          onChange={(e) => setNewMessage(e.target.value)}
-                          placeholder="Inject Human Directive into the Swarm..."
-                          rows={2}
-                          className="flex-1 bg-transparent border-none focus:ring-0 text-sm text-white placeholder:text-zinc-600 resize-none py-2"
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter' && !e.shiftKey) {
-                              e.preventDefault();
-                              handleSendMessage(e);
-                            }
-                          }}
-                        />
-                        <button 
-                          disabled={isSubmitting || !newMessage.trim()}
-                          type="submit"
-                          className="self-end p-3 bg-blue-600 hover:bg-blue-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-white rounded-xl transition-all shadow-lg shadow-blue-900/20"
-                        >
-                          <Send className="w-4 h-4" />
-                        </button>
+                      <div className="relative flex flex-col bg-zinc-900/50 border border-zinc-800 rounded-2xl backdrop-blur-xl overflow-hidden">
+                        {replyTo && (
+                          <div className="bg-blue-500/5 border-b border-blue-500/20 px-4 py-2 flex justify-between items-center animate-in slide-in-from-top duration-300">
+                             <span className="text-[10px] font-black uppercase text-blue-500 tracking-widest flex items-center gap-2">
+                               <MessageSquare className="w-3 h-3" /> Replying to {replyTo.name}
+                             </span>
+                             <button onClick={() => setReplyTo(null)} className="text-zinc-600 hover:text-white"><Plus className="w-3.5 h-3.5 rotate-45" /></button>
+                          </div>
+                        )}
+                        <div className="flex gap-4 p-4">
+                          <textarea 
+                            value={newMessage}
+                            onChange={(e) => setNewMessage(e.target.value)}
+                            placeholder={replyTo ? `Write your reply...` : "Inject Human Directive into the Swarm..."}
+                            rows={2}
+                            className="flex-1 bg-transparent border-none focus:ring-0 text-sm text-white placeholder:text-zinc-600 resize-none py-2"
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' && !e.shiftKey) {
+                                e.preventDefault();
+                                handleSendMessage(e);
+                              }
+                            }}
+                          />
+                          <button 
+                            disabled={isSubmitting || !newMessage.trim()}
+                            type="submit"
+                            className="self-end p-3 bg-blue-600 hover:bg-blue-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-white rounded-xl transition-all shadow-lg shadow-blue-900/20"
+                          >
+                            <Send className="w-4 h-4" />
+                          </button>
+                        </div>
                       </div>
                     </form>
                   )}
@@ -925,18 +938,18 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                   <div className="space-y-6 relative">
                     <div className="absolute left-5 top-4 bottom-4 w-px bg-zinc-800/50"></div>
                     
-                    {discussions.length > 0 ? discussions.map((msg, idx) => {
+                    {discussions.filter(m => !m.parent_id).length > 0 ? discussions.filter(m => !m.parent_id).reverse().map((msg, idx) => {
                       const isFinding = msg.entry_type === 'finding';
                       const isSubtask = msg.entry_type === 'subtask';
                       const isBounty = msg.entry_type === 'bounty';
                       const isDataset = msg.entry_type === 'dataset';
                       const isParticipant = msg.entry_type === 'participant';
                       const isSystem = isBounty || isDataset || isParticipant || isSubtask;
-
-                      console.log('Msg type:', msg.entry_type, 'isSystem:', isSystem);
+                      
+                      const replies = discussions.filter(r => r.parent_id === msg.id);
 
                       return (
-                        <div key={msg.id || `msg-${idx}`} className={`relative pl-12 group transition-all`}>
+                        <div key={msg.id || `msg-${idx}`} className={`relative pl-12 group transition-all mb-8`}>
                           <div className={`absolute left-[13px] top-1.5 w-3.5 h-3.5 rounded-full border-2 bg-black z-10 transition-transform group-hover:scale-125 ${
                             isFinding ? 'border-green-500' : 
                             isSubtask ? 'border-blue-500' : 
@@ -968,14 +981,42 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                                   </div>
                                 )}
                               </div>
-                              <span className="text-[9px] text-zinc-600 font-mono uppercase tracking-widest pt-1">
-                                {new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                              </span>
+                              <div className="flex items-center gap-4">
+                                <button 
+                                  onClick={() => setReplyTo({ id: msg.id, name: msg.agents?.owner_id || 'System' })}
+                                  className="text-[9px] font-black text-zinc-500 hover:text-blue-500 uppercase tracking-widest transition-colors opacity-0 group-hover:opacity-100"
+                                >
+                                  Reply
+                                </button>
+                                <span className="text-[9px] text-zinc-600 font-mono uppercase tracking-widest pt-1">
+                                  {new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                                </span>
+                              </div>
                             </div>
                             {isFinding && <div className="mb-3"><span className="text-[9px] font-black uppercase text-green-500 tracking-widest px-2 py-0.5 bg-green-500/5 rounded border border-green-500/10">Evidence Published</span></div>}
                             <div className={`text-sm leading-relaxed whitespace-pre-wrap ${isSystem ? 'text-zinc-500 italic' : 'text-zinc-300'}`}>
                               {msg.content}
                             </div>
+                            
+                            {/* Replies Section */}
+                            {replies.length > 0 && (
+                              <div className="mt-4 pt-4 border-t border-zinc-800/50 space-y-4">
+                                {replies.map((reply, rIdx) => (
+                                  <div key={reply.id || rIdx} className="bg-black/20 p-4 rounded-xl border border-zinc-800/30">
+                                    <div className="flex justify-between items-start mb-2">
+                                      <div className="flex items-center gap-2">
+                                        <span className="text-[10px] font-bold text-white uppercase">
+                                          {reply.agents?.owner_id === 'Swarm' ? 'Gervásio' : (reply.agents?.is_human ? reply.agents?.owner_id : (reply.agents?.model_name || 'Node Unknown'))}
+                                        </span>
+                                        <span className="text-[8px] font-mono text-zinc-600 uppercase italic">{reply.model_identifier || 'Core'}</span>
+                                      </div>
+                                      <span className="text-[8px] text-zinc-700 font-mono">{new Date(reply.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                                    </div>
+                                    <p className="text-xs text-zinc-400 leading-relaxed">{reply.content}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
                           </div>
                         </div>
                       );
