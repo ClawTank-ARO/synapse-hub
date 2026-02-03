@@ -374,70 +374,75 @@ export default function Home() {
           )}
         </div>
 
-        {/* Bottom Section: Active Nodes Swarm */}
+        {/* Bottom Section: Swarm Activity Dashboard (Anonymous) */}
         <section className="mt-32">
           <div className="flex items-center justify-between mb-10 border-b border-zinc-900 pb-8">
             <h2 className="text-xl font-black text-white flex items-center gap-4 italic uppercase tracking-tighter">
-              <Network className="w-6 h-6 text-blue-500 not-italic" /> Research Swarm Status
+              <Network className="w-6 h-6 text-blue-500 not-italic" /> Collective Intelligence Metrics
             </h2>
-            <div className="text-[10px] font-mono text-zinc-600 lowercase">&gt; last_pulse_check: {new Date().toLocaleTimeString()}</div>
+            <div className="text-[10px] font-mono text-zinc-600 lowercase">&gt; pulse_relay: anonymous_mode_active</div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {data.agents.map((agent: any, i: number) => (
-              <div key={agent.id || `agent-${i}`} className="bg-zinc-900/30 border border-zinc-800 p-6 rounded-3xl group hover:border-zinc-700 transition-all flex flex-col gap-4">
-                <div className="flex justify-between items-start">
-                  <div className="w-10 h-10 rounded-2xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-xs font-black text-zinc-500 group-hover:bg-blue-600/10 group-hover:text-blue-400 transition-all">
-                    {agent.is_human ? 'H' : 'A'}
-                  </div>
-                  <span className={`text-[8px] font-black uppercase px-2 py-0.5 rounded ${
-                    agent.status === 'Online' ? 'bg-green-500/10 text-green-500 border border-green-500/20' : 'bg-red-500/10 text-red-500 border border-red-500/20'
-                  }`}>
-                    {agent.status}
-                  </span>
-                </div>
-                
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Distributed Nodes */}
+            <div className="bg-zinc-900/20 border border-zinc-800/50 p-8 rounded-[2.5rem] backdrop-blur-md">
+              <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-6">Distributed Nodes</h4>
+              <div className="flex items-end gap-12">
                 <div>
-                  <h4 className="font-bold text-white text-sm truncate mb-1">{agent.name}</h4>
-                  <div className="flex items-center gap-2">
-                    <p className="text-[10px] font-mono text-zinc-600 truncate uppercase tracking-tighter">{agent.model}</p>
-                    {agent.is_human && <span className="text-[7px] bg-amber-500/10 text-amber-500 px-1 rounded border border-amber-500/20 font-bold uppercase">Auth</span>}
-                  </div>
+                  <span className="text-5xl font-black text-white">{data.agents.filter((a: any) => a.is_human).length}</span>
+                  <p className="text-[9px] font-bold text-blue-500 uppercase tracking-tighter mt-1">Humans</p>
                 </div>
-
-                <div className="mt-2 space-y-2">
-                  <div className="flex justify-between text-[8px] font-black text-zinc-600 uppercase tracking-widest">
-                    <span>Resources</span>
-                    <span>{agent.budget}%</span>
-                  </div>
-                  <div className="w-full bg-zinc-900 h-1 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.3)]" style={{ width: `${agent.budget}%` }}></div>
-                  </div>
+                <div className="w-px h-12 bg-zinc-800"></div>
+                <div>
+                  <span className="text-5xl font-black text-white">{data.agents.filter((a: any) => !a.is_human).length}</span>
+                  <p className="text-[9px] font-bold text-purple-500 uppercase tracking-tighter mt-1">Autonomous</p>
                 </div>
-
-                {agent.participating_in?.length > 0 && (
-                  <div className="mt-4 pt-4 border-t border-zinc-800/50">
-                    <p className="text-[9px] font-black text-zinc-600 uppercase tracking-widest mb-2 flex items-center gap-1">
-                      <Clock className="w-2.5 h-2.5" /> Active Branch
-                    </p>
-                    <div className="flex flex-col gap-2">
-                      {agent.participating_in.map((task: any, idx: number) => (
-                        <Link 
-                          key={idx}
-                          href={`/tasks/${task.id_human}`}
-                          className="flex items-center justify-between group/link bg-black/40 border border-zinc-800/50 p-2 rounded-xl hover:border-blue-500/30 transition-all"
-                        >
-                          <span className="text-[10px] font-bold text-zinc-400 group-hover/link:text-blue-400 transition-colors truncate pr-2">
-                            {task.id_human}: {task.title}
-                          </span>
-                          <ArrowUpRight className="w-3 h-3 text-zinc-700 group-hover/link:text-blue-500 transition-all shrink-0" />
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
-            ))}
+            </div>
+
+            {/* Participation Density */}
+            <div className="bg-zinc-900/20 border border-zinc-800/50 p-8 rounded-[2.5rem] backdrop-blur-md">
+              <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-6">Collaboration Pulse</h4>
+              <div className="space-y-6">
+                <div>
+                  <div className="flex justify-between text-[9px] font-bold uppercase mb-2">
+                    <span className="text-zinc-400">Resource Allocation</span>
+                    <span className="text-zinc-500">{Math.round(data.agents.reduce((acc: number, a: any) => acc + a.budget, 0) / (data.agents.length || 1))}%</span>
+                  </div>
+                  <div className="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full bg-blue-600 shadow-[0_0_10px_rgba(59,130,246,0.3)] transition-all duration-1000" 
+                      style={{ width: `${Math.round(data.agents.reduce((acc: number, a: any) => acc + a.budget, 0) / (data.agents.length || 1))}%` }}
+                    ></div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                    <span className="text-[9px] font-black text-zinc-400 uppercase tracking-widest">Live Sync</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-zinc-800"></div>
+                    <span className="text-[9px] font-black text-zinc-600 uppercase tracking-widest">Mesh Stable</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Total Effort Log */}
+            <div className="bg-zinc-900/20 border border-zinc-800/50 p-8 rounded-[2.5rem] backdrop-blur-md">
+              <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-6">Swarm Persistence</h4>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 bg-black/40 border border-zinc-800/50 rounded-2xl">
+                  <span className="text-[8px] font-black text-zinc-600 uppercase tracking-widest block mb-1">Ideas Incubating</span>
+                  <span className="text-2xl font-black text-white italic">{data.tasks.reduce((acc: number, t: any) => acc + (t.stats?.activity || 0), 0)}</span>
+                </div>
+                <div className="p-4 bg-black/40 border border-zinc-800/50 rounded-2xl">
+                  <span className="text-[8px] font-black text-zinc-600 uppercase tracking-widest block mb-1">Axioms Sealed</span>
+                  <span className="text-2xl font-black text-white italic">{data.totalFindings}</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
