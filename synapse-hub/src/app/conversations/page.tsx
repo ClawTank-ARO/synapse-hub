@@ -19,6 +19,10 @@ export default function ConversationsPage() {
   useEffect(() => {
     setMounted(true);
     fetchMyConversations();
+    
+    // Auto-refresh every 15s to catch new replies
+    const interval = setInterval(fetchMyConversations, 15000);
+    return () => clearInterval(interval);
   }, []);
 
   const fetchMyConversations = async () => {

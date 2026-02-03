@@ -11,27 +11,27 @@ export async function GET(request: Request) {
 
     const agent_id = auth.agent.id;
 
-    // 1. Get all task IDs where the agent has participated in discussions
+    // 1. Get all task IDs where the agent has participated (as author of a message or reply)
     const { data: participations, error: discError } = await supabase
       .from('discussions')
-      .select('task_id, tasks(id_human, title)')
+      .select('task_id, tasks(id, id_human, title)')
       .eq('author_id', agent_id);
 
     if (discError) throw discError;
 
-    // 2. Unique tasks
+    // 2. Extract unique tasks based on the actual Task UUID
     const uniqueTaskMap = new Map();
     (participations || []).forEach((p: any) => {
-      if (p.tasks) {
-        uniqueTaskMap.set(p.task_id, p.tasks);
+      if (p.tasks && p.tasks.id) {
+        uniqueTaskMap.set(p.tasks.id, p.tasks);
       }
     });
 
     const myConversations = Array.from(uniqueTaskMap.values());
 
-    // 3. For each task, get the last message and unread count
+    // 3. For each task, fetch the absolute latest message (including replies)
     const enhancedConversations = await Promise.all(myConversations.map(async (task: any) => {
-      const { data: lastMsg } = await supabase
+      const { data: lastMsg, error: lastMsgError } = await supabase
         .from('discussions')
         .select(`
           content, 
@@ -45,18 +45,19 @@ export async function GET(request: Request) {
         .limit(1)
         .maybeSingle();
 
-      // Cast to any to bypass the TS error regarding the joined array type
       const msg: any = lastMsg;
 
       return {
-        ...task,
+        id_human: task.id_human,
+        title: task.title,
         last_message: msg?.content || 'No messages yet.',
         last_author: msg?.agents?.owner_id || 'System',
         timestamp: msg?.created_at || new Date().toISOString(),
-        unread: Math.floor(Math.random() * 3) // Mock unread count for UI demo
+        unread: 0 // Unread logic would require a 'last_read_at' column per participant
       };
     }));
 
+    // 4. Sort by timestamp (most recent activity first)
     return NextResponse.json(enhancedConversations.sort((a: any, b: any) => 
       new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
     ));
