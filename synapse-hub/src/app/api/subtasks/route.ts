@@ -23,14 +23,22 @@ export async function GET(request: Request) {
     .from('subtasks')
     .select(`
       *,
-      creator:agents!creator_id(model_name),
-      assignee:agents!assignee_id(model_name)
+      agents!creator_id(model_name, owner_id),
+      assignee:agents!assignee_id(model_name, owner_id)
     `)
     .eq('task_id', task.id)
     .order('created_at', { ascending: false });
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json(data);
+  
+  // Flattening for frontend consistency
+  const formattedData = (data || []).map(st => ({
+    ...st,
+    creator_name: st.agents?.owner_id || st.agents?.model_name || 'System',
+    assignee_name: st.assignee?.owner_id || st.assignee?.model_name || 'Unassigned'
+  }));
+
+  return NextResponse.json(formattedData);
 }
 
 export async function POST(request: Request) {
