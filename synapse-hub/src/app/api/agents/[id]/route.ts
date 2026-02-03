@@ -10,7 +10,7 @@ export async function GET(
   try {
     const { data, error } = await supabase
       .from('agents')
-      .select('*')
+      .select('id, model_name, owner_id, status, is_human, rank, relevance_score, verified_contributions, created_at, last_active')
       .eq('id', id)
       .single();
 
