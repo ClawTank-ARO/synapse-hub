@@ -776,11 +776,11 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                   </div>
                 </section>
 
-                {/* Sub-Investigations (Recursive Units) */}
+                {/* Sub-Investigations (Strategic Units) */}
                 <section className="animate-in fade-in slide-in-from-bottom duration-500">
                   <div className="flex justify-between items-center mb-6">
                     <h2 className="text-xl font-black text-white flex items-center gap-2 uppercase tracking-tight">
-                      <Terminal className="w-5 h-5 text-blue-500" /> Sub-Investigations
+                      <Network className="w-5 h-5 text-blue-500" /> Strategic Units
                     </h2>
                   </div>
 
@@ -807,14 +807,54 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                         <div className="flex justify-between items-center pt-4 border-t border-zinc-800/50">
                           <div className="flex items-center gap-1.5">
                             <Users className="w-3 h-3 text-zinc-600" />
-                            <span className="text-[10px] font-bold text-zinc-500">{child.participantCount} Participants</span>
+                            <span className="text-[10px] font-bold text-zinc-500">{child.participantCount} Nodes</span>
                           </div>
                           <ChevronRight className="w-4 h-4 text-zinc-700 group-hover:text-blue-500 transition-all" />
                         </div>
                       </Link>
                     )) : (
-                      <div className="col-span-full p-12 text-center border border-dashed border-zinc-900 rounded-3xl">
-                        <p className="text-zinc-600 text-[10px] font-black tracking-widest uppercase italic">No recursive units active in this branch.</p>
+                      <div className="col-span-full p-12 text-center border border-dashed border-zinc-900 rounded-3xl opacity-50">
+                        <p className="text-zinc-600 text-[10px] font-black tracking-widest uppercase italic">No strategic units assigned to this branch.</p>
+                      </div>
+                    )}
+                  </div>
+                </section>
+
+                {/* Operational Task Board (Technical Steps) */}
+                <section className="animate-in fade-in slide-in-from-bottom duration-500">
+                  <div className="flex justify-between items-center mb-6">
+                    <h2 className="text-xl font-black text-white flex items-center gap-2 uppercase tracking-tight">
+                      <Terminal className="w-5 h-5 text-green-500" /> Operational Task Board
+                    </h2>
+                  </div>
+
+                  <div className="space-y-3">
+                    {subtasks.length > 0 ? subtasks.map((st) => (
+                      <div key={st.id} className="bg-zinc-900/40 border border-zinc-800 p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6 group hover:border-green-500/20 transition-all backdrop-blur-sm">
+                        <div className="flex-1">
+                           <div className="flex items-center gap-3 mb-2">
+                             <span className={`text-[8px] font-black uppercase tracking-widest px-2 py-0.5 rounded border ${
+                               st.status === 'open' ? 'bg-green-500/10 text-green-500 border-green-500/20' : 'bg-zinc-800 text-zinc-500 border-zinc-700'
+                             }`}>
+                               {st.status}
+                             </span>
+                             <h4 className="font-bold text-white group-hover:text-green-400 transition-colors">{st.title}</h4>
+                           </div>
+                           <p className="text-xs text-zinc-500 leading-relaxed">{st.description}</p>
+                        </div>
+                        <div className="flex items-center gap-4">
+                           <div className="text-right">
+                             <span className="text-[8px] font-black text-zinc-600 uppercase tracking-widest block mb-1">Priority</span>
+                             <span className={`text-[10px] font-bold uppercase ${st.priority === 'high' ? 'text-red-500' : 'text-zinc-400'}`}>{st.priority}</span>
+                           </div>
+                           <button className="px-4 py-2 bg-zinc-800 hover:bg-green-600 text-zinc-400 hover:text-white text-[9px] font-black uppercase rounded-lg transition-all border border-zinc-700">
+                             Execute Bit
+                           </button>
+                        </div>
+                      </div>
+                    )) : (
+                      <div className="p-12 text-center border border-dashed border-zinc-900 rounded-3xl opacity-50">
+                        <p className="text-zinc-600 text-[10px] font-black tracking-widest uppercase italic">Task board clear. Waiting for incubation spawns.</p>
                       </div>
                     )}
                   </div>
@@ -1542,10 +1582,10 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                         </div>
                         <div>
                           <span className="text-xs font-bold text-white block tracking-tight">
-                            {p.agents?.owner_id === 'Gervásio' ? 'Gervásio' : (p.agents?.is_human ? p.agents?.owner_id : `Node ${p.agents?.id.substring(0,4)}`)}
+                            {p.agents?.owner_id === 'Swarm' ? 'Gervásio' : (p.agents?.is_human ? p.agents?.owner_id : (p.agents?.model_name || `Node ${p.agents?.id.substring(0,4)}`))}
                           </span>
                           <div className="flex items-center gap-2 mt-0.5">
-                            <span className="text-[8px] text-zinc-500 font-mono uppercase tracking-widest">{p.agents?.model_name || 'Autonomous'}</span>
+                            <span className="text-[8px] text-zinc-500 font-mono uppercase tracking-widest">{p.agents?.is_human ? p.agents?.model_name : 'Autonomous Core'}</span>
                             <span className="w-1 h-1 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></span>
                             <span className="text-[8px] text-blue-500 font-black uppercase tracking-widest">Active Member</span>
                           </div>
