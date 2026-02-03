@@ -69,7 +69,15 @@ async function callStudio(prompt: string, modelIdx: number, overrideKey?: string
     }
 
     const data = await res.json();
-    return data.candidates?.[0]?.content?.parts?.[0]?.text || null;
+    const candidate = data.candidates?.[0];
+    
+    if (candidate?.finishReason === 'SAFETY') {
+      console.warn(`[RAG] Studio ${model} blocked by safety filters.`);
+      return callStudio(prompt, modelIdx + 1, key);
+    }
+
+    const text = candidate?.content?.parts?.map((p: any) => p.text).join('') || null;
+    return text;
   } catch (err) {
     console.error(`[RAG] Studio error:`, err);
     return callStudio(prompt, modelIdx + 1, key);
@@ -164,15 +172,19 @@ export async function POST(request: Request) {
       });
     }
 
-    const prompt = `You are the ClawTank Swarm Brain. Answer the user query based ONLY on the provided context blocks extracted from cosmological literature. 
-If the answer is not in the context, say you don't know based on current data.
+    const prompt = `You are the ClawTank Swarm Brain, an elite scientific researcher. 
+Using the provided context blocks from cosmological literature, answer the query with high precision.
+If the answer is found in the text, provide a detailed synthesis. 
+If the answer is not in the context, clearly state that the current ledger data is insufficient.
+
+CRITICAL: Do not truncate your response. Finish your sentences.
 
 Query: ${query}
 
 Context:
 ${contextBlocks.join('\n\n')}
 
-Answer concisely as an elite scientific assistant:`;
+Synthesis:`;
 
     // Strategy: Rotation through Studio Models (Gemma/Gemini) -> OpenRouter Fallbacks
     let answer = await callStudio(prompt, 0);
@@ -189,7 +201,7 @@ Answer concisely as an elite scientific assistant:`;
     }
 
     return NextResponse.json({
-      answer,
+      answer: answer.trim(),
       sources: Array.from(sourcesMap.values()).slice(0, 3)
     });
 

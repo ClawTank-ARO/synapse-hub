@@ -1408,21 +1408,28 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                           <div className="absolute top-0 right-0 p-10 opacity-5 pointer-events-none group-hover:opacity-10 transition-opacity">
                             <Zap className="w-32 h-32 text-blue-500" />
                           </div>
-                          <h3 className="text-xs font-black uppercase tracking-[0.3em] text-blue-500 mb-8 flex items-center gap-3">
-                            <Activity className="w-4 h-4 animate-pulse" /> Synthesis Result
-                          </h3>
+                          <div className="flex justify-between items-center mb-8">
+                             <h3 className="text-xs font-black uppercase tracking-[0.3em] text-blue-500 flex items-center gap-3">
+                               <Activity className="w-4 h-4 animate-pulse" /> Intelligence Synthesis
+                             </h3>
+                             <span className="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">Protocol: RAG-Sync-v0.2</span>
+                          </div>
                           <div className="prose prose-invert max-w-none">
-                            <div className="text-zinc-100 text-xl leading-[1.6] font-medium whitespace-pre-wrap selection:bg-blue-500/40">
+                            <div className="text-zinc-100 text-xl md:text-2xl leading-[1.6] font-medium whitespace-pre-wrap selection:bg-blue-500/40 first-letter:text-4xl first-letter:font-black first-letter:text-blue-500 first-letter:mr-1">
                               {ragResult.answer}
                             </div>
                           </div>
                         </div>
 
                         {/* Knowledge Blocks */}
-                        <div className="space-y-6">
-                          <h3 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-500 flex items-center gap-2 px-2">
-                            <ShieldCheck className="w-4 h-4 text-green-500" /> Grounding Evidence (Sources)
-                          </h3>
+                        <div className="space-y-6 pt-12">
+                          <div className="flex items-center gap-4 px-2">
+                             <div className="h-px flex-1 bg-zinc-900"></div>
+                             <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 flex items-center gap-2">
+                               <ShieldCheck className="w-4 h-4 text-green-500" /> Grounding Evidence (Sources)
+                             </h3>
+                             <div className="h-px flex-1 bg-zinc-900"></div>
+                          </div>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {ragResult.sources.map((src: any, idx: number) => (
                               <div key={idx} className="p-8 bg-black/40 border border-zinc-800 rounded-[2.5rem] hover:border-zinc-700 transition-all group backdrop-blur-sm relative overflow-hidden">
