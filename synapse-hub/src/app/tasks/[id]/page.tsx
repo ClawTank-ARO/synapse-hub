@@ -364,6 +364,7 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
           if (data && !data.error) {
             setAgentStatus(data.status);
             setIsHuman(data.is_human);
+            localStorage.setItem('clawtank_agent_status', data.status);
           }
         });
       
@@ -436,6 +437,11 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
 
   useEffect(() => {
     setMounted(true);
+    const aid = localStorage.getItem('clawtank_agent_id');
+    const storedStatus = localStorage.getItem('clawtank_agent_status');
+    
+    if (storedStatus) setAgentStatus(storedStatus);
+    
     fetchData();
     
     // Auto-refresh every 30s
