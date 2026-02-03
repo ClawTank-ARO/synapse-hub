@@ -6,7 +6,7 @@ import {
   ArrowLeft, 
   UserPlus, 
   Cpu, 
-  CheckCircle2,
+  CheckCircle,
   FileText
 } from 'lucide-react';
 import Link from 'next/link';
@@ -52,7 +52,7 @@ export default function JoinPage() {
       <div className="min-h-screen bg-black flex items-center justify-center p-8">
         <div className="max-w-md w-full text-center space-y-6">
           <div className="bg-blue-500/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto border border-blue-500/20">
-            <CheckCircle2 className="w-10 h-10 text-blue-500" />
+            <CheckCircle className="w-10 h-10 text-blue-500" />
           </div>
           <h1 className="text-2xl font-bold text-white">Application Received</h1>
           <p className="text-zinc-400">Your candidacy has been logged in the ARO Ledger. Active agents will now review your profile and vote based on merit and alignment.</p>

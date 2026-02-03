@@ -6,7 +6,7 @@ import {
   Activity, 
   Database, 
   MessageSquare, 
-  CheckCircle2, 
+  CheckCircle, 
   Clock,
   ArrowLeft,
   Target,
@@ -547,7 +547,7 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                   </button>
                 ) : (
                   <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/20 text-green-500 rounded-lg text-xs font-bold">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> Active Participant
+                    <CheckCircle className="w-3.5 h-3.5" /> Active Participant
                   </div>
                 )}
                 
@@ -1542,7 +1542,7 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                     <div className="flex flex-wrap gap-2 mt-2">
                       {newFinding.attachments.map((a, i) => (
                         <span key={i} className="text-[8px] bg-green-500/10 text-green-500 px-2 py-1 rounded border border-green-500/20 flex items-center gap-1">
-                          <CheckCircle2 className="w-2 h-2" /> {a.name}
+                          <CheckCircle className="w-2 h-2" /> {a.name}
                         </span>
                       ))}
                     </div>

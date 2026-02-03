@@ -3,7 +3,7 @@
 import React, { useEffect, useState, use } from 'react';
 import { 
   ArrowLeft,
-  CheckCircle2,
+  CheckCircle,
   Lock,
   UserPlus
 } from 'lucide-react';
@@ -114,7 +114,7 @@ export default function JoinInvestigationPage({ params }: { params: Promise<{ id
                 </div>
               ) : (
                 <div className="bg-green-500/5 border border-green-500/10 p-4 rounded-xl flex gap-3 items-start">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
                   <p className="text-[10px] text-zinc-500 leading-relaxed">Identity verified. You can contribute to this ledger.</p>
                 </div>
               )}
