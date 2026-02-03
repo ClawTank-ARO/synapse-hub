@@ -120,12 +120,15 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
     if (!newIdeaThreadMsg.trim() || !activeAgentId) return;
     setIsSubmitting(true);
     try {
+      const apiKey = localStorage.getItem('clawtank_api_key');
       const res = await fetch('/api/discussions', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': apiKey ? `Bearer ${apiKey}` : ''
+        },
         body: JSON.stringify({
           idea_id: ideaId,
-          agent_id: activeAgentId,
           content: newIdeaThreadMsg,
           model_identifier: isHuman ? 'Human Directive' : 'Autonomous Core'
         })
@@ -143,12 +146,15 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
     if (!newFindingThreadMsg.trim() || !activeAgentId) return;
     setIsSubmitting(true);
     try {
+      const apiKey = localStorage.getItem('clawtank_api_key');
       const res = await fetch('/api/discussions', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': apiKey ? `Bearer ${apiKey}` : ''
+        },
         body: JSON.stringify({
           finding_id: findingId,
-          agent_id: activeAgentId,
           content: newFindingThreadMsg,
           model_identifier: isHuman ? 'Human Directive' : 'Autonomous Core'
         })
@@ -215,12 +221,15 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
     e.preventDefault();
     setIsSubmitting(true);
     try {
+      const apiKey = localStorage.getItem('clawtank_api_key');
       const res = await fetch('/api/ideas', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': apiKey ? `Bearer ${apiKey}` : ''
+        },
         body: JSON.stringify({
           task_id_human: id,
-          author_id: activeAgentId,
           title: newIdea.title,
           content: newIdea.content
         })
@@ -238,9 +247,13 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
     e.preventDefault();
     setIsSubmitting(true);
     try {
+      const apiKey = localStorage.getItem('clawtank_api_key');
       const res = await fetch('/api/datasets', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': apiKey ? `Bearer ${apiKey}` : ''
+        },
         body: JSON.stringify({
           task_id_human: id,
           name: newDataset.name,
@@ -261,9 +274,13 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
     e.preventDefault();
     setIsSubmitting(true);
     try {
+      const apiKey = localStorage.getItem('clawtank_api_key');
       const res = await fetch('/api/bounties', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': apiKey ? `Bearer ${apiKey}` : ''
+        },
         body: JSON.stringify({
           task_id_human: id,
           title: newBounty.title,
@@ -303,12 +320,7 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
     setJoinError(null);
     
     try {
-      // Get the API key from somewhere or assume it's in the auth-node validation
-      // Actually the frontend needs to send the token if lockdown is active.
-      // But currently the frontend might not be sending it in this fetch.
-      // Let's check how other fetches are done.
-      
-      const apiKey = localStorage.getItem('clawtank_api_key'); // Assume we store it
+      const apiKey = localStorage.getItem('clawtank_api_key');
 
       const res = await fetch('/api/tasks/participation', {
         method: 'POST',
@@ -317,18 +329,17 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
           'Authorization': apiKey ? `Bearer ${apiKey}` : ''
         },
         body: JSON.stringify({
-          task_id_human: id,
-          agent_id: activeAgentId
+          task_id_human: id
         })
       });
 
       if (res.ok) {
         setIsJoined(true);
+        fetchData();
       } else {
         const data = await res.json();
         setJoinError(data.error || 'Failed to join investigation');
-        // Any auth failure on a join attempt means the user is not active/approved enough
-        if (res.status === 401 || data.error?.includes('pending') || data.error?.includes('inactive') || data.error?.includes('Authorization')) {
+        if (res.status === 401 || data.error?.includes('pending') || data.error?.includes('inactive')) {
           setAgentStatus('pending_approval');
           localStorage.setItem('clawtank_agent_status', 'pending_approval');
         }
@@ -338,7 +349,6 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
       setJoinError('Network error. Please check your connection.');
     } finally {
       setIsJoining(false);
-      fetchData();
     }
   };
 
@@ -347,12 +357,15 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
     if (!newMessage.trim() || !activeAgentId) return;
     setIsSubmitting(true);
     try {
+      const apiKey = localStorage.getItem('clawtank_api_key');
       const res = await fetch('/api/discussions', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': apiKey ? `Bearer ${apiKey}` : ''
+        },
         body: JSON.stringify({
           task_id_human: id,
-          agent_id: activeAgentId,
           content: newMessage,
           model_identifier: 'Human Directive'
         })
@@ -467,12 +480,15 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
     e.preventDefault();
     setIsSubmitting(true);
     try {
+      const apiKey = localStorage.getItem('clawtank_api_key');
       const res = await fetch('/api/findings', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': apiKey ? `Bearer ${apiKey}` : ''
+        },
         body: JSON.stringify({
           task_id_human: id,
-          author_id: activeAgentId,
           content: newFinding.content,
           dataset_refs: newFinding.refs.split(',').map(r => r.trim()).filter(r => r),
           attachments: newFinding.attachments
@@ -490,12 +506,15 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
 
   const handleValidateFinding = async (findingId: string) => {
     try {
+      const apiKey = localStorage.getItem('clawtank_api_key');
       const res = await fetch('/api/validations', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': apiKey ? `Bearer ${apiKey}` : ''
+        },
         body: JSON.stringify({
           finding_id: findingId,
-          agent_id: activeAgentId,
           vote_type: 'verify',
           reasoning: 'Human Principal manual validation.',
           confidence_score: 1.0
@@ -526,10 +545,13 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      // Treating tasks as sub-investigations (Recursive ARO structure)
+      const apiKey = localStorage.getItem('clawtank_api_key');
       const res = await fetch('/api/investigations', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': apiKey ? `Bearer ${apiKey}` : ''
+        },
         body: JSON.stringify({
           parent_id_human: id,
           title: newSubtask.title,

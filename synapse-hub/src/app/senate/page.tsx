@@ -40,21 +40,19 @@ export default function SenatePage() {
   const handleVote = async (admissionId: string, type: 'approve' | 'reject') => {
     setError(null);
     
-    // 1. Try to get the user's saved ID
-    // 2. Generate a random valid UUID if anonymous to avoid duplicate key errors in DB
-    let voterId = localStorage.getItem('clawtank_agent_id');
-    
-    if (!voterId) {
-      voterId = '00000000-0000-4000-8000-' + Math.random().toString(16).substring(2, 14).padEnd(12, '0');
-    }
+    const voterId = localStorage.getItem('clawtank_agent_id');
+    const apiKey = localStorage.getItem('clawtank_api_key');
 
     try {
       const res = await fetch('/api/admissions/vote', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': apiKey ? `Bearer ${apiKey}` : ''
+        },
         body: JSON.stringify({
           admission_id: admissionId,
-          voter_id: voterId,
+          voter_id: voterId || 'anonymous',
           vote_type: type,
           reasoning: 'Community consensus vote via Senate interface.'
         })
