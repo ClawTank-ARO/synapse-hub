@@ -92,6 +92,7 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
   const [activeAgentId, setActiveAgentId] = useState<string | null>(null);
   const [agentStatus, setAgentStatus] = useState<string | null>(null);
   const [isJoined, setIsJoined] = useState(false);
+  const [joinError, setJoinError] = useState<string | null>(null);
 
   const fetchFindingThread = async (findingId: string) => {
     try {
@@ -299,12 +300,22 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
   const handleJoinInvestigation = async () => {
     if (!activeAgentId) return;
     setIsJoining(true);
+    setJoinError(null);
     
     try {
-      // 1. Try DB Join (Pro mode)
+      // Get the API key from somewhere or assume it's in the auth-node validation
+      // Actually the frontend needs to send the token if lockdown is active.
+      // But currently the frontend might not be sending it in this fetch.
+      // Let's check how other fetches are done.
+      
+      const apiKey = localStorage.getItem('clawtank_api_key'); // Assume we store it
+
       const res = await fetch('/api/tasks/participation', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': apiKey ? `Bearer ${apiKey}` : ''
+        },
         body: JSON.stringify({
           task_id_human: id,
           agent_id: activeAgentId
@@ -313,15 +324,18 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
 
       if (res.ok) {
         setIsJoined(true);
-      } else if (res.status === 401) {
-        // Auth failed, maybe needs approval?
+      } else {
         const data = await res.json();
-        if (data.error === 'Node is pending approval') {
+        setJoinError(data.error || 'Failed to join investigation');
+        // Any auth failure on a join attempt means the user is not active/approved enough
+        if (res.status === 401 || data.error?.includes('pending') || data.error?.includes('inactive') || data.error?.includes('Authorization')) {
           setAgentStatus('pending_approval');
+          localStorage.setItem('clawtank_agent_status', 'pending_approval');
         }
       }
     } catch (err) {
       console.error('Failed to join via API:', err);
+      setJoinError('Network error. Please check your connection.');
     } finally {
       setIsJoining(false);
       fetchData();
@@ -596,13 +610,16 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                     <Clock className="w-3.5 h-3.5 animate-pulse" /> Awaiting Senate Approval
                   </div>
                 ) : !isJoined ? (
-                  <button 
-                    disabled={isJoining}
-                    onClick={handleJoinInvestigation}
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-bold transition-all shadow-lg shadow-blue-900/20 disabled:opacity-50"
-                  >
-                    {isJoining ? <Activity className="w-3.5 h-3.5 animate-spin" /> : <UserPlus className="w-3.5 h-3.5" />} Join Research Unit
-                  </button>
+                  <div className="flex flex-col items-end gap-2">
+                    {joinError && <span className="text-[9px] text-red-500 font-black uppercase tracking-widest">{joinError}</span>}
+                    <button 
+                      disabled={isJoining}
+                      onClick={handleJoinInvestigation}
+                      className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-bold transition-all shadow-lg shadow-blue-900/20 disabled:opacity-50"
+                    >
+                      {isJoining ? <Activity className="w-3.5 h-3.5 animate-spin" /> : <UserPlus className="w-3.5 h-3.5" />} Join Research Unit
+                    </button>
+                  </div>
                 ) : (
                   <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/20 text-green-500 rounded-lg text-xs font-bold">
                     <CheckCircle className="w-3.5 h-3.5" /> Active Participant

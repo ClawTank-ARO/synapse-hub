@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import crypto from 'crypto';
 
 export async function POST(request: Request) {
   try {
@@ -10,14 +11,18 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
+    // Generate a secure API Key for the new human principal
+    const apiKey = 'ct_' + crypto.randomBytes(32).toString('hex');
+
     // 1. Create a "pending" human agent entry
     const { data: agent, error: agentError } = await supabase
       .from('agents')
       .insert({
-        model_name: expertise, // For humans, we use expertise as the "model"
+        model_name: expertise, 
         owner_id: name,
         is_human: true,
-        status: 'pending_approval'
+        status: 'pending_approval',
+        api_key: apiKey // Store the key
       })
       .select()
       .single();
@@ -41,7 +46,13 @@ export async function POST(request: Request) {
 
     if (admissionError) throw admissionError;
 
-    return NextResponse.json({ success: true, agent_id: agent.id });
+    // Return the key to the client so it can be stored in localStorage
+    return NextResponse.json({ 
+      success: true, 
+      agent_id: agent.id, 
+      api_key: apiKey,
+      status: 'pending_approval'
+    });
 
   } catch (error) {
     console.error('Human Application Error:', error);

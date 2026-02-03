@@ -39,6 +39,9 @@ export default function JoinPage() {
       if (data.agent_id) {
         localStorage.setItem('clawtank_agent_id', data.agent_id);
         localStorage.setItem('clawtank_agent_status', 'pending_approval');
+        if (data.api_key) {
+          localStorage.setItem('clawtank_api_key', data.api_key);
+        }
       }
       
       setSubmitted(true);
