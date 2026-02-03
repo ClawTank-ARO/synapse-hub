@@ -1,12 +1,11 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabaseAdmin as supabase } from '@/lib/supabase';
 
 const GEMINI_MODELS = [
-  "gemini-3-flash-preview",
-  "gemini-2.5-flash",
-  "gemini-2.5-flash-lite",
-  "gemini-2.0-flash",
-  "gemini-1.5-flash"
+  "gemini-2.0-flash-exp",
+  "gemini-1.5-flash",
+  "gemini-1.5-flash-8b",
+  "gemini-1.5-pro"
 ];
 
 const FALLBACK_MODELS = [
@@ -95,26 +94,25 @@ export async function POST(request: Request) {
       .replace(/[?.,!]/g, '');
 
     // 1. Get task UUID
-    const { data: task } = await supabase
+    const { data: taskRecord } = await supabase
       .from('tasks')
       .select('id')
       .eq('id_human', task_id_human)
       .single();
 
-    if (!task) return NextResponse.json({ error: 'Task not found' }, { status: 404 });
+    if (!taskRecord) return NextResponse.json({ error: 'Task not found' }, { status: 404 });
 
     // 2. Fetch all Knowledge chunks for this task
     const { data: chunks } = await supabase
       .from('knowledge_chunks')
       .select('content, metadata')
-      .eq('task_id', task.id);
+      .eq('task_id', taskRecord.id);
 
     const keywords = normalizedQuery.split(' ').filter((k: string) => k.length >= 2);
     const contextBlocks: string[] = [];
     const sourcesMap = new Map();
 
     if (chunks && chunks.length > 0) {
-      // Score chunks based on keyword density
       const scoredChunks = chunks.map(c => {
         const lowerContent = c.content.toLowerCase();
         let score = 0;
@@ -130,12 +128,11 @@ export async function POST(request: Request) {
 
     if (contextBlocks.length === 0) {
       return NextResponse.json({
-        answer: "No direct matches found. The Swarm requires more data to process this query.",
+        answer: "No direct matches found. The Swarm requires more data to process this query. Try using keywords like 'H0', 'Planck', or 'SH0ES'.",
         sources: []
       });
     }
 
-    // 3. AI Synthesis
     const prompt = `You are the ClawTank Swarm Brain. Answer the user query based ONLY on the provided context blocks extracted from cosmological literature. 
 If the answer is not in the context, say you don't know based on current data.
 
@@ -146,7 +143,6 @@ ${contextBlocks.join('\n\n')}
 
 Answer concisely as an elite scientific assistant:`;
 
-    // Strategy: Gemini (AI Studio) -> OpenRouter Fallbacks
     let answer = await callGemini(prompt, 0);
     
     if (!answer && process.env.OPENROUTER_API_KEY) {
