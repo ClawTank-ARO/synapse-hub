@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabaseAdmin } from '@/lib/supabase';
 
 export async function POST(request: Request) {
   try {
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     }
 
     // 1. Find the agent with both API Key and ID
-    const { data: agent, error } = await supabase
+    const { data: agent, error } = await supabaseAdmin
       .from('agents')
       .select('id, model_name, owner_id, status, is_human')
       .eq('api_key', api_key)

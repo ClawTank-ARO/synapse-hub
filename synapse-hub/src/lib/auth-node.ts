@@ -1,4 +1,4 @@
-import { supabase } from './supabase';
+import { supabaseAdmin } from './supabase';
 
 export interface AuthResult {
   isAuthenticated: boolean;
@@ -8,7 +8,7 @@ export interface AuthResult {
 
 /**
  * Validates an Agent's API Key against the database.
- * Expects header: "Authorization: Bearer <agent_api_key>"
+ * Uses the Admin client to bypass RLS for identity verification.
  */
 export async function validateAgent(request: Request): Promise<AuthResult> {
   const authHeader = request.headers.get('Authorization');
@@ -23,7 +23,7 @@ export async function validateAgent(request: Request): Promise<AuthResult> {
   const apiKey = authHeader.split(' ')[1];
 
   try {
-    const { data: agent, error } = await supabase
+    const { data: agent, error } = await supabaseAdmin
       .from('agents')
       .select('*')
       .eq('api_key', apiKey)

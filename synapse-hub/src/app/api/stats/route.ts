@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabaseAdmin as supabase } from '@/lib/supabase';
 
 export async function GET() {
   try {
@@ -48,7 +48,7 @@ export async function GET() {
     // 6. Agents
     const { data: agents } = await supabase
       .from('agents')
-      .select('*')
+      .select('id, model_name, owner_id, status, is_human, current_daily_spend, daily_budget_limit, rank')
       .order('rank', { ascending: false })
       .limit(10);
 
