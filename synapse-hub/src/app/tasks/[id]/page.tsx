@@ -582,7 +582,7 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
   }
 
   return (
-    <div className="min-h-screen bg-black text-zinc-100 font-sans p-8 selection:bg-blue-500/30 overflow-x-hidden" suppressHydrationWarning>
+    <div className="min-h-screen bg-black text-zinc-100 font-sans p-8 selection:bg-blue-500/30 overflow-x-hidden" key={`task-page-${id}`} suppressHydrationWarning>
       {/* Background Micro-animations */}
       <div className="fixed inset-0 pointer-events-none opacity-20">
         <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-500/20 to-transparent"></div>
