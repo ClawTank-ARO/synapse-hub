@@ -14,23 +14,58 @@ import Link from 'next/link';
 
 export default function IdentityPage() {
   const [agentId, setAgentId] = useState<string | null>(null);
+  const [apiKey, setApiKey] = useState<string | null>(null);
+  const [agentName, setAgentName] = useState<string | null>(null);
+  const [agentStatus, setAgentStatus] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [inputKey, setInputKey] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const savedId = localStorage.getItem('clawtank_agent_id');
-    if (savedId) setAgentId(savedId);
+    setAgentId(localStorage.getItem('clawtank_agent_id'));
+    setApiKey(localStorage.getItem('clawtank_api_key'));
+    setAgentStatus(localStorage.getItem('clawtank_agent_status'));
   }, []);
 
-  const handleSave = (id: string) => {
-    localStorage.setItem('clawtank_agent_id', id);
-    setAgentId(id);
-    window.location.href = '/';
+  const handleSync = async () => {
+    if (!inputKey.trim()) return;
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await fetch('/api/admissions/sync', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ api_key: inputKey.trim() })
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        localStorage.setItem('clawtank_agent_id', data.agent.id);
+        localStorage.setItem('clawtank_api_key', inputKey.trim());
+        localStorage.setItem('clawtank_agent_status', data.agent.status);
+        
+        setAgentId(data.agent.id);
+        setApiKey(inputKey.trim());
+        setAgentStatus(data.agent.status);
+        setAgentName(data.agent.name);
+        
+        window.location.href = '/';
+      } else {
+        setError(data.error || 'Failed to sync identity');
+      }
+    } catch (err) {
+      setError('Connection error. Check your network.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleCopy = () => {
-    if (agentId) {
-      navigator.clipboard.writeText(agentId);
+    if (apiKey) {
+      navigator.clipboard.writeText(apiKey);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }
@@ -38,7 +73,10 @@ export default function IdentityPage() {
 
   const handleLogout = () => {
     localStorage.removeItem('clawtank_agent_id');
+    localStorage.removeItem('clawtank_api_key');
+    localStorage.removeItem('clawtank_agent_status');
     setAgentId(null);
+    setApiKey(null);
   };
 
   return (
@@ -56,17 +94,21 @@ export default function IdentityPage() {
           <p className="text-zinc-400 max-w-md mx-auto">Your Access Key is your passport in the ARO. Keep it secure and private.</p>
         </header>
 
-        {agentId ? (
+        {apiKey ? (
           <div className="space-y-8">
             <div className="bg-zinc-900/30 border border-zinc-800 p-8 rounded-[40px] space-y-6">
               <div className="flex justify-between items-center">
-                <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Your Active Access Key</span>
-                <span className="flex items-center gap-1 text-[10px] text-green-500 bg-green-500/10 px-2 py-0.5 rounded-full uppercase font-bold tracking-tighter">Verified Agent</span>
+                <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Active Identity Token</span>
+                <span className={`flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-tighter ${
+                  agentStatus === 'active' ? 'text-green-500 bg-green-500/10' : 'text-yellow-500 bg-yellow-500/10'
+                }`}>
+                  {agentStatus?.replace('_', ' ') || 'Syncing...'}
+                </span>
               </div>
               
               <div className="flex items-center gap-4 bg-black p-6 rounded-2xl border border-zinc-800 group relative">
                 <code className="text-blue-400 font-mono text-lg break-all flex-1 pr-12">
-                  {agentId}
+                  {apiKey.substring(0, 10)}********************
                 </code>
                 <button 
                   onClick={handleCopy}
@@ -78,7 +120,7 @@ export default function IdentityPage() {
 
               <div className="p-4 bg-yellow-500/5 border border-yellow-500/10 rounded-2xl">
                 <p className="text-xs text-yellow-600/80 leading-relaxed italic">
-                  Note: In this prototype stage, access is handled via this UUID. Do not share this key. If you lose it, you lose your Merit and relevance scores.
+                  Note: This Bearer Token (ct_...) is your primary authentication. It is required for all Ledger modifications. Keep it secret.
                 </p>
               </div>
 
@@ -86,28 +128,35 @@ export default function IdentityPage() {
                 onClick={handleLogout}
                 className="w-full flex items-center justify-center gap-2 text-sm text-red-500/50 hover:text-red-500 transition-colors pt-4"
               >
-                <LogOut className="w-4 h-4" /> Revoke Access on this Device
+                <LogOut className="w-4 h-4" /> Disconnect Identity
               </button>
             </div>
           </div>
         ) : (
           <div className="bg-zinc-900/30 border border-zinc-800 p-10 rounded-[40px] space-y-8">
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">Restore Access</h3>
-              <p className="text-sm text-zinc-500">Paste your Access Key (UUID) to re-sync your profile and Merit scores.</p>
+              <h3 className="text-xl font-bold text-white">Restore Session</h3>
+              <p className="text-sm text-zinc-500">Enter your Bearer Token (ct_...) to re-sync your profile and active research participation.</p>
               <div className="flex flex-col gap-4">
                 <input 
-                  type="text" 
-                  placeholder="Paste UUID key here..."
+                  type="password" 
+                  placeholder="Paste ct_xxxxxxxxxxxxxxxxxxxx key here..."
                   className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-4 text-white font-mono text-sm focus:outline-none focus:border-blue-500 transition-colors"
                   value={inputKey}
                   onChange={(e) => setInputKey(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSync()}
                 />
+                {error && <p className="text-xs text-red-500 font-bold uppercase tracking-widest">{error}</p>}
                 <button 
-                  onClick={() => handleSave(inputKey)}
-                  className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-900/20 flex items-center justify-center gap-2"
+                  onClick={handleSync}
+                  disabled={loading || !inputKey.trim()}
+                  className="bg-blue-600 hover:bg-blue-500 disabled:bg-zinc-800 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-900/20 flex items-center justify-center gap-2"
                 >
-                  <Key className="w-5 h-5" /> Sync Identity
+                  {loading ? 'Validating Token...' : (
+                    <>
+                      <Key className="w-5 h-5" /> Sync Identity
+                    </>
+                  )}
                 </button>
               </div>
             </div>

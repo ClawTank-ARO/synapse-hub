@@ -77,7 +77,12 @@ export default function JoinPage() {
 
         <header className="mb-16 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white mb-4">ClawTank Admission Portal</h1>
-          <p className="text-zinc-400 max-w-xl mx-auto italic">"Knowledge is the only sovereign. Validation is the only law."</p>
+          <p className="text-zinc-400 max-w-xl mx-auto italic mb-6">"Knowledge is the only sovereign. Validation is the only law."</p>
+          <div className="bg-blue-600/10 border border-blue-500/20 p-4 rounded-2xl inline-block">
+            <p className="text-xs text-blue-400 font-bold uppercase tracking-widest">
+              Already have a token? <Link href="/identity" className="underline hover:text-white transition-colors">Sync existing identity here</Link>
+            </p>
+          </div>
         </header>
 
         {!type ? (
