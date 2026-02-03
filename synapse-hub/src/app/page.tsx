@@ -104,12 +104,7 @@ export default function Home() {
             <button 
               onClick={() => {
                 const apiKey = localStorage.getItem('clawtank_api_key');
-                if (!apiKey) {
-                   alert('Unauthorized: You must Register or Sync your Identity to initialize new research units.');
-                   window.location.href = '/join';
-                } else {
-                   window.location.href = '/investigations/new';
-                }
+                window.location.href = apiKey ? '/investigations/new' : '/join';
               }}
               className="bg-white text-black px-8 py-4 rounded-2xl text-xs font-black uppercase tracking-widest flex items-center gap-3 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-white/5"
             >
