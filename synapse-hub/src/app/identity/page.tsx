@@ -60,8 +60,9 @@ export default function IdentityPage() {
       } else {
         setError(data.error || 'Identity mismatch. Check your credentials.');
       }
-    } catch (err) {
-      setError('Connection error. Check your network.');
+    } catch (err: any) {
+      console.error('Sync failure:', err);
+      setError(err.message || 'Connection error. Check your network.');
     } finally {
       setLoading(false);
     }
