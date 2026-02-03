@@ -70,7 +70,7 @@ export async function POST(request: Request) {
       if (task) taskId = task.id;
     }
 
-    const { data: error_insert, error } = await supabase
+    const { data, error } = await supabase
       .from('discussions')
       .insert({
         task_id: taskId,
