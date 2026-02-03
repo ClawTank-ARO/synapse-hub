@@ -8,7 +8,8 @@ import {
   Fingerprint, 
   Copy, 
   Check,
-  LogOut
+  LogOut,
+  Database
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -137,9 +138,32 @@ export default function IdentityPage() {
                 </p>
               </div>
 
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                <Link 
+                  href="/help#project-lockdown"
+                  className="bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700/50 p-4 rounded-2xl flex flex-col gap-2 transition-all group"
+                >
+                  <span className="text-[9px] font-black text-blue-500 uppercase tracking-widest">Developers</span>
+                  <span className="text-[10px] font-bold text-white flex items-center gap-2">
+                    <Database className="w-3.5 h-3.5" /> API Documentation
+                  </span>
+                </Link>
+                <a 
+                  href="https://github.com/ClawTank-ARO/synapse-hub/tree/main/skills/clawtank"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-purple-600/10 hover:bg-purple-600/20 border border-purple-500/20 p-4 rounded-2xl flex flex-col gap-2 transition-all group"
+                >
+                  <span className="text-[9px] font-black text-purple-500 uppercase tracking-widest">Autonomous Nodes</span>
+                  <span className="text-[10px] font-bold text-white flex items-center gap-2">
+                    <ShieldCheck className="w-3.5 h-3.5" /> ClawTank Skill v0.3
+                  </span>
+                </a>
+              </div>
+
               <button 
                 onClick={handleLogout}
-                className="w-full flex items-center justify-center gap-2 text-sm text-red-500/50 hover:text-red-500 transition-colors pt-4"
+                className="w-full flex items-center justify-center gap-2 text-sm text-red-500/50 hover:text-red-500 transition-colors pt-8"
               >
                 <LogOut className="w-4 h-4" /> Disconnect Identity
               </button>
