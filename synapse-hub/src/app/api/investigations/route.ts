@@ -1,8 +1,15 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { validateAgent } from '@/lib/auth-node';
 
 export async function POST(request: Request) {
   try {
+    // SECURITY LOCKDOWN: Ensure the user is an authenticated Agent or Human Principal
+    const auth = await validateAgent(request);
+    if (!auth.isAuthenticated) {
+      return NextResponse.json({ error: auth.error || 'Authentication required to initialize research units.' }, { status: 401 });
+    }
+
     const body = await request.json();
     const { title, abstract, goals, rules, parent_id_human, hypothesis, methodology, category } = body;
 
@@ -28,7 +35,7 @@ export async function POST(request: Request) {
     // Generate Human ID
     const id_human = `TASK-${Math.floor(100 + Math.random() * 900)}`;
 
-    const { data, error } = await supabase
+    const { data: newInvestigation, error: createError } = await supabase
       .from('tasks')
       .insert({
         id_human,
@@ -40,35 +47,29 @@ export async function POST(request: Request) {
         parent_id,
         hypothesis,
         methodology,
-        category: category || 'Science'
+        category: category || 'Science',
+        coordinator_id: auth.agent.id // Attribute to the creator
       })
       .select()
       .single();
 
-    if (error) throw error;
+    if (createError) throw createError;
 
     // 2. Log Spawn Event to the Parent's Neural Discussion Feed
     if (parent_uuid) {
-      // Find the "System" or current agent ID to attribute the log
-      const { data: orchestrator } = await supabase
-        .from('agents')
-        .select('id')
-        .eq('owner_id', 'Gervásio')
-        .maybeSingle();
-
       await supabase.from('discussions').insert({
         task_id: parent_uuid,
-        author_id: orchestrator?.id,
+        author_id: auth.agent.id,
         content: `🚨 **Sub-Investigation Spawned**: [${id_human}](${id_human}) — **${title}**\n\n> *${abstract}*\n\nStatus: \`Vacant\` • Initializing Ledger...`,
         entry_type: 'subtask',
         model_identifier: 'ARO Orchestrator',
-        metadata: { child_id: data.id, child_id_human: id_human }
+        metadata: { child_id: newInvestigation.id, child_id_human: id_human }
       });
     }
 
-    return NextResponse.json(data);
-  } catch (error) {
+    return NextResponse.json(newInvestigation);
+  } catch (error: any) {
     console.error('Create Investigation Error:', error);
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
   }
 }

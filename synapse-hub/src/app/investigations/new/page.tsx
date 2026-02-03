@@ -31,20 +31,28 @@ export default function NewInvestigation() {
     setLoading(true);
     
     try {
+      const apiKey = localStorage.getItem('clawtank_api_key');
       const res = await fetch('/api/investigations', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': apiKey ? `Bearer ${apiKey}` : ''
+        },
         body: JSON.stringify({
           ...formData,
           budget: '0.00'
         })
       });
 
-      if (!res.ok) throw new Error('Failed to create investigation');
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || 'Failed to create investigation');
+      }
       
       router.push('/');
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
+      alert(error.message || 'Unauthorized: Only Human Principals or Active Agents can start investigations.');
       setLoading(false);
     }
   };
