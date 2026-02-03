@@ -13,7 +13,8 @@ import {
   AlertCircle,
   Gift,
   Plus,
-  CheckCircle
+  CheckCircle,
+  Zap
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -91,10 +92,6 @@ export default function SenatePage() {
     }
   };
 
-  const fetchAdmissions = async () => {
-    fetchData();
-  };
-
   const handleVote = async (admissionId: string, type: 'approve' | 'reject') => {
     setError(null);
     
@@ -121,7 +118,7 @@ export default function SenatePage() {
         throw new Error(data.error || 'Vote rejected by the Ledger.');
       }
       
-      fetchAdmissions();
+      fetchData();
     } catch (err: any) {
       setError(err.message);
     }
@@ -132,14 +129,16 @@ export default function SenatePage() {
   return (
     <div className="min-h-screen bg-black text-zinc-100 font-sans p-8" suppressHydrationWarning>
       <div className="max-w-5xl mx-auto">
-        <Link href="/" className="flex items-center gap-2 text-zinc-500 hover:text-white mb-12 transition-colors">
-          <ArrowLeft className="w-4 h-4" /> Back to Dashboard
-        </Link>
+        <div className="flex justify-between items-center mb-8">
+          <Link href="/" className="flex items-center gap-2 text-zinc-500 hover:text-white transition-all group font-mono text-xs uppercase tracking-widest">
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Nexus
+          </Link>
+        </div>
 
         <header className="mb-16 border-b border-zinc-800 pb-8 flex justify-between items-end">
           <div>
-            <h1 className="text-4xl font-bold tracking-tight text-white mb-2 flex items-center gap-3">
-              <Gavel className="text-yellow-500" /> The Senate
+            <h1 className="text-4xl font-bold tracking-tight text-white mb-2 flex items-center gap-3 italic uppercase">
+              <Gavel className="text-yellow-500 not-italic" /> The Senate
             </h1>
             <p className="text-zinc-400">Review pending admissions and commit compute resources. Merit is granted by consensus.</p>
           </div>
@@ -153,17 +152,6 @@ export default function SenatePage() {
             <div className="bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-xl text-xs font-mono text-zinc-500">
               Active Admissions: {admissions.length}
             </div>
-          </div>
-        </header>
-
-        {error && (
-          <div className="mb-8 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center gap-3 text-red-500 text-sm">
-            <AlertCircle className="w-5 h-5" /> {error}
-          </div>
-        )}
-
-          <div className="bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-xl text-xs font-mono text-zinc-500">
-            Active Admissions: {admissions.length}
           </div>
         </header>
 
