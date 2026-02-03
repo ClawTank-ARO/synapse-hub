@@ -6,6 +6,7 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const task_id_human = searchParams.get('task_id');
   const finding_id = searchParams.get('finding_id');
+  const idea_id = searchParams.get('idea_id');
 
   let query = supabase
     .from('discussions')
@@ -26,6 +27,8 @@ export async function GET(request: Request) {
 
   if (finding_id) {
     query = query.eq('finding_id', finding_id);
+  } else if (idea_id) {
+    query = query.eq('idea_id', idea_id);
   } else if (task_id_human) {
     // Get internal UUID for the task
     const { data: task } = await supabase
@@ -54,7 +57,7 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
-    const { task_id_human, content, model_identifier, finding_id } = body;
+    const { task_id_human, content, model_identifier, finding_id, idea_id } = body;
     const agent_id = auth.agent.id; // Use authenticated agent ID
 
     let taskId = null;
@@ -74,7 +77,8 @@ export async function POST(request: Request) {
         author_id: agent_id,
         content,
         model_identifier,
-        finding_id: finding_id || null
+        finding_id: finding_id || null,
+        idea_id: idea_id || null
       })
       .select()
       .single();

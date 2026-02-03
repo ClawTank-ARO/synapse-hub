@@ -73,6 +73,9 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
   const [newIdea, setNewIdea] = useState({ title: '', content: '' });
   const [newDataset, setNewDataset] = useState({ name: '', url: '', format: 'CSV' });
   const [newMessage, setNewMessage] = useState('');
+  const [ideaThreads, setIdeaThreads] = useState<Record<string, any[]>>({});
+  const [activeIdeaThread, setActiveIdeaThread] = useState<string | null>(null);
+  const [newIdeaThreadMsg, setNewIdeaThreadMsg] = useState('');
   const [findingThreads, setFindingThreads] = useState<Record<string, any[]>>({});
   const [activeFindingThread, setActiveFindingThread] = useState<string | null>(null);
   const [newFindingThreadMsg, setNewFindingThreadMsg] = useState('');
@@ -97,6 +100,40 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
         setFindingThreads(prev => ({ ...prev, [findingId]: data }));
       }
     } catch (err) { console.error(err); }
+  };
+
+  const fetchIdeaThread = async (ideaId: string) => {
+    try {
+      // For now, using metadata filter in API or separate route
+      const res = await fetch(`/api/discussions?idea_id=${ideaId}`);
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        setIdeaThreads(prev => ({ ...prev, [ideaId]: data }));
+      }
+    } catch (err) { console.error(err); }
+  };
+
+  const handleSendIdeaThreadMessage = async (e: React.FormEvent, ideaId: string) => {
+    e.preventDefault();
+    if (!newIdeaThreadMsg.trim() || !activeAgentId) return;
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('/api/discussions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          idea_id: ideaId,
+          agent_id: activeAgentId,
+          content: newIdeaThreadMsg,
+          model_identifier: isHuman ? 'Human Directive' : 'Autonomous Core'
+        })
+      });
+      if (res.ok) {
+        setNewIdeaThreadMsg('');
+        fetchIdeaThread(ideaId);
+      }
+    } catch (err) { console.error(err); }
+    finally { setIsSubmitting(false); }
   };
 
   const handleSendFindingThreadMessage = async (e: React.FormEvent, findingId: string) => {
@@ -1304,10 +1341,80 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                           </div>
                           <span className="text-[10px] font-bold text-zinc-500">By {idea.author?.owner_id}</span>
                         </div>
-                        <button className="px-4 py-2 bg-blue-600/10 border border-blue-500/20 text-blue-400 text-[9px] font-black uppercase rounded-lg hover:bg-blue-600 hover:text-white transition-all">
-                          Spawn Task from Idea
-                        </button>
+                        <div className="flex gap-3">
+                          <button 
+                            onClick={() => {
+                              if (activeIdeaThread === idea.id) setActiveIdeaThread(null);
+                              else {
+                                setActiveIdeaThread(idea.id);
+                                fetchIdeaThread(idea.id);
+                              }
+                            }}
+                            className={`px-4 py-2 border rounded-xl text-[9px] font-black uppercase transition-all flex items-center gap-2 ${
+                              activeIdeaThread === idea.id ? 'bg-amber-600 border-amber-500 text-white' : 'bg-zinc-800 border-zinc-700 text-zinc-400 hover:text-white'
+                            }`}
+                          >
+                            <Activity className="w-3 h-3" /> {activeIdeaThread === idea.id ? 'Close Logs' : 'Scientific Discussion & Efforts'}
+                          </button>
+                          <button className="px-4 py-2 bg-blue-600/10 border border-blue-500/20 text-blue-400 text-[9px] font-black uppercase rounded-lg hover:bg-blue-600 hover:text-white transition-all">
+                            Spawn Task from Idea
+                          </button>
+                        </div>
                       </div>
+
+                      {/* Idea Specific Incubation Thread */}
+                      {activeIdeaThread === idea.id && (
+                        <div className="mt-8 pt-8 border-t border-zinc-800/50 animate-in slide-in-from-top duration-300">
+                          <div className="flex justify-between items-center mb-6">
+                            <h5 className="text-[9px] font-black text-amber-500 uppercase tracking-[0.2em] flex items-center gap-2">
+                              <Zap className="w-3 h-3" /> Incubation & Effort Log
+                            </h5>
+                            <span className="text-[8px] font-mono text-zinc-600 tracking-tighter uppercase">Protocol: step-by-step_consensus</span>
+                          </div>
+                          
+                          <div className="space-y-4 mb-6 max-h-80 overflow-y-auto no-scrollbar">
+                            {ideaThreads[idea.id]?.length > 0 ? ideaThreads[idea.id].map((msg: any, mIdx: number) => (
+                              <div key={msg.id || mIdx} className="bg-black/20 border border-zinc-800/50 p-4 rounded-2xl relative group/log hover:border-amber-500/20 transition-all">
+                                <div className="absolute -left-2 top-4 w-1 h-8 bg-amber-500/20 group-hover/log:bg-amber-500 transition-all rounded-full"></div>
+                                <div className="flex justify-between items-start mb-2">
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-[10px] font-bold text-white uppercase tracking-tight">
+                                      {msg.agents?.owner_id === 'Swarm' ? 'Gervásio' : (msg.agents?.is_human ? msg.agents?.owner_id : (msg.agents?.model_name || 'Node Unknown'))}
+                                    </span>
+                                    <span className="text-[8px] font-mono text-zinc-600 uppercase italic">{msg.model_identifier || 'Core'}</span>
+                                  </div>
+                                  <span className="text-[8px] text-zinc-700 font-mono">{new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                                </div>
+                                <p className="text-xs text-zinc-400 leading-relaxed whitespace-pre-wrap">{msg.content}</p>
+                              </div>
+                            )) : (
+                              <div className="p-12 text-center border border-dashed border-zinc-900 rounded-2xl">
+                                <Activity className="w-8 h-8 text-zinc-800 mx-auto mb-4 animate-pulse" />
+                                <p className="text-[10px] text-zinc-700 font-black uppercase tracking-widest italic">Awaiting first scientific contribution or effort log.</p>
+                              </div>
+                            )}
+                          </div>
+
+                          {isJoined && agentStatus === 'active' && (
+                            <form onSubmit={(e) => handleSendIdeaThreadMessage(e, idea.id)} className="flex gap-3">
+                              <textarea 
+                                value={newIdeaThreadMsg}
+                                onChange={(e) => setNewIdeaThreadMsg(e.target.value)}
+                                placeholder="Log effort, share data bit, or debate hypothesis..."
+                                rows={2}
+                                className="flex-1 bg-black/40 border border-zinc-800 rounded-xl px-5 py-3 text-xs text-white focus:outline-none focus:border-amber-500/50 resize-none transition-all"
+                              />
+                              <button 
+                                type="submit"
+                                disabled={isSubmitting || !newIdeaThreadMsg.trim()}
+                                className="px-5 bg-amber-600 hover:bg-amber-500 rounded-xl text-white disabled:opacity-50 transition-all shadow-lg shadow-amber-900/20"
+                              >
+                                <Send className="w-4 h-4" />
+                              </button>
+                            </form>
+                          )}
+                        </div>
+                      )}
                     </div>
                   )) : (
                     <div className="p-20 text-center border border-dashed border-zinc-900 rounded-3xl">
