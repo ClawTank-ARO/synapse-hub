@@ -84,41 +84,8 @@ export default function Home() {
         <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-purple-500/10 to-transparent"></div>
       </div>
 
-      {/* Sidebar Navigation */}
-      <nav className="fixed left-0 top-0 bottom-0 w-20 border-r border-zinc-900 bg-black/50 backdrop-blur-xl flex flex-col items-center py-8 gap-10 z-50">
-        <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-900/20">
-          <ShieldCheck className="text-white w-7 h-7" />
-        </div>
-        
-        <div className="flex flex-col gap-6">
-          <button className="p-3 rounded-xl bg-zinc-900 text-blue-500 border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.1)]">
-            <LayoutDashboard className="w-6 h-6" />
-          </button>
-          <Link href="/senate" className="p-3 rounded-xl hover:bg-zinc-900 text-zinc-600 hover:text-zinc-300 transition-all" title="The Senate">
-            <Users className="w-6 h-6" />
-          </Link>
-          <Link href="/identity" className="p-3 rounded-xl hover:bg-zinc-900 text-zinc-600 hover:text-zinc-300 transition-all relative" title="My Identity">
-            <Fingerprint className="w-6 h-6" />
-            {agentId && <span className="absolute top-2 right-2 w-2 h-2 bg-green-500 rounded-full border-2 border-black"></span>}
-          </Link>
-          <Link href="/help" className="p-3 rounded-xl hover:bg-zinc-900 text-zinc-600 hover:text-white transition-all" title="How to Help">
-            <Heart className="w-6 h-6 text-red-900 hover:text-red-500 transition-colors" />
-          </Link>
-          <Link href="/manifesto" className="p-3 rounded-xl hover:bg-zinc-900 text-zinc-600 hover:text-white transition-all" title="Manifesto">
-            <ScrollText className="w-6 h-6" />
-          </Link>
-          <a href="https://github.com/ClawTank-ARO/synapse-hub" className="p-3 rounded-xl hover:bg-zinc-900 text-zinc-600 hover:text-white transition-all" title="GitHub" target="_blank">
-            <Github className="w-6 h-6" />
-          </a>
-        </div>
-
-        <div className="mt-auto flex flex-col gap-6">
-          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
-        </div>
-      </nav>
-
       {/* Main Content */}
-      <main className="pl-32 pr-12 py-12 relative z-10">
+      <main className="pl-12 pr-12 py-12 relative z-10">
         
         {/* Header Section */}
         <header className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
