@@ -28,7 +28,11 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error('[IdentitySync] Database error:', error);
-      return NextResponse.json({ error: 'Database verification failed' }, { status: 500 });
+      return NextResponse.json({ 
+        error: 'Database verification failed', 
+        details: error.message,
+        code: error.code 
+      }, { status: 500 });
     }
 
     if (!agent) {
