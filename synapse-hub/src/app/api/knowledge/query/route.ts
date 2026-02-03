@@ -7,7 +7,7 @@ const STUDIO_MODELS = [
   "gemma-3-27b-it",
   "gemma-3-12b-it",
   "gemma-3-4b-it",
-  "gemini-2.0-flash", // Fallback candidate
+  "gemini-2.0-flash",
   "gemini-1.5-flash"
 ];
 
@@ -17,8 +17,35 @@ const OPENROUTER_FALLBACKS = [
   "openrouter/auto" 
 ];
 
-async function callStudio(prompt: string, modelIdx: number): Promise<string | null> {
-  const key = process.env.GOOGLE_AI_STUDIO_KEY;
+async function getSwarmKey(provider: string): Promise<string | null> {
+  try {
+    // Attempt to get the latest active key from the DB vault first
+    const { data: vaultKey } = await supabase
+      .from('active_vault')
+      .select('decrypted_key')
+      .eq('provider', provider)
+      .eq('is_active', true)
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .maybeSingle();
+
+    if (vaultKey?.decrypted_key) {
+      console.log(`[RAG] Using Swarm-donated key for ${provider}`);
+      return vaultKey.decrypted_key;
+    }
+  } catch (e) {
+    console.error(`[Vault] Failed to fetch key:`, e);
+  }
+
+  // Fallback to environment variables
+  if (provider === 'Google') return process.env.GOOGLE_AI_STUDIO_KEY || null;
+  if (provider === 'OpenRouter') return process.env.OPENROUTER_API_KEY || null;
+  
+  return null;
+}
+
+async function callStudio(prompt: string, modelIdx: number, overrideKey?: string): Promise<string | null> {
+  const key = overrideKey || await getSwarmKey('Google');
   if (!key || modelIdx >= STUDIO_MODELS.length) return null;
 
   const model = STUDIO_MODELS[modelIdx];
@@ -38,19 +65,20 @@ async function callStudio(prompt: string, modelIdx: number): Promise<string | nu
     if (!res.ok) {
       const err = await res.text();
       console.warn(`[RAG] Studio ${model} failed (Status ${res.status}): ${err}`);
-      return callStudio(prompt, modelIdx + 1);
+      return callStudio(prompt, modelIdx + 1, key);
     }
 
     const data = await res.json();
     return data.candidates?.[0]?.content?.parts?.[0]?.text || null;
   } catch (err) {
     console.error(`[RAG] Studio error:`, err);
-    return callStudio(prompt, modelIdx + 1);
+    return callStudio(prompt, modelIdx + 1, key);
   }
 }
 
 async function callOpenRouter(prompt: string, modelIdx: number): Promise<string | null> {
-  if (modelIdx >= OPENROUTER_FALLBACKS.length) return null;
+  const key = await getSwarmKey('OpenRouter');
+  if (!key || modelIdx >= OPENROUTER_FALLBACKS.length) return null;
   
   const model = OPENROUTER_FALLBACKS[modelIdx];
   console.log(`[RAG] Attempting synthesis with OpenRouter: ${model}`);
@@ -60,7 +88,7 @@ async function callOpenRouter(prompt: string, modelIdx: number): Promise<string 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
+        'Authorization': `Bearer ${key}`,
         'HTTP-Referer': 'https://clawtank.ai',
         'X-Title': 'ClawTank Swarm Brain'
       },
@@ -146,10 +174,10 @@ ${contextBlocks.join('\n\n')}
 
 Answer concisely as an elite scientific assistant:`;
 
-    // Strategy: Rotation through Studio Models -> OpenRouter Fallbacks
+    // Strategy: Rotation through Studio Models (Gemma/Gemini) -> OpenRouter Fallbacks
     let answer = await callStudio(prompt, 0);
     
-    if (!answer && process.env.OPENROUTER_API_KEY) {
+    if (!answer) {
       answer = await callOpenRouter(prompt, 0);
     }
 

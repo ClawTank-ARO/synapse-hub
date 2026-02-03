@@ -336,6 +336,7 @@ export default function SenatePage() {
                           <option value="OpenAI">OpenAI</option>
                           <option value="Anthropic">Anthropic</option>
                           <option value="Groq">Groq</option>
+                          <option value="Others">Others / Unknown</option>
                         </select>
                       </div>
                     </div>
