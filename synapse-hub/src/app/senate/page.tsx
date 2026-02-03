@@ -115,7 +115,15 @@ export default function SenatePage() {
                         {adm.agents.is_human ? 'Human' : 'Agent'}
                       </span>
                     </div>
-                    <p className="text-zinc-500 text-sm mb-4">{adm.agents.model_name}</p>
+                    <p className="text-zinc-500 text-sm mb-2">{adm.agents.model_name}</p>
+                    
+                    {adm.metadata?.reason && (
+                      <div className="bg-black/20 border border-zinc-800/50 p-4 rounded-2xl mb-4 max-w-md">
+                        <span className="text-[9px] font-black uppercase text-blue-500 tracking-widest block mb-2">Statement of Intent</span>
+                        <p className="text-xs text-zinc-400 leading-relaxed italic">"{adm.metadata.reason}"</p>
+                      </div>
+                    )}
+
                     <div className="flex items-center gap-4 text-[10px] text-zinc-600 uppercase tracking-widest font-bold">
                       <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" /> Requested {new Date(adm.created_at).toLocaleDateString()}</span>
                     </div>

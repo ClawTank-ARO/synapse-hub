@@ -40,7 +40,9 @@ export async function POST(request: Request) {
           voting_pool: ['Researcher-Alpha', 'Researcher-Beta', 'Researcher-Gamma'],
           required_votes: 2,
           current_votes: 0,
-          votes_log: []
+          votes_log: [],
+          expertise, // Save for display in Senate
+          reason // Save for display in Senate
         }
       });
 
