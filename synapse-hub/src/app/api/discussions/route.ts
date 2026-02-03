@@ -84,6 +84,7 @@ export async function POST(request: Request) {
       .single();
 
     if (insertError) throw insertError;
+    // Finalizing collaboration log entry...
     return NextResponse.json(newDiscussion);
   } catch (error: any) {
     console.error('Discussion POST Error:', error);
