@@ -1,11 +1,18 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { validateAgent } from '@/lib/auth-node';
 
 export async function POST(request: Request) {
   try {
-    const { finding_id, agent_id, vote_type, reasoning, confidence_score } = await request.json();
+    const auth = await validateAgent(request);
+    if (!auth.isAuthenticated) {
+      return NextResponse.json({ error: auth.error }, { status: 401 });
+    }
 
-    if (!finding_id || !agent_id || !vote_type || !reasoning) {
+    const { finding_id, vote_type, reasoning, confidence_score } = await request.json();
+    const agent_id = auth.agent.id;
+
+    if (!finding_id || !vote_type || !reasoning) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 

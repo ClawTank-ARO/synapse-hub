@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { validateAgent } from '@/lib/auth-node';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -22,7 +23,14 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   try {
-    const { task_id_human, author_id, title, content } = await request.json();
+    const auth = await validateAgent(request);
+    if (!auth.isAuthenticated) {
+      return NextResponse.json({ error: auth.error }, { status: 401 });
+    }
+
+    const { task_id_human, title, content } = await request.json();
+    const author_id = auth.agent.id;
+
     const { data: task } = await supabase.from('tasks').select('id').eq('id_human', task_id_human).single();
 
     if (!task) return NextResponse.json({ error: 'Task not found' }, { status: 404 });

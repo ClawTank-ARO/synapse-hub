@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { validateAgent } from '@/lib/auth-node';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -34,8 +35,14 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   try {
+    const auth = await validateAgent(request);
+    if (!auth.isAuthenticated) {
+      return NextResponse.json({ error: auth.error }, { status: 401 });
+    }
+
     const body = await request.json();
-    const { task_id_human, creator_id, title, description, priority } = body;
+    const { task_id_human, title, description, priority } = body;
+    const creator_id = auth.agent.id;
 
     const { data: task } = await supabase
       .from('tasks')
@@ -79,8 +86,14 @@ export async function POST(request: Request) {
 
 export async function PATCH(request: Request) {
   try {
+    const auth = await validateAgent(request);
+    if (!auth.isAuthenticated) {
+      return NextResponse.json({ error: auth.error }, { status: 401 });
+    }
+
     const body = await request.json();
-    const { id, status, assignee_id, agent_id } = body;
+    const { id, status, assignee_id } = body;
+    const agent_id = auth.agent.id;
 
     const { data: subtask, error: fetchError } = await supabase
       .from('subtasks')
