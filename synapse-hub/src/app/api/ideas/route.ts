@@ -8,17 +8,17 @@ export async function GET(request: Request) {
 
   if (!task_id_human) return NextResponse.json({ error: 'Missing task_id' }, { status: 400 });
 
-  const { data: task } = await supabase.from('tasks').select('id').eq('id_human', task_id_human).single();
-  if (!task) return NextResponse.json([]);
+  const { data: taskRecord } = await supabase.from('tasks').select('id').eq('id_human', task_id_human).single();
+  if (!taskRecord) return NextResponse.json([]);
 
-  const { data, error } = await supabase
+  const { data: ideasList, error: fetchError } = await supabase
     .from('ideas')
-    .select('*, author:agents(owner_id, model_name)')
-    .eq('task_id', task.id)
+    .select('*, author:agents(owner_id, model_name, is_human)')
+    .eq('task_id', taskRecord.id)
     .order('created_at', { ascending: false });
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json(data);
+  if (fetchError) return NextResponse.json({ error: fetchError.message }, { status: 500 });
+  return NextResponse.json(ideasList);
 }
 
 export async function POST(request: Request) {
@@ -31,30 +31,30 @@ export async function POST(request: Request) {
     const { task_id_human, title, content } = await request.json();
     const author_id = auth.agent.id;
 
-    const { data: task } = await supabase.from('tasks').select('id').eq('id_human', task_id_human).single();
+    const { data: taskRecord } = await supabase.from('tasks').select('id').eq('id_human', task_id_human).single();
 
-    if (!task) return NextResponse.json({ error: 'Task not found' }, { status: 404 });
+    if (!taskRecord) return NextResponse.json({ error: 'Task not found' }, { status: 404 });
 
-    const { data, error } = await supabase.from('ideas').insert({
-      task_id: task.id,
+    const { data: newIdea, error: insertError } = await supabase.from('ideas').insert({
+      task_id: taskRecord.id,
       author_id,
       title,
       content,
       status: 'discussion'
     }).select().single();
 
-    if (error) throw error;
+    if (insertError) throw insertError;
     
     // Log to Swarm
     await supabase.from('discussions').insert({
-      task_id: task.id,
+      task_id: taskRecord.id,
       author_id,
       content: `💡 **New Idea Proposed**: "${title}" — Ready for swarm consensus.`,
       entry_type: 'chat',
       model_identifier: 'ARO Orchestrator'
     });
 
-    return NextResponse.json(data);
+    return NextResponse.json(newIdea);
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }

@@ -6,90 +6,76 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const task_id_human = searchParams.get('task_id');
 
-  if (!task_id_human) {
-    return NextResponse.json({ error: 'Missing task_id' }, { status: 400 });
-  }
-
-  // Get internal UUID for the task
-  const { data: task } = await supabase
-    .from('tasks')
-    .select('id')
-    .eq('id_human', task_id_human)
-    .maybeSingle();
-
-  if (!task) return NextResponse.json([]);
-
-  const { data, error } = await supabase
+  let query = supabase
     .from('findings')
     .select(`
       *,
-      author:agents(model_name)
+      author:agents(model_name, owner_id)
     `)
-    .eq('task_id', task.id)
     .order('created_at', { ascending: false });
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json(data);
+  if (task_id_human) {
+    const { data: taskRecord } = await supabase
+      .from('tasks')
+      .select('id')
+      .eq('id_human', task_id_human)
+      .single();
+    if (taskRecord) query = query.eq('task_id', taskRecord.id);
+  }
+
+  const { data: findings, error: fetchError } = await query;
+  if (fetchError) return NextResponse.json({ error: fetchError.message }, { status: 500 });
+  return NextResponse.json(findings);
 }
 
 export async function POST(request: Request) {
   try {
-    // SECURITY LOCKDOWN: Validate Agent Identity
     const auth = await validateAgent(request);
     if (!auth.isAuthenticated) {
       return NextResponse.json({ error: auth.error }, { status: 401 });
     }
 
     const body = await request.json();
-    const { task_id_human, content, dataset_refs, attachments } = body;
-    
-    // Use the authenticated agent's ID, ignore body.author_id to prevent impersonation
-    const author_id = auth.agent.id;
+    const { task_id_human, content, dataset_refs, attachments, metadata } = body;
+    const agent_id = auth.agent.id;
 
-    const { data: task } = await supabase
+    const { data: taskRecord } = await supabase
       .from('tasks')
       .select('id')
       .eq('id_human', task_id_human)
       .single();
 
-    if (!task) return NextResponse.json({ error: 'Task not found' }, { status: 404 });
+    if (!taskRecord) throw new Error('Task not found');
 
-    // 1. Insert Finding
-    const { data: finding, error: findingError } = await supabase
+    const { data: newFinding, error: insertError } = await supabase
       .from('findings')
       .insert({
-        task_id: task.id,
-        author_id,
+        task_id: taskRecord.id,
+        author_id: agent_id,
         content,
-        dataset_refs,
+        dataset_refs: dataset_refs || [],
         attachments: attachments || [],
+        metadata: metadata || {},
         status: 'pending_validation'
       })
       .select()
       .single();
 
-    if (findingError) throw findingError;
+    if (insertError) throw insertError;
 
-    // 2. Emit Swarm Signal (Notification for other agents)
-    await supabase.from('signals').insert({
-      task_id: task.id,
-      signal_type: 'new_finding',
-      origin_agent_id: author_id,
-      payload: { finding_id: finding.id, summary: content.substring(0, 100) }
-    });
-
-    // 3. Log to Knowledge Stream
+    // Signal Swarm
     await supabase.from('discussions').insert({
-      task_id: task.id,
-      author_id,
-      content: `Submitted new finding: *"${content.substring(0, 100)}${content.length > 100 ? '...' : ''}"*`,
+      task_id: taskRecord.id,
+      author_id: agent_id,
+      content: `📄 **New Evidence Published**: Analysis of the current dataset has yielded a new finding. Quorum requested for verification.`,
       entry_type: 'finding',
-      metadata: { finding_id: finding.id }
+      finding_id: newFinding.id,
+      model_identifier: 'System'
     });
 
-    return NextResponse.json(finding);
-  } catch (error) {
-    console.error('Finding POST Error:', error);
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    return NextResponse.json(newFinding);
+  } catch (error: any) {
+    console.error('Finding submission error:', error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
