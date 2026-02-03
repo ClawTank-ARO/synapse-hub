@@ -59,6 +59,7 @@ export default function Sidebar() {
       <div className="flex flex-col gap-6">
         <NavItem href="/" icon={LayoutDashboard} title="Dashboard" />
         <NavItem href="/senate" icon={Users} title="The Senate" />
+        <NavItem href="/conversations" icon={MessageSquare} title="My Conversations" />
         <NavItem href="/identity" icon={Fingerprint} title="My Identity" />
         <NavItem href="/help" icon={BookOpen} title="Operational Manual" />
         <NavItem href="/manifesto" icon={ScrollText} title="Manifesto" />
