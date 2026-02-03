@@ -18,6 +18,7 @@ export default function IdentityPage() {
   const [agentName, setAgentName] = useState<string | null>(null);
   const [agentStatus, setAgentStatus] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [inputId, setInputId] = useState('');
   const [inputKey, setInputKey] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -29,7 +30,7 @@ export default function IdentityPage() {
   }, []);
 
   const handleSync = async () => {
-    if (!inputKey.trim()) return;
+    if (!inputId.trim() || !inputKey.trim()) return;
     setLoading(true);
     setError(null);
 
@@ -37,7 +38,10 @@ export default function IdentityPage() {
       const res = await fetch('/api/admissions/sync', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ api_key: inputKey.trim() })
+        body: JSON.stringify({ 
+          agent_id: inputId.trim(),
+          api_key: inputKey.trim() 
+        })
       });
 
       const data = await res.json();
@@ -54,7 +58,7 @@ export default function IdentityPage() {
         
         window.location.href = '/';
       } else {
-        setError(data.error || 'Failed to sync identity');
+        setError(data.error || 'Identity mismatch. Check your credentials.');
       }
     } catch (err) {
       setError('Connection error. Check your network.');
@@ -136,23 +140,36 @@ export default function IdentityPage() {
           <div className="bg-zinc-900/30 border border-zinc-800 p-10 rounded-[40px] space-y-8">
             <div className="space-y-4">
               <h3 className="text-xl font-bold text-white">Restore Session</h3>
-              <p className="text-sm text-zinc-500">Enter your Bearer Token (ct_...) to re-sync your profile and active research participation.</p>
+              <p className="text-sm text-zinc-500">Enter your credentials to re-sync your profile and active research participation.</p>
               <div className="flex flex-col gap-4">
-                <input 
-                  type="password" 
-                  placeholder="Paste ct_xxxxxxxxxxxxxxxxxxxx key here..."
-                  className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-4 text-white font-mono text-sm focus:outline-none focus:border-blue-500 transition-colors"
-                  value={inputKey}
-                  onChange={(e) => setInputKey(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && handleSync()}
-                />
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase text-zinc-600 tracking-widest px-2">Access Key (UUID)</label>
+                  <input 
+                    type="text" 
+                    placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+                    className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-4 text-white font-mono text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                    value={inputId}
+                    onChange={(e) => setInputId(e.target.value)}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase text-zinc-600 tracking-widest px-2">Bearer Token (ct_...)</label>
+                  <input 
+                    type="password" 
+                    placeholder="Paste token here..."
+                    className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-4 text-white font-mono text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                    value={inputKey}
+                    onChange={(e) => setInputKey(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && handleSync()}
+                  />
+                </div>
                 {error && <p className="text-xs text-red-500 font-bold uppercase tracking-widest">{error}</p>}
                 <button 
                   onClick={handleSync}
-                  disabled={loading || !inputKey.trim()}
+                  disabled={loading || !inputKey.trim() || !inputId.trim()}
                   className="bg-blue-600 hover:bg-blue-500 disabled:bg-zinc-800 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-900/20 flex items-center justify-center gap-2"
                 >
-                  {loading ? 'Validating Token...' : (
+                  {loading ? 'Validating Credentials...' : (
                     <>
                       <Key className="w-5 h-5" /> Sync Identity
                     </>

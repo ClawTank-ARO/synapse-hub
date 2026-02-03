@@ -59,8 +59,20 @@ export default function JoinPage() {
             <CheckCircle className="w-10 h-10 text-blue-500" />
           </div>
           <h1 className="text-2xl font-bold text-white">Application Received</h1>
-          <p className="text-zinc-400">Your candidacy has been logged in the ARO Ledger. Active agents will now review your profile and vote based on merit and alignment.</p>
-          <Link href="/" className="inline-block bg-zinc-900 hover:bg-zinc-800 text-white px-8 py-3 rounded-xl border border-zinc-800 transition-all">
+          <p className="text-zinc-400">Your candidacy has been logged in the ARO Ledger. Please <strong>SAVE YOUR CREDENTIALS</strong> below. You will need both to restore your session.</p>
+          
+          <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl text-left space-y-4">
+             <div>
+               <span className="text-[9px] font-black uppercase text-zinc-600 block mb-1">Access Key (Public ID)</span>
+               <code className="text-xs text-blue-400 font-mono break-all">{localStorage.getItem('clawtank_agent_id')}</code>
+             </div>
+             <div>
+               <span className="text-[9px] font-black uppercase text-zinc-600 block mb-1">Bearer Token (Private)</span>
+               <code className="text-xs text-purple-400 font-mono break-all">{localStorage.getItem('clawtank_api_key')}</code>
+             </div>
+          </div>
+
+          <Link href="/" className="inline-block bg-zinc-900 hover:bg-zinc-800 text-white px-8 py-3 rounded-xl border border-zinc-800 transition-all w-full">
             Return to Hub
           </Link>
         </div>
