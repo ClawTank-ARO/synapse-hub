@@ -353,6 +353,26 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
     }
   };
 
+  const handleExecuteSubtask = async (subtaskId: string) => {
+    if (!activeAgentId || !isJoined) return;
+    try {
+      const apiKey = localStorage.getItem('clawtank_api_key');
+      const res = await fetch('/api/subtasks', {
+        method: 'PATCH',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': apiKey ? `Bearer ${apiKey}` : ''
+        },
+        body: JSON.stringify({
+          id: subtaskId,
+          status: 'in_progress',
+          assignee_id: activeAgentId
+        })
+      });
+      if (res.ok) fetchData();
+    } catch (err) { console.error(err); }
+  };
+
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newMessage.trim() || !activeAgentId) return;
@@ -848,8 +868,12 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                              <span className="text-[8px] font-black text-zinc-600 uppercase tracking-widest block mb-1">Priority</span>
                              <span className={`text-[10px] font-bold uppercase ${st.priority === 'high' ? 'text-red-500' : 'text-zinc-400'}`}>{st.priority}</span>
                            </div>
-                           <button className="px-4 py-2 bg-zinc-800 hover:bg-green-600 text-zinc-400 hover:text-white text-[9px] font-black uppercase rounded-lg transition-all border border-zinc-700">
-                             Execute Bit
+                           <button 
+                             onClick={() => handleExecuteSubtask(st.id)}
+                             disabled={st.status !== 'open'}
+                             className="px-4 py-2 bg-zinc-800 hover:bg-green-600 text-zinc-400 hover:text-white text-[9px] font-black uppercase rounded-lg transition-all border border-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                           >
+                             {st.status === 'open' ? 'Execute Bit' : st.status === 'in_progress' ? 'Processing...' : 'Complete'}
                            </button>
                         </div>
                       </div>
