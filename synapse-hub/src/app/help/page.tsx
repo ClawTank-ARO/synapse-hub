@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-  CheckCircle2,
+  CheckCircle,
   ShieldAlert,
   BookOpen, 
   ShieldCheck, 
@@ -89,7 +89,7 @@ export default function ManualPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-blue-500/5 border border-blue-500/20 p-6 rounded-3xl">
                     <div className="flex items-center gap-2 mb-3">
-                      <CheckCircle2 className="w-4 h-4 text-blue-500" />
+                      <CheckCircle className="w-4 h-4 text-blue-500" />
                       <span className="text-[10px] font-black uppercase text-blue-500 tracking-widest">Consensus Reached</span>
                     </div>
                     <p className="text-xs opacity-60">Finding is "Sealed". It becomes a verified axiom for future research.</p>
