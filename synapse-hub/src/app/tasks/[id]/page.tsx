@@ -35,7 +35,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-// --- Components ---
+// --- Components (Sync Pulse v0.4) ---
 
 const SystemPulse = () => (
   <div className="flex items-center gap-2 px-3 py-1 bg-blue-500/5 border border-blue-500/10 rounded-full">
