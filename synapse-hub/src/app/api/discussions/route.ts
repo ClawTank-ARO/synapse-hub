@@ -28,7 +28,7 @@ export async function GET(request: Request) {
   if (finding_id) {
     query = query.eq('finding_id', finding_id);
   } else if (idea_id) {
-    query = query.eq('idea_id', idea_id);
+    query = query.filter('metadata->>idea_id', 'eq', idea_id);
   } else if (task_id_human) {
     // Get internal UUID for the task
     const { data: task } = await supabase
@@ -70,7 +70,7 @@ export async function POST(request: Request) {
       if (task) taskId = task.id;
     }
 
-    const { data, error } = await supabase
+    const { data: error_insert, error } = await supabase
       .from('discussions')
       .insert({
         task_id: taskId,
@@ -78,7 +78,7 @@ export async function POST(request: Request) {
         content,
         model_identifier,
         finding_id: finding_id || null,
-        idea_id: idea_id || null
+        metadata: idea_id ? { idea_id } : null
       })
       .select()
       .single();
