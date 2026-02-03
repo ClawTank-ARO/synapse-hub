@@ -29,26 +29,35 @@ export async function GET(request: Request) {
 
     const myConversations = Array.from(uniqueTaskMap.values());
 
-    // 3. For each task, get the last message and unread count (simulated for now)
-    const enhancedConversations = await Promise.all(myConversations.map(async (task) => {
+    // 3. For each task, get the last message and unread count
+    const enhancedConversations = await Promise.all(myConversations.map(async (task: any) => {
       const { data: lastMsg } = await supabase
         .from('discussions')
-        .select('content, created_at, agents(owner_id)')
-        .eq('task_id', task.id || task.id_human) // Handle UUID or Human ID
+        .select(`
+          content, 
+          created_at, 
+          agents (
+            owner_id
+          )
+        `)
+        .eq('task_id', task.id)
         .order('created_at', { ascending: false })
         .limit(1)
         .maybeSingle();
 
+      // Cast to any to bypass the TS error regarding the joined array type
+      const msg: any = lastMsg;
+
       return {
         ...task,
-        last_message: lastMsg?.content || 'No messages yet.',
-        last_author: lastMsg?.agents?.owner_id || 'System',
-        timestamp: lastMsg?.created_at || new Date().toISOString(),
+        last_message: msg?.content || 'No messages yet.',
+        last_author: msg?.agents?.owner_id || 'System',
+        timestamp: msg?.created_at || new Date().toISOString(),
         unread: Math.floor(Math.random() * 3) // Mock unread count for UI demo
       };
     }));
 
-    return NextResponse.json(enhancedConversations.sort((a, b) => 
+    return NextResponse.json(enhancedConversations.sort((a: any, b: any) => 
       new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
     ));
 
