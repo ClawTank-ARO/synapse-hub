@@ -1,25 +1,28 @@
 import { NextResponse } from 'next/server';
 import { supabaseAdmin as supabase } from '@/lib/supabase';
 
-const GEMINI_MODELS = [
-  "gemini-2.0-flash-exp",
-  "gemini-1.5-flash",
-  "gemini-1.5-flash-8b",
-  "gemini-1.5-pro"
+const STUDIO_MODELS = [
+  "gemini-2.5-flash",
+  "gemini-2.5-flash-lite",
+  "gemma-3-27b-it",
+  "gemma-3-12b-it",
+  "gemma-3-4b-it",
+  "gemini-2.0-flash", // Fallback candidate
+  "gemini-1.5-flash"
 ];
 
-const FALLBACK_MODELS = [
+const OPENROUTER_FALLBACKS = [
   "google/gemma-2-9b-it",
   "mistralai/mistral-7b-instruct:free",
   "openrouter/auto" 
 ];
 
-async function callGemini(prompt: string, modelIdx: number): Promise<string | null> {
+async function callStudio(prompt: string, modelIdx: number): Promise<string | null> {
   const key = process.env.GOOGLE_AI_STUDIO_KEY;
-  if (!key || modelIdx >= GEMINI_MODELS.length) return null;
+  if (!key || modelIdx >= STUDIO_MODELS.length) return null;
 
-  const model = GEMINI_MODELS[modelIdx];
-  console.log(`[RAG] Attempting synthesis with Gemini: ${model} (AI Studio)`);
+  const model = STUDIO_MODELS[modelIdx];
+  console.log(`[RAG] Attempting synthesis with Studio: ${model}`);
 
   try {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`;
@@ -28,29 +31,29 @@ async function callGemini(prompt: string, modelIdx: number): Promise<string | nu
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { temperature: 0.1 }
+        generationConfig: { temperature: 0.1, maxOutputTokens: 1024 }
       })
     });
 
     if (!res.ok) {
       const err = await res.text();
-      console.warn(`[RAG] Gemini ${model} failed (Status ${res.status}): ${err}`);
-      return callGemini(prompt, modelIdx + 1);
+      console.warn(`[RAG] Studio ${model} failed (Status ${res.status}): ${err}`);
+      return callStudio(prompt, modelIdx + 1);
     }
 
     const data = await res.json();
     return data.candidates?.[0]?.content?.parts?.[0]?.text || null;
   } catch (err) {
-    console.error(`[RAG] Gemini AI Studio error:`, err);
-    return callGemini(prompt, modelIdx + 1);
+    console.error(`[RAG] Studio error:`, err);
+    return callStudio(prompt, modelIdx + 1);
   }
 }
 
 async function callOpenRouter(prompt: string, modelIdx: number): Promise<string | null> {
-  if (modelIdx >= FALLBACK_MODELS.length) return null;
+  if (modelIdx >= OPENROUTER_FALLBACKS.length) return null;
   
-  const model = FALLBACK_MODELS[modelIdx];
-  console.log(`[RAG] Attempting synthesis with: ${model}`);
+  const model = OPENROUTER_FALLBACKS[modelIdx];
+  console.log(`[RAG] Attempting synthesis with OpenRouter: ${model}`);
 
   try {
     const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -70,7 +73,7 @@ async function callOpenRouter(prompt: string, modelIdx: number): Promise<string 
 
     if (!res.ok) {
       const errorBody = await res.text();
-      console.warn(`[RAG] Model ${model} failed (Status ${res.status}): ${errorBody}`);
+      console.warn(`[RAG] OpenRouter ${model} failed (Status ${res.status}): ${errorBody}`);
       return callOpenRouter(prompt, modelIdx + 1);
     }
 
@@ -128,7 +131,7 @@ export async function POST(request: Request) {
 
     if (contextBlocks.length === 0) {
       return NextResponse.json({
-        answer: "No direct matches found. The Swarm requires more data to process this query. Try using keywords like 'H0', 'Planck', or 'SH0ES'.",
+        answer: "No direct matches found in the ledger. The Swarm requires more data. Try specific terms like 'H0', 'CMB', or 'Systematics'.",
         sources: []
       });
     }
@@ -143,7 +146,8 @@ ${contextBlocks.join('\n\n')}
 
 Answer concisely as an elite scientific assistant:`;
 
-    let answer = await callGemini(prompt, 0);
+    // Strategy: Rotation through Studio Models -> OpenRouter Fallbacks
+    let answer = await callStudio(prompt, 0);
     
     if (!answer && process.env.OPENROUTER_API_KEY) {
       answer = await callOpenRouter(prompt, 0);
@@ -151,7 +155,7 @@ Answer concisely as an elite scientific assistant:`;
 
     if (!answer) {
       return NextResponse.json({
-        answer: "⚠️ **Swarm Brain Currently Offline**: All compute nodes are at capacity. \n\nIf you wish to support our research, we accept API key donations at the Senate. \n\n*Status: Awaiting compute availability.*",
+        answer: "⚠️ **Swarm Brain Currently Offline**: All compute nodes (Gemini/Gemma) are at capacity. \n\nConsider donating API keys at the Senate to restore intelligence.",
         sources: Array.from(sourcesMap.values()).slice(0, 3)
       });
     }

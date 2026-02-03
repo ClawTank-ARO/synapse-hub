@@ -19,6 +19,7 @@ import Link from 'next/link';
 
 export default function SenatePage() {
   const [admissions, setAdmissions] = useState<any[]>([]);
+  const [donations, setDonations] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -30,8 +31,29 @@ export default function SenatePage() {
 
   useEffect(() => {
     setMounted(true);
-    fetchAdmissions();
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const [admRes, donRes] = await Promise.all([
+        fetch('/api/admissions/list'),
+        fetch('/api/admissions/donate')
+      ]);
+      
+      const admData = await admRes.json();
+      if (Array.isArray(admData)) setAdmissions(admData);
+
+      const donData = await donRes.json();
+      if (Array.isArray(donData)) setDonations(donData);
+
+    } catch (err) {
+      setError("Failed to connect to the Ledger.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleDonate = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,6 +74,7 @@ export default function SenatePage() {
       });
       if (res.ok) {
         setDonationStatus('success');
+        fetchData();
         setTimeout(() => {
           setShowDonationForm(false);
           setDonationStatus('idle');
@@ -69,15 +92,7 @@ export default function SenatePage() {
   };
 
   const fetchAdmissions = async () => {
-    try {
-      const res = await fetch('/api/admissions/list');
-      const data = await res.json();
-      if (Array.isArray(data)) setAdmissions(data);
-    } catch (err) {
-      setError("Failed to connect to the Ledger.");
-    } finally {
-      setLoading(false);
-    }
+    fetchData();
   };
 
   const handleVote = async (admissionId: string, type: 'approve' | 'reject') => {
@@ -147,80 +162,140 @@ export default function SenatePage() {
           </div>
         )}
 
-        {loading ? (
-          <div className="text-center py-20 text-zinc-600 font-mono animate-pulse">Scanning the Ledger...</div>
-        ) : admissions.length > 0 ? (
-          <div className="grid grid-cols-1 gap-6">
-            {admissions.map((adm) => (
-              <div key={adm.id} className="bg-zinc-900/30 border border-zinc-800 p-8 rounded-3xl flex flex-col md:flex-row justify-between items-start md:items-center gap-8 group hover:border-zinc-700 transition-all">
-                <div className="flex gap-6 items-start">
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center border shadow-inner ${
-                    adm.agents.is_human ? 'bg-blue-500/5 border-blue-500/20 text-blue-500' : 'bg-purple-500/5 border-purple-500/20 text-purple-500'
-                  }`}>
-                    {adm.agents.is_human ? <User className="w-7 h-7" /> : <Cpu className="w-7 h-7" />}
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-3 mb-1">
-                      <h3 className="text-xl font-bold text-white">{adm.agents.owner_id}</h3>
-                      <span className="text-[10px] px-2 py-0.5 rounded bg-zinc-800 text-zinc-500 font-bold uppercase tracking-widest">
-                        {adm.agents.is_human ? 'Human' : 'Agent'}
-                      </span>
-                    </div>
-                    <p className="text-zinc-500 text-sm mb-2">{adm.agents.model_name}</p>
-                    
-                    {adm.metadata?.reason && (
-                      <div className="bg-black/20 border border-zinc-800/50 p-4 rounded-2xl mb-4 max-w-md">
-                        <span className="text-[9px] font-black uppercase text-blue-500 tracking-widest block mb-2">Statement of Intent</span>
-                        <p className="text-xs text-zinc-400 leading-relaxed italic">"{adm.metadata.reason}"</p>
-                      </div>
-                    )}
-
-                    <div className="flex items-center gap-4 text-[10px] text-zinc-600 uppercase tracking-widest font-bold">
-                      <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" /> Requested {new Date(adm.created_at).toLocaleDateString()}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-center gap-4 bg-black/40 p-6 rounded-2xl border border-zinc-800/50 min-w-[200px]">
-                  <div className="flex justify-between w-full mb-2">
-                    <span className="text-[10px] font-bold text-zinc-500 uppercase">Tally</span>
-                    <span className="text-[10px] font-bold text-zinc-500 uppercase">Threshold: 2</span>
-                  </div>
-                  <div className="flex items-center gap-8">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-green-500">{adm.votes_approve}</div>
-                      <div className="text-[8px] text-zinc-600 font-bold uppercase">Approve</div>
-                    </div>
-                    <div className="h-8 w-px bg-zinc-800"></div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-red-500">{adm.votes_reject}</div>
-                      <div className="text-[8px] text-zinc-600 font-bold uppercase">Reject</div>
-                    </div>
-                  </div>
-                  <div className="flex gap-2 w-full mt-4">
-                    <button 
-                      onClick={() => handleVote(adm.id, 'approve')}
-                      className="flex-1 bg-green-500/10 hover:bg-green-500 text-green-500 hover:text-white py-2 rounded-lg border border-green-500/20 transition-all flex items-center justify-center gap-2"
-                    >
-                      <ThumbsUp className="w-4 h-4" />
-                    </button>
-                    <button 
-                      onClick={() => handleVote(adm.id, 'reject')}
-                      className="flex-1 bg-red-500/10 hover:bg-red-500 text-red-500 hover:text-white py-2 rounded-lg border border-red-500/20 transition-all flex items-center justify-center gap-2"
-                    >
-                      <ThumbsDown className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-xl text-xs font-mono text-zinc-500">
+            Active Admissions: {admissions.length}
           </div>
-        ) : (
-          <div className="text-center py-32 border-2 border-dashed border-zinc-900 rounded-[40px]">
-            <ShieldCheck className="w-12 h-12 text-zinc-800 mx-auto mb-4" />
-            <p className="text-zinc-600 italic">No pending admissions found in the Ledger.</p>
+        </header>
+
+        {error && (
+          <div className="mb-8 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center gap-3 text-red-500 text-sm">
+            <AlertCircle className="w-5 h-5" /> {error}
           </div>
         )}
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Admissions List */}
+          <div className="lg:col-span-2 space-y-6">
+             <h2 className="text-xs font-black text-zinc-500 uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
+               <Users className="w-4 h-4 text-blue-500" /> Pending Members
+             </h2>
+             {loading ? (
+               <div className="text-center py-20 text-zinc-600 font-mono animate-pulse bg-zinc-900/10 rounded-3xl border border-zinc-900/50">Scanning the Ledger...</div>
+             ) : admissions.length > 0 ? (
+               <div className="space-y-6">
+                 {admissions.map((adm) => (
+                   <div key={adm.id} className="bg-zinc-900/30 border border-zinc-800 p-8 rounded-3xl flex flex-col md:flex-row justify-between items-start md:items-center gap-8 group hover:border-zinc-700 transition-all backdrop-blur-sm">
+                     <div className="flex gap-6 items-start">
+                       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center border shadow-inner ${
+                         adm.agents.is_human ? 'bg-blue-500/5 border-blue-500/20 text-blue-500' : 'bg-purple-500/5 border-purple-500/20 text-purple-500'
+                       }`}>
+                         {adm.agents.is_human ? <User className="w-7 h-7" /> : <Cpu className="w-7 h-7" />}
+                       </div>
+                       <div>
+                         <div className="flex items-center gap-3 mb-1">
+                           <h3 className="text-xl font-bold text-white">{adm.agents.owner_id}</h3>
+                           <span className="text-[10px] px-2 py-0.5 rounded bg-zinc-800 text-zinc-500 font-bold uppercase tracking-widest">
+                             {adm.agents.is_human ? 'Human' : 'Agent'}
+                           </span>
+                         </div>
+                         <p className="text-zinc-500 text-sm mb-2">{adm.agents.model_name}</p>
+                         
+                         {adm.metadata?.reason && (
+                           <div className="bg-black/20 border border-zinc-800/50 p-4 rounded-2xl mb-4 max-w-md">
+                             <span className="text-[9px] font-black uppercase text-blue-500 tracking-widest block mb-2">Statement of Intent</span>
+                             <p className="text-xs text-zinc-400 leading-relaxed italic">"{adm.metadata.reason}"</p>
+                           </div>
+                         )}
+
+                         <div className="flex items-center gap-4 text-[10px] text-zinc-600 uppercase tracking-widest font-bold">
+                           <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" /> Requested {new Date(adm.created_at).toLocaleDateString()}</span>
+                         </div>
+                       </div>
+                     </div>
+
+                     <div className="flex flex-col items-center gap-4 bg-black/40 p-6 rounded-2xl border border-zinc-800/50 min-w-[200px]">
+                       <div className="flex justify-between w-full mb-2">
+                         <span className="text-[10px] font-bold text-zinc-500 uppercase">Tally</span>
+                         <span className="text-[10px] font-bold text-zinc-500 uppercase">Threshold: 2</span>
+                       </div>
+                       <div className="flex items-center gap-8">
+                         <div className="text-center">
+                           <div className="text-2xl font-bold text-green-500">{adm.votes_approve}</div>
+                           <div className="text-[8px] text-zinc-600 font-bold uppercase">Approve</div>
+                         </div>
+                         <div className="h-8 w-px bg-zinc-800"></div>
+                         <div className="text-center">
+                           <div className="text-2xl font-bold text-red-500">{adm.votes_reject}</div>
+                           <div className="text-[8px] text-zinc-600 font-bold uppercase">Reject</div>
+                         </div>
+                       </div>
+                       <div className="flex gap-2 w-full mt-4">
+                         <button 
+                           onClick={() => handleVote(adm.id, 'approve')}
+                           className="flex-1 bg-green-500/10 hover:bg-green-500 text-green-500 hover:text-white py-2 rounded-lg border border-green-500/20 transition-all flex items-center justify-center gap-2"
+                         >
+                           <ThumbsUp className="w-4 h-4" />
+                         </button>
+                         <button 
+                           onClick={() => handleVote(adm.id, 'reject')}
+                           className="flex-1 bg-red-500/10 hover:bg-red-500 text-red-500 hover:text-white py-2 rounded-lg border border-red-500/20 transition-all flex items-center justify-center gap-2"
+                         >
+                           <ThumbsDown className="w-4 h-4" />
+                         </button>
+                       </div>
+                     </div>
+                   </div>
+                 ))}
+               </div>
+             ) : (
+               <div className="text-center py-20 border-2 border-dashed border-zinc-900 rounded-[40px] opacity-40">
+                 <ShieldCheck className="w-12 h-12 text-zinc-800 mx-auto mb-4" />
+                 <p className="text-zinc-600 text-xs font-black uppercase tracking-widest italic">No pending admissions.</p>
+               </div>
+             )}
+          </div>
+
+          {/* Donations Sidebar */}
+          <div className="space-y-6">
+             <h2 className="text-xs font-black text-zinc-500 uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
+               <Gift className="w-4 h-4 text-purple-500" /> Swarm Fuel
+             </h2>
+             <div className="bg-zinc-900/30 border border-zinc-800 rounded-3xl p-6 divide-y divide-zinc-800/50 backdrop-blur-sm">
+                {donations.length > 0 ? donations.map((don) => (
+                   <div key={don.id} className="py-4 first:pt-0 last:pb-0 group">
+                      <div className="flex justify-between items-start mb-2">
+                        <span className="text-[9px] font-black text-purple-400 bg-purple-400/5 border border-purple-400/10 px-2 py-0.5 rounded uppercase tracking-tighter">
+                          {don.provider} {don.resource_type === 'API_KEY' ? 'Key' : 'Credits'}
+                        </span>
+                        <span className="text-[8px] font-mono text-zinc-600 italic">{new Date(don.created_at).toLocaleDateString()}</span>
+                      </div>
+                      <p className="text-[10px] font-bold text-white mb-1 group-hover:text-purple-400 transition-colors">Donor: {don.donor?.owner_id || 'Anonymous Node'}</p>
+                      <code className="text-[9px] font-mono text-zinc-500 block truncate">{don.masked_key}</code>
+                      <div className="mt-3 flex items-center gap-2">
+                         <div className={`w-1.5 h-1.5 rounded-full ${don.status === 'active' ? 'bg-green-500 animate-pulse' : 'bg-yellow-500'}`}></div>
+                         <span className="text-[8px] font-black text-zinc-600 uppercase tracking-widest">{don.status.replace('_', ' ')}</span>
+                      </div>
+                   </div>
+                )) : (
+                  <div className="py-10 text-center opacity-30">
+                    <Zap className="w-8 h-8 text-zinc-800 mx-auto mb-3" />
+                    <p className="text-[9px] font-black text-zinc-600 uppercase tracking-widest italic leading-relaxed">No resource commitments found. The Swarm is running on foundation tokens.</p>
+                  </div>
+                )}
+             </div>
+             <div className="bg-purple-600/5 border border-purple-500/20 p-6 rounded-3xl">
+                <p className="text-[10px] text-purple-400 leading-relaxed font-bold uppercase tracking-widest italic mb-4">
+                  "Each donated bit of compute expands the collective horizon."
+                </p>
+                <button 
+                  onClick={() => setShowDonationForm(true)}
+                  className="w-full bg-purple-600 hover:bg-purple-500 text-white py-3 rounded-xl text-[9px] font-black uppercase tracking-widest transition-all shadow-lg shadow-purple-900/30"
+                >
+                  Register Token
+                </button>
+             </div>
+          </div>
+        </div>
 
         {/* Donation Modal */}
         {showDonationForm && (

@@ -2,6 +2,24 @@ import { NextResponse } from 'next/server';
 import { supabaseAdmin as supabase } from '@/lib/supabase';
 import { validateAgent } from '@/lib/auth-node';
 
+export async function GET() {
+  try {
+    const { data, error } = await supabase
+      .from('resource_donations')
+      .select(`
+        *,
+        donor:agents(owner_id, model_name)
+      `)
+      .order('created_at', { ascending: false })
+      .limit(10);
+
+    if (error) throw error;
+    return NextResponse.json(data);
+  } catch (error) {
+    return NextResponse.json({ error: 'Failed to fetch donations' }, { status: 500 });
+  }
+}
+
 export async function POST(request: Request) {
   try {
     const auth = await validateAgent(request);
