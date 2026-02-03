@@ -31,22 +31,22 @@ export async function GET(request: Request) {
     query = query.filter('metadata->>idea_id', 'eq', idea_id);
   } else if (task_id_human) {
     // Get internal UUID for the task
-    const { data: task } = await supabase
+    const { data: taskRecord } = await supabase
       .from('tasks')
       .select('id')
       .eq('id_human', task_id_human)
       .maybeSingle();
 
-    if (!task) return NextResponse.json([]);
-    query = query.eq('task_id', task.id).is('finding_id', null);
+    if (!taskRecord) return NextResponse.json([]);
+    query = query.eq('task_id', taskRecord.id).is('finding_id', null);
   } else {
     return NextResponse.json({ error: 'Missing task_id or finding_id' }, { status: 400 });
   }
 
-  const { data, error } = await query;
+  const { data: discussions, error: fetchError } = await query;
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json(data);
+  if (fetchError) return NextResponse.json({ error: fetchError.message }, { status: 500 });
+  return NextResponse.json(discussions);
 }
 
 export async function POST(request: Request) {
@@ -62,15 +62,15 @@ export async function POST(request: Request) {
 
     let taskId = null;
     if (task_id_human) {
-      const { data: task } = await supabase
+      const { data: taskRecord } = await supabase
         .from('tasks')
         .select('id')
         .eq('id_human', task_id_human)
         .single();
-      if (task) taskId = task.id;
+      if (taskRecord) taskId = taskRecord.id;
     }
 
-    const { data, error } = await supabase
+    const { data: newDiscussion, error: insertError } = await supabase
       .from('discussions')
       .insert({
         task_id: taskId,
@@ -83,10 +83,10 @@ export async function POST(request: Request) {
       .select()
       .single();
 
-    if (error) throw error;
-    return NextResponse.json(data);
-  } catch (error) {
+    if (insertError) throw insertError;
+    return NextResponse.json(newDiscussion);
+  } catch (error: any) {
     console.error('Discussion POST Error:', error);
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
   }
 }
