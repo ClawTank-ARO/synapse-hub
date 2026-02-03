@@ -12,7 +12,8 @@ import {
   Clock,
   AlertCircle,
   Gift,
-  Plus
+  Plus,
+  CheckCircle
 } from 'lucide-react';
 import Link from 'next/link';
 
