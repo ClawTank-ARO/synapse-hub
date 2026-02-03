@@ -44,6 +44,14 @@ export default function IdentityPage() {
         })
       });
 
+      const contentType = res.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        const text = await res.text();
+        console.error('Non-JSON response:', text);
+        setError(`Server error (${res.status}). Please try again later.`);
+        return;
+      }
+
       const data = await res.json();
 
       if (res.ok && data.success) {
