@@ -1005,7 +1005,7 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                         <span className={`px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-widest border ${
                           ds.status === 'raw' ? 'bg-zinc-800 text-zinc-500 border-zinc-700' : 'bg-green-500/10 text-green-500 border-green-500/20'
                         }`}>
-                          {ds.status}
+                          {ds.status === 'cleaned' ? 'PROCESSED' : ds.status}
                         </span>
                       </div>
                       <h4 className="text-sm font-bold text-white mb-1 group-hover:text-purple-400 transition-colors">{ds.name}</h4>
@@ -1014,7 +1014,9 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                         <span className="text-[9px] text-zinc-500 font-black uppercase tracking-widest">{ds.format || 'Unknown'}</span>
                         <div className="flex gap-2">
                           <button className="p-1.5 bg-zinc-800 hover:bg-zinc-700 rounded-md text-[8px] font-black uppercase transition-all">Download</button>
-                          <button className="p-1.5 bg-zinc-800 hover:bg-zinc-700 rounded-md text-[8px] font-black uppercase transition-all">Clean</button>
+                          <button className="p-1.5 bg-zinc-800 hover:bg-zinc-700 rounded-md text-[8px] font-black uppercase transition-all">
+                            {ds.status === 'cleaned' ? 'RE-PROCESS' : 'PROCESS'}
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -1022,26 +1024,26 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                     <div className="col-span-full p-20 text-center border border-dashed border-zinc-900 rounded-3xl">
                       <Database className="w-12 h-12 text-zinc-800 mx-auto mb-6" />
                       <h3 className="text-xl font-bold text-white mb-2">No Data Assets</h3>
-                      <p className="text-zinc-500 text-sm max-w-sm mx-auto">Register your raw or cleaned datasets here to maintain a structured version control for the investigation.</p>
-                    </div>
-                  )}
-                </div>
-              </section>
-            )}
-
-            {activeTab === 'evidence' && (
-              <section className="animate-in fade-in slide-in-from-bottom duration-500 space-y-8">
-                <div className="flex justify-between items-center mb-8">
-                  <h2 className="text-4xl font-black text-white uppercase tracking-tighter">Evidence Ledger</h2>
-                  <div className="flex gap-2">
-                    <span className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-[9px] font-black text-blue-500 uppercase tracking-widest">
-                      {findings.filter(f => f.status === 'verified').length} Consensus
-                    </span>
-                    <span className="px-3 py-1 bg-yellow-500/10 border border-yellow-500/20 rounded-full text-[9px] font-black text-yellow-500 uppercase tracking-widest">
-                      {findings.filter(f => f.status === 'pending_validation').length} Under Review
-                    </span>
+                      <p className="text-zinc-500 text-sm max-w-sm mx-auto">Register your raw or processed datasets here to maintain a structured version control for the investigation.</p>
+                      </div>
+                    )}
                   </div>
-                </div>
+                </section>
+              )}
+
+              {activeTab === 'evidence' && (
+                <section className="animate-in fade-in slide-in-from-bottom duration-500 space-y-8">
+                  <div className="flex justify-between items-center mb-8">
+                    <h2 className="text-4xl font-black text-white uppercase tracking-tighter">Evidence Ledger</h2>
+                    <div className="flex gap-2">
+                      <span className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-[9px] font-black text-blue-500 uppercase tracking-widest">
+                        {findings.filter(f => f.status === 'verified').length} Consensus
+                      </span>
+                      <span className="px-3 py-1 bg-yellow-500/10 border border-yellow-500/20 rounded-full text-[9px] font-black text-yellow-500 uppercase tracking-widest">
+                        {findings.filter(f => f.status === 'pending_validation').length} Under Review
+                      </span>
+                    </div>
+                  </div>
 
                 <div className="grid grid-cols-1 gap-6">
                   {findings.length > 0 ? findings.map((f, fIdx) => (
@@ -1260,7 +1262,7 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                           </div>
                           <div className="overflow-hidden flex-1">
                             <p className="text-sm font-bold text-white truncate">{ds.name}</p>
-                            <p className="text-[9px] text-zinc-600 uppercase font-black tracking-widest mt-1">RAG Ready • v.{ds.version}</p>
+                            <p className="text-[9px] text-zinc-600 uppercase font-black tracking-widest mt-1">Status: Processed • v.{ds.version}</p>
                           </div>
                           <ExternalLink className="w-4 h-4 text-zinc-700 group-hover:text-purple-500 opacity-0 group-hover:opacity-100 transition-all" />
                         </a>
