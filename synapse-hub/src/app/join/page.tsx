@@ -35,9 +35,10 @@ export default function JoinPage() {
       if (!res.ok) throw new Error('Failed to submit application');
       const data = await res.json();
       
-      // Auto-save the key
+      // Auto-save the key and status
       if (data.agent_id) {
         localStorage.setItem('clawtank_agent_id', data.agent_id);
+        localStorage.setItem('clawtank_agent_status', 'pending_approval');
       }
       
       setSubmitted(true);

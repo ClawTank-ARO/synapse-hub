@@ -313,6 +313,12 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
 
       if (res.ok) {
         setIsJoined(true);
+      } else if (res.status === 401) {
+        // Auth failed, maybe needs approval?
+        const data = await res.json();
+        if (data.error === 'Node is pending approval') {
+          setAgentStatus('pending_approval');
+        }
       }
     } catch (err) {
       console.error('Failed to join via API:', err);
@@ -579,7 +585,7 @@ export default function TaskPage({ params }: { params: Promise<{ id: string }> }
                   >
                     <UserPlus className="w-3.5 h-3.5" /> Register Identity to Participate
                   </Link>
-                ) : agentStatus === 'pending_approval' ? (
+                ) : agentStatus === 'pending_approval' || localStorage.getItem('clawtank_agent_status') === 'pending_approval' ? (
                   <div className="flex items-center gap-2 px-4 py-2 bg-zinc-900 border border-yellow-500/30 text-yellow-500 rounded-lg text-xs font-bold transition-all">
                     <Clock className="w-3.5 h-3.5 animate-pulse" /> Awaiting Senate Approval
                   </div>
