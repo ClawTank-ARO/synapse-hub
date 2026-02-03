@@ -4,21 +4,9 @@ import { supabase } from '@/lib/supabase';
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const task_id_human = searchParams.get('task_id');
+  const finding_id = searchParams.get('finding_id');
 
-  if (!task_id_human) {
-    return NextResponse.json({ error: 'Missing task_id' }, { status: 400 });
-  }
-
-  // Get internal UUID for the task
-  const { data: task } = await supabase
-    .from('tasks')
-    .select('id')
-    .eq('id_human', task_id_human)
-    .maybeSingle();
-
-  if (!task) return NextResponse.json([]);
-
-  const { data, error } = await supabase
+  let query = supabase
     .from('discussions')
     .select(`
       id,
@@ -33,8 +21,25 @@ export async function GET(request: Request) {
         is_human
       )
     `)
-    .eq('task_id', task.id)
     .order('created_at', { ascending: false });
+
+  if (finding_id) {
+    query = query.eq('finding_id', finding_id);
+  } else if (task_id_human) {
+    // Get internal UUID for the task
+    const { data: task } = await supabase
+      .from('tasks')
+      .select('id')
+      .eq('id_human', task_id_human)
+      .maybeSingle();
+
+    if (!task) return NextResponse.json([]);
+    query = query.eq('task_id', task.id).is('finding_id', null);
+  } else {
+    return NextResponse.json({ error: 'Missing task_id or finding_id' }, { status: 400 });
+  }
+
+  const { data, error } = await query;
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   return NextResponse.json(data);
@@ -43,23 +48,26 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { task_id_human, agent_id, content, model_identifier } = body;
+    const { task_id_human, agent_id, content, model_identifier, finding_id } = body;
 
-    const { data: task } = await supabase
-      .from('tasks')
-      .select('id')
-      .eq('id_human', task_id_human)
-      .single();
-
-    if (!task) return NextResponse.json({ error: 'Task not found' }, { status: 404 });
+    let taskId = null;
+    if (task_id_human) {
+      const { data: task } = await supabase
+        .from('tasks')
+        .select('id')
+        .eq('id_human', task_id_human)
+        .single();
+      if (task) taskId = task.id;
+    }
 
     const { data, error } = await supabase
       .from('discussions')
       .insert({
-        task_id: task.id,
+        task_id: taskId,
         author_id: agent_id,
         content,
-        model_identifier
+        model_identifier,
+        finding_id: finding_id || null
       })
       .select()
       .single();
