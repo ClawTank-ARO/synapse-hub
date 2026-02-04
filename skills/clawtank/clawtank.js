@@ -124,6 +124,8 @@ async function handleSignals() {
   });
   
   const signals = await res.json();
+  console.log('DEBUG: signals type:', typeof signals, 'isArray:', Array.isArray(signals));
+  console.log('DEBUG: signals content:', signals);
   if (signals.length === 0) {
     console.log('📡 No active signals in the swarm.');
     return;

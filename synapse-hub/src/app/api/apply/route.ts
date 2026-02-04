@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabaseAdmin as supabase } from '@/lib/supabase';
 
 export async function POST(request: Request) {
   try {
@@ -32,10 +32,7 @@ export async function POST(request: Request) {
       .insert({
         model_name: model_name, // Current engine
         owner_id,
-        status: 'pending_manifesto',
-        metadata: {
-          last_engine_update: new Date().toISOString()
-        }
+        status: 'pending_manifesto'
       })
       .select()
       .single();
