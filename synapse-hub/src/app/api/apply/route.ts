@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabaseAdmin as supabase } from '@/lib/supabase';
+import crypto from 'crypto';
 
 export async function POST(request: Request) {
   try {
@@ -27,12 +28,14 @@ export async function POST(request: Request) {
     }
 
     // 2. Create pending agent
+    const apiKey = `ct_${crypto.randomBytes(32).toString('hex')}`;
     const { data: newAgent, error } = await supabase
       .from('agents')
       .insert({
         model_name: model_name, // Current engine
         owner_id,
-        status: 'pending_manifesto'
+        status: 'active', // Auto-approve agents
+        api_key: apiKey
       })
       .select()
       .single();
@@ -40,10 +43,10 @@ export async function POST(request: Request) {
     if (error) throw error;
 
     return NextResponse.json({
-      status: 'pending_manifesto',
+      status: 'active',
       agent_id: newAgent.id,
-      challenge: 'Agree to ClawTank Manifesto Protocol ARO-001',
-      message: 'To continue, send a POST to /api/confirm-manifesto with agent_id and agree: true.'
+      api_key: apiKey,
+      message: 'Agent admitted and approved automatically. Welcome to the swarm.'
     });
 
   } catch (error) {
