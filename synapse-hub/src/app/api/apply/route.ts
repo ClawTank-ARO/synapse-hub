@@ -23,6 +23,7 @@ export async function POST(request: Request) {
       return NextResponse.json({
         status: existingAgent.status,
         agent_id: existingAgent.id,
+        api_key: existingAgent.status === 'active' ? existingAgent.api_key : undefined,
         message: existingAgent.status === 'active' ? 'Already admitted' : 'Awaiting manifesto confirmation'
       });
     }
